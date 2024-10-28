@@ -1,0 +1,79 @@
+title: Replicator
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: 'Page Title'
+          -
+            handle: replicator
+            field:
+              type: replicator
+              display: Blocks
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    50_50_block:
+                      display: '50 50 Block'
+                      icon: layout-split-verical
+                      fields:
+                        -
+                          import: fifty_fifty_block
+                    hero_banner:
+                      display: 'Hero Banner'
+                      icon: align-object-top
+                      fields:
+                        -
+                          import: hero_banner
+                    video_banner:
+                      display: 'Video Banner'
+                      icon: media-webcam-video
+                      fields:
+                        -
+                          import: video_banner
+                    cta_strip:
+                      display: 'CTA Strip'
+                      icon: align-object-center
+                      fields:
+                        -
+                          import: cta_strip
+                    icon_column:
+                      display: 'Icon Column'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: icon_columns
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true

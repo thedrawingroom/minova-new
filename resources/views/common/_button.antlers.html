@@ -1,0 +1,6 @@
+<a href="{{ $url ?? '#' }}"
+    class="inline-flex uppercase items-center justify-center border-4 min-h-[50px] px-[25px] rounded-full text-center hover:bg-white transition duration-300 ease-in-out
+   {{ $style === 'primary' ? 'border-minovaGold bg-minovaGold hover:border-minovaGold active:bg-minovaGoldClicked' : '' }}
+   {{ $style === 'black' ? 'bg-black text-white border-black hover:bg-white hover:text-black active:bg-gray-800 active:border-gray-800' : '' }}">
+    {{ $text ?? 'Click Me' }}
+</a>

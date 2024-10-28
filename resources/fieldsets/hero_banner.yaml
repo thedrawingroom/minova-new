@@ -1,0 +1,28 @@
+title: 'Hero Banner'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+  -
+    handle: description
+    field:
+      type: text
+      display: Description
+  -
+    handle: background_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Background Image'
+      validate:
+        - required
+  -
+    handle: large_banner
+    field:
+      type: toggle
+      display: 'Large Banner'

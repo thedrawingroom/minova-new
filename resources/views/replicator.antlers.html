@@ -1,0 +1,13 @@
+{{ replicator }}
+    {{ if type == "50_50_block" }}
+        {{ partial:blocks/5050}}
+    {{ elseif type == "hero_banner" }}
+        {{ partial:blocks/heroBanner }}
+    {{ elseif type == "video_banner" }}
+        {{ partial:blocks/videoBanner }}
+    {{ elseif type == "cta_strip" }}
+        {{ partial:blocks/ctaStrip }}
+    {{ elseif type == "icon_column" }}
+        {{ partial:blocks/iconColumn }}
+    {{ /if }}
+{{ /replicator }}

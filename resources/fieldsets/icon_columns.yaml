@@ -1,0 +1,30 @@
+title: 'Icon Columns'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: cards
+    field:
+      type: grid
+      display: Cards
+      fields:
+        -
+          handle: icon
+          field:
+            max_files: 1
+            container: assets
+            type: assets
+            display: Icon
+        -
+          handle: card_title
+          field:
+            type: text
+            display: 'Card Title'
+        -
+          handle: card_body
+          field:
+            type: textarea
+            display: 'Card Body'

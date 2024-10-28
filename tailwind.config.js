@@ -9,7 +9,42 @@ export default {
     ],
 
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                inter: ['Inter', 'sans-serif'],
+                flama: ['Flama', 'sans-serif'],
+                flamablack: ['FlamaBlack', 'sans-serif'],
+            },
+            letterSpacing: {
+                '00': '0',
+            },
+            lineHeight: {
+                'x1-57': '1.57',
+            },
+            colors: {
+                minovaGold: '#FAB90A',
+                minovaGoldClicked: 'rgba(250, 185, 10, 0.7)',
+            },
+            borderRadius: {
+                button: '25px',
+            },
+            screens: {
+                '2xl': '1140px',
+                xl: '1140px',
+                lg: '960px',    
+                md: '720px',    
+                sm: '540px',    
+                xl: '1140px',   
+            },
+            safelist: [
+                'sm:text-xl',
+                'text-4xl',
+                'sm:text-6xl',
+                'text-7xl',
+                'bg-blue-500',
+                'sm:bg-red-500',
+            ],
+        },
     },
 
     plugins: [
