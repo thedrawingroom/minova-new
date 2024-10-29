@@ -1,0 +1,32 @@
+title: Video
+fields:
+  -
+    handle: video_type
+    field:
+      options:
+        -
+          key: link
+          value: Link
+        -
+          key: file
+          value: File
+      inline: true
+      default: file
+      type: radio
+      display: 'Video Type'
+  -
+    handle: video_file
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Video File'
+      if:
+        video_type: 'equals file'
+  -
+    handle: video_link
+    field:
+      type: video
+      display: 'Video Link'
+      if:
+        video_type: 'equals link'

@@ -35,39 +35,39 @@ fields:
               fields:
                 -
                   import: project_bard
-            project_video_block:
-              display: 'Project Video Block'
+            video:
+              display: Video
               icon: media-webcam-video
               fields:
                 -
-                  import: project_video_block
+                  import: video
             button:
               display: Button
               icon: align-object-center
               fields:
                 -
-                  handle: button
-                  field:
-                    type: group
-                    display: Button
-                    fields:
-                      -
-                        handle: button_text
-                        field:
-                          type: text
-                          display: 'Button Text'
-                          validate:
-                            - required
-                      -
-                        handle: button_url
-                        field:
-                          type: link
-                          display: 'Button URL'
-                          validate:
-                            - required
+                  import: button
             address_table:
               display: 'Address Table'
               icon: home-house
               fields:
                 -
                   import: address_table
+            subtitle:
+              display: Subtitle
+              icon: align-object-bottom
+              fields:
+                -
+                  import: bard_subtitle
+            numbered_list:
+              display: 'Numbered List'
+              icon: dashboard-layout
+              fields:
+                -
+                  import: bard_numbered_list
+            image_columns:
+              display: 'Image Columns'
+              icon: dashboard-layout
+              fields:
+                -
+                  import: bard_image_columns
