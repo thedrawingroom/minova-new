@@ -1,0 +1,73 @@
+title: 'Project Bard Block'
+fields:
+  -
+    handle: block_image
+    field:
+      container: assets
+      type: assets
+      display: 'Block Image'
+      validate:
+        - required
+  -
+    handle: block_title
+    field:
+      type: text
+      display: 'Block Title'
+      validate:
+        - required
+  -
+    handle: text_title
+    field:
+      type: text
+      display: 'Text Title'
+  -
+    handle: location
+    field:
+      type: text
+      display: Location
+  -
+    handle: description
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+        - h1
+        - h4
+        - h5
+        - h6
+        - underline
+      remove_empty_nodes: false
+      type: bard
+      display: Description
+  -
+    handle: flip
+    field:
+      type: toggle
+      display: 'Flip Orientation'
+  -
+    handle: full_width
+    field:
+      type: toggle
+      display: 'Full Width'
+  -
+    handle: button
+    field:
+      type: group
+      display: Button
+      fields:
+        -
+          handle: button_text
+          field:
+            type: text
+            display: 'Button Text'
+        -
+          handle: button_url
+          field:
+            type: link
+            display: 'Button URL'

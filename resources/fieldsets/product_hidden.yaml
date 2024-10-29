@@ -1,0 +1,19 @@
+title: 'Product Hidden'
+fields:
+  -
+    handle: slider_product_name
+    field:
+      type: text
+      display: 'Slider Product Name'
+  -
+    handle: slider_description
+    field:
+      type: textarea
+      display: 'Slider Description'
+  -
+    handle: slider_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Slider Image'

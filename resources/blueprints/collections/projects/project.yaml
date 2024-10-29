@@ -1,0 +1,40 @@
+title: Project
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            import: projects
+            config:
+              title:
+                required: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: locale
+            field:
+              type: terms
+              taxonomies:
+                - locale
+              display: Locale
+              mode: select
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - projects
+              max_items: 1
+              listable: false
+              localizable: true

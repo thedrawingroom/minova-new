@@ -1,0 +1,67 @@
+title: 'Main Bard'
+fields:
+  -
+    handle: content
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+        - h1
+        - h4
+        - h5
+        - h6
+        - underline
+        - horizontalrule
+      remove_empty_nodes: false
+      type: bard
+      display: Content
+      sets:
+        bard_blocks:
+          display: 'Bard Blocks'
+          icon: addon-boxes-stack
+          sets:
+            project_image_block:
+              display: 'Project Image Block'
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: project_bard
+            project_video_block:
+              display: 'Project Video Block'
+              icon: media-webcam-video
+              fields:
+                -
+                  import: project_video_block
+            button:
+              display: Button
+              icon: align-object-center
+              fields:
+                -
+                  handle: button
+                  field:
+                    type: group
+                    display: Button
+                    fields:
+                      -
+                        handle: button_text
+                        field:
+                          type: text
+                          display: 'Button Text'
+                          validate:
+                            - required
+                      -
+                        handle: button_url
+                        field:
+                          type: link
+                          display: 'Button URL'
+                          validate:
+                            - required

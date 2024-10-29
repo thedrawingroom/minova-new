@@ -1,0 +1,87 @@
+title: News
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+          -
+            handle: main_title
+            field:
+              type: text
+              validate:
+                - required
+              display: 'Main Title'
+          -
+            handle: image
+            field:
+              container: assets
+              type: assets
+              display: Image
+              max_files: 1
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - underline
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+              sets:
+                standard_layout:
+                  display: 'Standard Layout'
+                  sets:
+                    content_heading:
+                      display: 'Content Heading'
+                      icon: align-object-top
+                      fields:
+                        -
+                          handle: heading
+                          field:
+                            type: text
+                            display: Heading
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required

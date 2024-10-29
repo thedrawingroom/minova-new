@@ -1,0 +1,34 @@
+title: 'Team Columns'
+fields:
+  -
+    handle: team
+    field:
+      type: group
+      display: Team
+      fields:
+        -
+          handle: team_pic
+          field:
+            container: assets
+            type: assets
+            display: 'Team Pic'
+        -
+          handle: name
+          field:
+            type: text
+            display: Name
+        -
+          handle: position
+          field:
+            type: text
+            display: Position
+        -
+          handle: team_description
+          field:
+            type: textarea
+            display: 'Team Description'
+        -
+          handle: team_quote
+          field:
+            type: textarea
+            display: 'Team Quote'

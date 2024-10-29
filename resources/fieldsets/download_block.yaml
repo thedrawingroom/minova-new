@@ -1,0 +1,19 @@
+title: 'Download Block'
+fields:
+  -
+    handle: downloads
+    field:
+      type: group
+      display: Downloads
+      fields:
+        -
+          handle: download_heading
+          field:
+            type: text
+            display: 'Download Heading'
+        -
+          handle: download_files
+          field:
+            container: assets
+            type: assets
+            display: 'Download Files'

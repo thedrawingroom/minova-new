@@ -28,30 +28,84 @@ tabs:
                       fields:
                         -
                           import: fifty_fifty_block
-                    hero_banner:
-                      display: 'Hero Banner'
-                      icon: align-object-top
-                      fields:
-                        -
-                          import: hero_banner
-                    video_banner:
-                      display: 'Video Banner'
-                      icon: media-webcam-video
-                      fields:
-                        -
-                          import: video_banner
                     cta_strip:
                       display: 'CTA Strip'
                       icon: align-object-center
                       fields:
                         -
                           import: cta_strip
+                    download_block:
+                      display: 'Download Block'
+                      icon: download-arrow-down
+                      fields:
+                        -
+                          import: download_block
+                    hero_banner:
+                      display: 'Hero Banner'
+                      icon: align-object-top
+                      fields:
+                        -
+                          import: hero_banner
                     icon_column:
                       display: 'Icon Column'
                       icon: dashboard-layout
                       fields:
                         -
                           import: icon_columns
+                    main_bard:
+                      display: 'Main Bard'
+                      icon: content-book-open
+                      fields:
+                        -
+                          import: main_bard
+                    product_grid:
+                      display: 'Product Grid'
+                      icon: layout-grid-dots
+                      fields:
+                        -
+                          import: product_grid
+                    product_hidden:
+                      display: 'Product Hidden'
+                      icon: alert-help-question
+                      fields:
+                        -
+                          import: product_hidden
+                    product_side_block:
+                      display: 'Product Side Block'
+                      icon: align-right
+                      fields:
+                        -
+                          import: product_side_block
+                    product_slider:
+                      display: 'Product Slider'
+                      icon: arrows-fit-to-width
+                      fields:
+                        -
+                          import: product_slider
+                    project_bard_block:
+                      display: 'Project Bard Block'
+                      icon: content-book-open
+                      fields:
+                        -
+                          import: project_bard
+                    project_video_block:
+                      display: 'Project Video Block'
+                      icon: media-webcam-video
+                      fields:
+                        -
+                          import: project_video_block
+                    team_columns:
+                      display: 'Team Columns'
+                      icon: user-avatar
+                      fields:
+                        -
+                          import: team_columns
+                    video_banner:
+                      display: 'Video Banner'
+                      icon: media-webcam-video
+                      fields:
+                        -
+                          import: video_banner
           -
             handle: template
             field:
@@ -77,3 +131,11 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: locale
+            field:
+              type: terms
+              taxonomies:
+                - locale
+              display: Locale
+              mode: select

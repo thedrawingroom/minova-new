@@ -4,3 +4,9 @@ id: d3685503-5bdd-4188-94c1-5e0c5b6dfc49
 password_hash: $2y$12$bQw.3D1S/JFBS32AW86wZ.mqNGkGQe77VNJH4XyrvETZiMap.vLPK
 preferences:
   theme: dark
+  collections:
+    products:
+      columns:
+        - title
+        - slug
+        - status

@@ -1,0 +1,23 @@
+title: 'Services Hidden'
+fields:
+  -
+    handle: service_name
+    field:
+      type: text
+      display: 'Service Name'
+  -
+    handle: service_description
+    field:
+      type: textarea
+      display: 'Service Description'
+  -
+    handle: service_image
+    field:
+      container: assets
+      type: assets
+      display: 'Service Image'
+  -
+    handle: service_link
+    field:
+      type: link
+      display: 'Service Link'

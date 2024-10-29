@@ -1,0 +1,27 @@
+title: 'Product Slider'
+fields:
+  -
+    handle: slider_title
+    field:
+      type: text
+      display: 'Slider Title'
+  -
+    handle: products
+    field:
+      type: group
+      display: Products
+      fields:
+        -
+          handle: slider_product_name
+          field: product_hidden.slider_product_name
+        -
+          handle: slider_description
+          field: product_hidden.slider_description
+        -
+          handle: slider_image
+          field: product_hidden.slider_image
+        -
+          handle: product_link
+          field:
+            type: link
+            display: 'Product Link'
