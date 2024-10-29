@@ -1,6 +1,6 @@
 <div class="w-screen h-[20vh] sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[60vh] overflow-hidden relative flex justify-center items-center">
     {{ if video_asset }}
-    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop>
+    <video class="absolute inset-0 object-cover w-full h-full" autoplay muted loop>
         <source src="{{ video_asset }}" type="video/mp4">
     </video>
     {{ /if }}

@@ -8,12 +8,17 @@ export default {
         './content/**/*.md',
     ],
 
-    theme: {
+  theme: {
+    container: {
+      center: true,
+      padding: '1.25rem',
+    },
         extend: {
             fontFamily: {
                 inter: ['Inter', 'sans-serif'],
                 flama: ['Flama', 'sans-serif'],
                 flamablack: ['FlamaBlack', 'sans-serif'],
+                helvetica: ['helvetica', 'sans-serif'],
             },
             letterSpacing: {
                 '00': '0',
@@ -31,10 +36,9 @@ export default {
             screens: {
                 '2xl': '1140px',
                 xl: '1140px',
-                lg: '960px',    
-                md: '720px',    
-                sm: '540px',    
-                xl: '1140px',   
+                lg: '960px',
+                md: '720px',
+                sm: '540px',
             },
             safelist: [
                 'sm:text-xl',
