@@ -37,6 +37,12 @@ tabs:
                     type: assets
                     display: Image
           -
+            handle: short_description
+            field:
+              character_limit: 110
+              type: textarea
+              display: 'Short Description'
+          -
             import: main_bard
           -
             handle: template

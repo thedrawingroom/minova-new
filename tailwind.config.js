@@ -34,7 +34,7 @@ export default {
                 button: '25px',
             },
             screens: {
-                '2xl': '1140px',
+                '2xl': '1440px',
                 xl: '1140px',
                 lg: '960px',
                 md: '720px',
