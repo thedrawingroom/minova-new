@@ -1,77 +1,85 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @font-face {
-    font-family: 'Flama';
-    src: url('/public/fonts/flama-basic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Flama';
+  src: url('/public/fonts/flama-basic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'FlamaBlack';
-    src: url('/public/fonts/flamablack.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'FlamaBlack';
+  src: url('/public/fonts/flamablack.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'FlamaBlack', sans-serif;
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-}
+  }
 
-h1 {
+  h1 {
     font-size: 2.25rem;
-}
+  }
 
-h2 {
+  h2 {
     font-size: 1.875rem;
-}
+  }
 
-h3 {
+  h3 {
     font-size: 1.5rem;
-}
+  }
 
-
-h4 {
+  h4 {
     font-size: 1.25rem;
-}
+  }
 
-h5 {
+  h5 {
     font-size: 1.125rem;
+  }
 
-}
-
-h6 {
+  h6 {
     font-size: 1rem;
-}
+  }
 
-p {
+  p {
     font-family: 'Flama', 'sans-serif';
-}
+  }
 
-ul,
-ol {
+  ul,
+  ol {
     padding-left: 1.5rem;
-}
+  }
 
-ul {
+  ul {
     list-style-type: disc;
-}
+  }
 
-ol {
+  ol {
     list-style-type: decimal;
-}
+  }
 
-ul li p,
-ol li p {
+  ul li p,
+  ol li p {
     margin: 0;
+  }
+
+  :root {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
 }
