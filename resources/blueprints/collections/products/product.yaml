@@ -4,25 +4,55 @@ tabs:
     display: Main
     sections:
       -
-        display: 'Product Catagory'
         fields:
           -
-            handle: product_name
+            handle: title
             field:
               type: text
+              required: true
               validate:
                 - required
-              display: 'Product Name'
+              display: Title
           -
-            import: product
-            config:
-              title:
-                required: true
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+          -
+            handle: banner
+            field:
+              type: group
+              display: Banner
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+          -
+            import: main_bard
+          -
+            handle: related_products
+            field:
+              collections:
+                - products
+              type: entries
+              display: 'Related Products'
           -
             handle: template
             field:
               type: template
               display: Template
+              localizable: true
   sidebar:
     display: Sidebar
     sections:
@@ -35,11 +65,26 @@ tabs:
               localizable: true
               validate: 'max:200'
           -
-            handle: parent
+            handle: locale
             field:
-              type: entries
-              collections:
-                - products
-              max_items: 1
-              listable: false
-              localizable: true
+              type: terms
+              taxonomies:
+                - locale
+              display: Locale
+              mode: select
+          -
+            handle: region
+            field:
+              type: terms
+              taxonomies:
+                - region
+              display: Region
+              mode: select
+          -
+            handle: indust
+            field:
+              type: terms
+              taxonomies:
+                - indust
+              display: Industries
+              mode: select

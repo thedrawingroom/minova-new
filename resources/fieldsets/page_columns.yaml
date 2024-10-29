@@ -1,0 +1,21 @@
+title: 'Page Columns'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: pages
+    field:
+      max_items: 3
+      create: false
+      collections:
+        - pages
+      type: entries
+      display: Pages

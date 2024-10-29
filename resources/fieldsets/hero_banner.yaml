@@ -26,3 +26,9 @@ fields:
     field:
       type: toggle
       display: 'Large Banner'
+  -
+    handle: include_breadcrumbs
+    field:
+      default: true
+      type: toggle
+      display: 'Include Breadcrumbs'

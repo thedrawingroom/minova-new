@@ -1,22 +1,14 @@
 title: 'Product Grid'
 fields:
   -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
     handle: products
     field:
-      type: group
+      collections:
+        - products
+      type: entries
       display: Products
-      fields:
-        -
-          handle: slider_product_name
-          field: product_hidden.slider_product_name
-        -
-          handle: slider_description
-          field: product_hidden.slider_description
-        -
-          handle: slider_image
-          field: product_hidden.slider_image
-        -
-          handle: product_link
-          field:
-            type: link
-            display: 'Product Link'

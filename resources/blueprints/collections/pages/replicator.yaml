@@ -14,6 +14,18 @@ tabs:
                 - required
               display: 'Page Title'
           -
+            handle: featured_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Featured Image'
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
             handle: replicator
             field:
               type: replicator
@@ -52,12 +64,6 @@ tabs:
                       fields:
                         -
                           import: icon_columns
-                    main_bard:
-                      display: 'Main Bard'
-                      icon: content-book-open
-                      fields:
-                        -
-                          import: main_bard
                     product_grid:
                       display: 'Product Grid'
                       icon: layout-grid-dots
@@ -88,6 +94,12 @@ tabs:
                       fields:
                         -
                           import: project_bard
+                    content:
+                      display: Content
+                      icon: content-book-open
+                      fields:
+                        -
+                          import: main_bard
                     project_video_block:
                       display: 'Project Video Block'
                       icon: media-webcam-video
@@ -106,6 +118,29 @@ tabs:
                       fields:
                         -
                           import: video_banner
+                    project_slider:
+                      display: 'Project Slider'
+                      icon: arrows-fit-to-width
+                      fields:
+                        -
+                          import: project_slider
+                    page_columns:
+                      display: 'Page Columns'
+                      icon: layout-three-columns
+                      fields:
+                        -
+                          import: page_columns
+                    latest_news:
+                      display: 'Latest News'
+                      instructions: 'This block automatically pulls the latest three news articles'
+                      icon: globe-world-wide-web
+                      fields: {  }
+                    products_accordion:
+                      display: 'Products Accordion'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: products_accordion
           -
             handle: template
             field:

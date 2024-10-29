@@ -1,4 +1,4 @@
-title: 'Main Bard'
+title: Content
 fields:
   -
     handle: content
@@ -65,3 +65,9 @@ fields:
                           display: 'Button URL'
                           validate:
                             - required
+            address_table:
+              display: 'Address Table'
+              icon: home-house
+              fields:
+                -
+                  import: address_table

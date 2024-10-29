@@ -1,0 +1,22 @@
+title: 'Content Sidebar'
+fields:
+  -
+    import: main_bard
+  -
+    handle: downloads
+    field:
+      type: grid
+      display: Downloads
+      fields:
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+        -
+          handle: file
+          field:
+            max_files: 1
+            container: assets
+            type: assets
+            display: File

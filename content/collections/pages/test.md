@@ -4,7 +4,7 @@ blueprint: replicator
 title: Test
 template: replicator
 updated_by: d3685503-5bdd-4188-94c1-5e0c5b6dfc49
-updated_at: 1730088654
+updated_at: 1730201361
 replicator:
   -
     id: m2or0kx9
@@ -125,5 +125,11 @@ replicator:
         card_title: Teamwork
         card_body: 'Drive collaboration through the exchange of ideas and views.'
     type: icon_column
+    enabled: true
+  -
+    id: m2ud6nu6
+    slider_products:
+      - 2c2bf5f2-8808-494f-9798-0f9c41ac9a2e
+    type: product_slider
     enabled: true
 ---

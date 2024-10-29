@@ -1,34 +1,36 @@
 title: 'Team Columns'
 fields:
   -
-    handle: team
+    handle: team_members
     field:
-      type: group
-      display: Team
+      type: grid
+      display: 'Team Members'
+      mode: stacked
+      add_row: 'Add Team Member'
       fields:
         -
-          handle: team_pic
+          handle: image
           field:
             container: assets
             type: assets
-            display: 'Team Pic'
+            display: Image
         -
           handle: name
           field:
             type: text
             display: Name
         -
-          handle: position
+          handle: job_title
           field:
             type: text
-            display: Position
+            display: 'Job Title'
         -
-          handle: team_description
+          handle: about
           field:
             type: textarea
-            display: 'Team Description'
+            display: About
         -
-          handle: team_quote
+          handle: quote
           field:
             type: textarea
-            display: 'Team Quote'
+            display: Quote
