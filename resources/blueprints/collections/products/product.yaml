@@ -88,3 +88,11 @@ tabs:
                 - indust
               display: Industries
               mode: select
+          -
+            handle: common_use
+            field:
+              type: terms
+              taxonomies:
+                - common_use
+              display: 'Common Use'
+              mode: select

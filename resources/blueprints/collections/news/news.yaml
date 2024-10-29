@@ -10,13 +10,8 @@ tabs:
             field:
               type: text
               required: true
-          -
-            handle: main_title
-            field:
-              type: text
               validate:
                 - required
-              display: 'Main Title'
           -
             handle: image
             field:
@@ -25,41 +20,24 @@ tabs:
               display: Image
               max_files: 1
           -
-            handle: content
+            handle: banner
             field:
-              buttons:
-                - h2
-                - h3
-                - bold
-                - italic
-                - unorderedlist
-                - orderedlist
-                - removeformat
-                - quote
-                - anchor
-                - image
-                - table
-                - h1
-                - h4
-                - h5
-                - h6
-                - underline
-              remove_empty_nodes: false
-              type: bard
-              display: Content
-              sets:
-                standard_layout:
-                  display: 'Standard Layout'
-                  sets:
-                    content_heading:
-                      display: 'Content Heading'
-                      icon: align-object-top
-                      fields:
-                        -
-                          handle: heading
-                          field:
-                            type: text
-                            display: Heading
+              type: group
+              display: Banner
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: image
+                  field:
+                    container: assets
+                    type: assets
+                    display: Image
+          -
+            import: main_bard
           -
             handle: template
             field:
