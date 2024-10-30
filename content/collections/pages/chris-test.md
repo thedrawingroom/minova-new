@@ -4,8 +4,21 @@ blueprint: replicator
 title: 'Chris test'
 template: replicator
 updated_by: d3685503-5bdd-4188-94c1-5e0c5b6dfc49
-updated_at: 1730285270
+updated_at: 1730297859
 replicator:
+  -
+    id: m2vymqt1
+    slider_title: 'This is a title'
+    slider_products:
+      - 2c2bf5f2-8808-494f-9798-0f9c41ac9a2e
+      - 9907c6dc-41fc-4d7b-94ad-c9c858c91350
+      - 7308c5ba-7277-46b9-a3ab-a008b6724c4d
+      - d67a9567-25a3-476d-9ee4-ca59b4a968d4
+      - 51723845-60db-480c-8104-f4df4a6fd98e
+      - 990206db-c030-407d-856b-a7252b0d44ba
+      - ea585f16-1158-4f41-8696-57d9a747b775
+    type: product_slider
+    enabled: true
   -
     id: m2vr1z1p
     projects:

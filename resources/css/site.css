@@ -82,3 +82,21 @@
     -webkit-text-size-adjust: 100%;
   }
 }
+
+@layer components {
+  .slick-dots {
+    @apply absolute z-10 flex flex-wrap p-0 m-0 list-none -translate-x-1/2 -bottom-12 left-1/2;
+  }
+
+  .slick-dots li {
+    @apply p-1;
+  }
+
+  .slick-dots button {
+    @apply block size-4 p-0 text-[0]/[0] border-0 bg-white/20 rounded-full outline-0 cursor-pointer shadow transition;
+  }
+
+  .product-slider .slick-dots .slick-active button {
+    @apply opacity-100 bg-minovaGold;
+  }
+}

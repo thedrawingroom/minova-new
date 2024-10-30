@@ -4,6 +4,8 @@ const nextArrow = `<button type="button" class="slick-arrow slick-arrow--next ab
 export default {
   init() {
     this.sliderProjectEl = $('.project-slider');
+    this.sliderProductEl = $('.product-slider');
+
     addEventListener('resize', function () {
       $('.slick-slider').slick('resize');
     });
@@ -27,6 +29,42 @@ export default {
               arrows: false,
               autoplay: true,
               adaptiveHeight: true,
+            },
+          },
+        ],
+      });
+    }
+
+    if (this.sliderProductEl.length) {
+      this.sliderProductEl.slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        prevArrow: '',
+        nextArrow: nextArrow,
+        rows: 0,
+        autoplay: false,
+        autoplaySpeed: 5000,
+        responsive: [
+          {
+            breakpoint: 1440,
+            settings: {
+              slidesToShow: 4,
+            },
+          },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 960,
+            settings: {
+              slidesToShow: 2,
+              dots: true,
+              arrows: false,
             },
           },
         ],

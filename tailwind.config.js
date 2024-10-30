@@ -5,8 +5,9 @@ export default {
     './resources/**/*.antlers.php',
     './resources/**/*.blade.php',
     './resources/**/*.vue',
-    './resources/js/components/sliders.js',
     './content/**/*.md',
+    './resources/js/components/sliders.js',
+    './resources/css/site.css',
   ],
 
   theme: {
