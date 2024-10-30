@@ -12,6 +12,7 @@
         "php": "^8.2",
         "laravel/framework": "^11",
         "laravel/tinker": "^2.9",
+        "league/flysystem-aws-s3-v3": "^3.0",
         "statamic/cms": "^5.0",
         "statamic/eloquent-driver": "^4.16"
     },
