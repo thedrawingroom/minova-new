@@ -53,6 +53,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
+      - name: Use .env.ci
+        run: cp .env.ci .env
+
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-suggest
 
