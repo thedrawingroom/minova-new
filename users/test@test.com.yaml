@@ -10,3 +10,7 @@ preferences:
         - title
         - slug
         - status
+    pages:
+      after_save: continue_editing
+    news:
+      after_save: continue_editing

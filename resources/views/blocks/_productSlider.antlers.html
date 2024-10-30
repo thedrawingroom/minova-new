@@ -1,0 +1,20 @@
+<div class="py-20 bg-gradient-to-r from-zinc-600 to-neutral-400">
+  <div class="container relative mx-auto lg:pr-24">
+    <div class="-mx-4 product-slider [&_.slick-track]:flex [&_.slick-slide]:h-[initial] [&_div]:h-full"
+      style="position: unset;">
+      {{ slider_products }}
+        <div class="mx-4 bg-white group">
+          <a href="{{ slug }}" class="flex flex-col h-full">
+            <div class=" aspect-square basis-1">
+              {{ partial:common/image }}
+            </div>
+            <h3
+              class="flex items-center justify-center flex-1 h-full px-4 py-2 mb-0 font-normal text-center font-flama">
+              {{ title }}
+            </h3>
+          </a>
+        </div>
+      {{ /slider_products }}
+    </div>
+  </div>
+</div>

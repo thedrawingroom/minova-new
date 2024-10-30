@@ -1,13 +1,21 @@
 {{ replicator }}
-    {{ if type == "50_50_block" }}
-        {{ partial:blocks/5050}}
-    {{ elseif type == "hero_banner" }}
-        {{ partial:blocks/heroBanner }}
-    {{ elseif type == "video_banner" }}
-        {{ partial:blocks/videoBanner }}
-    {{ elseif type == "cta_strip" }}
-        {{ partial:blocks/ctaStrip }}
-    {{ elseif type == "icon_column" }}
-        {{ partial:blocks/iconColumn }}
-    {{ /if }}
+  {{ if type == "50_50_block" }}
+    {{ partial:blocks/5050 }}
+  {{ elseif type == "hero_banner" }}
+    {{ partial:blocks/heroBanner }}
+  {{ elseif type == "video_banner" }}
+    {{ partial:blocks/videoBanner }}
+  {{ elseif type == "cta_strip" }}
+    {{ partial:blocks/ctaStrip }}
+  {{ elseif type == "icon_column" }}
+    {{ partial:blocks/iconColumn }}
+  {{ elseif type == "team_columns" }}
+    {{ partial:blocks/teamColumn }}
+  {{ elseif type == "latest_news" }}
+    {{ partial:blocks/latestNews }}
+  {{ elseif type == "project_slider" }}
+    {{ partial:blocks/projectSlider }}
+  {{ elseif type == "product_slider" }}
+    {{ partial:blocks/productSlider }}
+  {{ /if }}
 {{ /replicator }}

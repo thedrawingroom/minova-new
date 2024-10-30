@@ -1,6 +1,10 @@
-<a href="{{ $url ?? '#' }}"
-    class="inline-flex uppercase items-center justify-center border-4 min-h-[50px] px-[25px] rounded-full text-center hover:bg-white transition duration-300 ease-in-out
-   {{ $style === 'primary' ? 'border-minovaGold bg-minovaGold hover:border-minovaGold active:bg-minovaGoldClicked' : '' }}
-   {{ $style === 'black' ? 'bg-black text-white border-black hover:bg-white hover:text-black active:bg-gray-800 active:border-gray-800' : '' }}">
-    {{ $text ?? 'Click Me' }}
+<a href="{{ $url ? $url : button:link ?? '#' }}" class="{{
+    [
+      'inline-flex uppercase items-center justify-center text-center transition duration-300 ease-in-out',
+      'border-4 border-gray-200 min-h-[50px] px-[25px] rounded-full hover:bg-white' => $style !== 'inline'
+      'underline decoration-transparent hover:underline hover:decoration-white transition-colors' => $style ==='inline'
+      'border-minovaGold bg-minovaGold hover:border-minovaGold active:bg-minovaGoldClicked' => $style === 'primary',
+      'bg-black text-white border-black hover:bg-white hover:text-black active:bg-gray-800 active:border-gray-800' => $style === 'black',
+    ] | classes }}">
+  {{ $text ? $text : button:label ?? 'Click Me' }}
 </a>

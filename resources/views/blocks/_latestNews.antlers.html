@@ -1,0 +1,32 @@
+<div class="pb-20 bg-gradient-to-r from-zinc-600 to-neutral-400">
+  <div class="container">
+    <div class="flex justify-between">
+      <h2 class="mb-12 text-3xl text-white uppercase">Latest News</h2>
+      <p class="text-white">
+        {{ partial:common/button text="All news" style="inline" }}
+      </p>
+    </div>
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+      {{ collection:news limit="3" }}
+        <a href="{{ slug }}"
+          class="overflow-hidden group flex flex-col bg-white rounded shadow-[5px_5px_38px_5px_rgba(0,_0,_0,_0.3)]">
+          <div class="overflow-hidden">
+            {{ partial:common/image class="object-cover transition-transform duration-500 size-full group-hover:scale-105" }}
+          </div>
+          <div class="flex flex-col justify-between flex-1 p-6">
+            <div>
+              <h3 class="mb-4 font-normal line-clamp-1 font-flama">{{ title }}</h3>
+              <p class="mb-8 line-clamp-2 text-zinc-500">{{ short_description }}</p>
+            </div>
+            <div>
+              <div
+                class="{{ ['inline-flex uppercase items-center justify-center text-center transition duration-300 ease-in-out border-4 min-h-[50px] px-[25px] rounded-full group-hover:bg-neutral-800 group-hover:border-neutral-800 group-hover:text-gray-200', ] | classes }}">
+                Read more
+              </div>
+            </div>
+          </div>
+        </a>
+      {{ /collection:news }}
+    </div>
+  </div>
+</div>
