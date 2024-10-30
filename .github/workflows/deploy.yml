@@ -56,6 +56,11 @@ jobs:
       - name: Use .env.ci
         run: cp .env.ci .env
 
+      - name: Create Database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-suggest
 
