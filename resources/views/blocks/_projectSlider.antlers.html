@@ -1,0 +1,27 @@
+<div class="py-20 bg-gradient-to-r from-zinc-600 to-neutral-400">
+  <div class="relative mx-auto bg-white project-slider max-w-screen-3xl">
+    {{ projects }}
+      <div>
+        <div class="grid lg:grid-cols-2">
+          <div class="flex flex-col justify-center p-8">
+            <p class="mb-2 text-lg uppercase text-zinc-800/80">Project</p>
+            <h3 class="mb-2 text-4xl uppercase">{{ title }}</h3>
+            <p class="mb-4 text-2xl uppercase text-zinc-800/80">{{ location }}</p>
+            <p class="text-2xl text-zinc-800/80">{{ description }}</p>
+            <div class="mt-8">
+              {{ partial:common/button style="primary" }}
+            </div>
+          </div>
+          <div class="relative overflow-hidden">
+            <div
+              class="absolute top-0 transform rotate-45 -translate-x-1/2 -translate-y-1/2 bg-white left-1/2 size-14 lg:left-0 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:size-28 lg:top-1/2">
+            </div>
+            <div class="">
+              {{ partial:common/image class="object-cover max-h-[50vh] w-full lg:h-[50vh] lg:max-h-full" }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{ /projects }}
+  </div>
+</div>

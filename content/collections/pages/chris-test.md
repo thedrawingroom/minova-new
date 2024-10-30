@@ -4,8 +4,40 @@ blueprint: replicator
 title: 'Chris test'
 template: replicator
 updated_by: d3685503-5bdd-4188-94c1-5e0c5b6dfc49
-updated_at: 1730217701
+updated_at: 1730285270
 replicator:
+  -
+    id: m2vr1z1p
+    projects:
+      -
+        id: m2vr1zx8
+        image: vadlaheidi-tunnel-1.jpg
+        title: 'Vadlaheidi tunnel'
+        location: 'Akureyi, Iceland'
+        description: 'Minova supported the Vadlaheidi tunnel in Iceland to inhibit the heavy inrush of geothermal water. Our successful and timely intervention allowed for the excavation to be continued uninterrupted.'
+        button:
+          label: 'See Project'
+          link: '#'
+      -
+        id: m2vr4hsr
+        image: minova-qts-mallaig-2019-12-s.jpg
+        title: 'CP5 and CP6 mallaig Scotland'
+        location: 'Mallaig, Scotland'
+        description: 'Minova supported QTS Geotechnical Ltd with passive draped rockfall netting and accessories, galvanised ATB rock bolts, Lokset resin capsules.'
+        button:
+          label: 'See Project'
+          link: '#'
+      -
+        id: m2vr5h82
+        image: 2019-minova-039.jpg
+        title: 'A465 Heads of the valley'
+        location: 'Wales, UK'
+        description: "Minova supported CAN Ltd with supplying over 11,000 soil nails\_ installed across the 8km site, with a large quantity of R32S self-drilling nails with 76 mm and 110 mm tungsten carbide drill bits."
+        button:
+          label: 'See Project'
+          link: '#'
+    type: project_slider
+    enabled: true
   -
     id: m2umxtkm
     type: latest_news
