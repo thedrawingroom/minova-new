@@ -62,7 +62,7 @@ jobs:
           touch database/database.sqlite
 
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-interaction --no-suggest
+        run: composer install --prefer-dist --no-interaction --no-suggest --no-scripts
 
       - name: Install NPM dependencies
         run: npm install
