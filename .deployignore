@@ -1,0 +1,14 @@
+/bootstrap/cache/*.php
+/.*
+/node_modules
+/storage
+/vendor/composer/composer/tests/*
+/ray.php
+bitbucket-pipelines.yml
+Envoy.blade.php
+package-lock.json
+package.json
+README.md
+vite.config.js
+webpack.mix.js
+yarn.lock
