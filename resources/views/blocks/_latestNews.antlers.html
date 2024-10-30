@@ -1,4 +1,4 @@
-<div class="py-20 bg-gradient-to-tr from-zinc-600 to-neutral-400">
+<div class="py-20 bg-gradient-to-r from-zinc-600 to-neutral-400">
   <div class="container">
     <div class="flex justify-between">
       <h2 class="mb-12 text-3xl text-white uppercase">Latest News</h2>
@@ -11,8 +11,7 @@
         <a href="{{ slug }}"
           class="overflow-hidden group flex flex-col bg-white rounded shadow-[5px_5px_38px_5px_rgba(0,_0,_0,_0.3)]">
           <div class="overflow-hidden">
-            <img class="object-cover transition-transform duration-500 size-full group-hover:scale-105"
-              src="{{ image }}" alt="{{ image:alt }}">
+            {{ partial:common/image class="object-cover transition-transform duration-500 size-full group-hover:scale-105" }}
           </div>
           <div class="flex flex-col justify-between flex-1 p-6">
             <div>

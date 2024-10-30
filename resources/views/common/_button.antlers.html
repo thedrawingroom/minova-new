@@ -1,4 +1,4 @@
-<a href="{{ $url ?? '#' }}" class="{{
+<a href="{{ $url ? $url : button:link ?? '#' }}" class="{{
     [
       'inline-flex uppercase items-center justify-center text-center transition duration-300 ease-in-out',
       'border-4 border-gray-200 min-h-[50px] px-[25px] rounded-full hover:bg-white' => $style !== 'inline'
@@ -6,5 +6,5 @@
       'border-minovaGold bg-minovaGold hover:border-minovaGold active:bg-minovaGoldClicked' => $style === 'primary',
       'bg-black text-white border-black hover:bg-white hover:text-black active:bg-gray-800 active:border-gray-800' => $style === 'black',
     ] | classes }}">
-  {{ $text ?? 'Click Me' }}
+  {{ $text ? $text : button:label ?? 'Click Me' }}
 </a>
