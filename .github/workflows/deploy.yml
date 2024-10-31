@@ -62,8 +62,11 @@ jobs:
           mkdir -p database
           touch database/database.sqlite
 
+      - name: Temporarily set Statamic to use static files
+        run: php -r "file_put_contents('./config/statamic/eloquent-driver.php', str_replace('\'driver\' => \'eloquent\'', '\'driver\' => \'file\'', file_get_contents('./config/statamic/eloquent-driver.php')));"
+
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-interaction --no-suggest --no-scripts
+        run: composer install --prefer-dist --no-interaction --no-suggest
 
       - name: Install NPM dependencies
         run: npm install
