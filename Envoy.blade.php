@@ -44,6 +44,7 @@
     rsync
     manifest_file
     setup_symlinks
+    autodump
     verify_install
     activate_release
     migrate
@@ -101,6 +102,11 @@
 
     echo "* Linking storage directory to new release dir ({{ $shared_dir }}/storage -> {{ $new_release_dir }}/storage) *"
     sudo -S ln -nfs {{ $shared_dir }}/storage {{ $new_release_dir }}/storage
+@endtask
+
+@task('autodump')
+    cd {{ $new_release_dir }}
+    composer run-script post-autoload-dump
 @endtask
 
 @task('verify_install', ['on' => 'web'])
