@@ -106,6 +106,7 @@
 @task('verify_install', ['on' => 'web'])
     echo "* Verifying install ({{ $new_release_dir }}) *"
     cd {{ $new_release_dir }}
+    sudo -S {{ $php }} -r "file_put_contents('./config/statamic/eloquent-driver.php', str_replace('\'driver\' => \'file\'', '\'driver\' => \'eloquent\'', file_get_contents('./config/statamic/eloquent-driver.php')));"
     sudo -S {{ $php }} artisan --version
 @endtask
 
