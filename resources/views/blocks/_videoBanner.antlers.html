@@ -1,9 +1,7 @@
-{{ if video_asset }}
+{{ if video }}
   <div class="block-video-banner mb-10">
-    <div class="relative h-[20vh] w-screen overflow-hidden sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[60vh]">
-      <video class="absolute left-0 top-0 h-full w-full object-cover" autoplay muted loop>
-        <source src="{{ video_asset }}" type="video/mp4" />
-      </video>
+    <div class="relative h-[20vh] w-full overflow-hidden sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[60vh]">
+      {{ partial:common/video class="absolute left-0 top-0 size-full object-cover" :url="video" autoplay="true" muted="true" loop="true" }}
     </div>
   </div>
 {{ /if }}

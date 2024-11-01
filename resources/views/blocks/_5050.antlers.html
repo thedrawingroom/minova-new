@@ -3,17 +3,12 @@
     <div class="container grid grid-cols-1 gap-7 lg:grid-cols-2 lg:gap-10">
       <div class="lg:order-2 lg:flex lg:flex-col lg:justify-center">
         {{ if content }}
-          <div class="text-wrap">
+          <div class="{{ ['mb-4' => button || page_links] | classes }} text-wrap">
             {{ content }}
           </div>
         {{ /if }}
-        {{ if group_field:use_button }}
-          <div class="pt-4">
-            {{ partial:common/button :url="group_field:button_url" :text="group_field:button_text" style="gold" }}
-          </div>
-        {{ /if }}
         {{ if page_links }}
-          <ul class="pt-4">
+          <ul class="{{ ['mb-4' => button] | classes }}">
             {{ page_links }}
               {{ if title && url }}
                 <li>
@@ -28,6 +23,11 @@
               {{ /if }}
             {{ /page_links }}
           </ul>
+        {{ /if }}
+        {{ if button }}
+          <div>
+            {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+          </div>
         {{ /if }}
       </div>
       <div class="lg:order-1">

@@ -1,11 +1,14 @@
-{{ if slider_products }}
+{{ if products }}
   <div class="block-product-slider bg-gradient-to-r from-neutral-500 to-neutral-400">
     <div class="container py-20">
+      {{ if title }}
+        <h3 class="mb-10">{{ title }}</h3>
+      {{ /if }}
       <div
         class="product-slider -mx-4 [&_.slick-slide]:h-[initial] [&_.slick-track]:flex [&_div]:h-full"
         style="position: unset"
       >
-        {{ slider_products }}
+        {{ products }}
           <div class="mx-4 h-full bg-white">
             <a href="{{ slug }}" class="flex h-full flex-col">
               <div class="aspect-square basis-1">
@@ -18,7 +21,7 @@
               </div>
             </a>
           </div>
-        {{ /slider_products }}
+        {{ /products }}
       </div>
     </div>
   </div>

@@ -19,7 +19,6 @@ export default {
         prevArrow: '',
         nextArrow: nextArrow,
         rows: 0,
-        fade: true,
         autoplay: false,
         autoplaySpeed: 5000,
         responsive: [

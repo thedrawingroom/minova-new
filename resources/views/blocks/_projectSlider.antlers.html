@@ -1,27 +1,44 @@
-<div class="pb-20 bg-gradient-to-r from-zinc-600 to-neutral-400">
-  <div class="relative mx-auto bg-white project-slider max-w-screen-3xl">
-    {{ projects }}
-      <div>
-        <div class="grid lg:grid-cols-2">
-          <div class="flex flex-col justify-center p-8">
-            <p class="mb-2 text-lg uppercase text-zinc-800/80">Project</p>
-            <h3 class="mb-2 text-4xl uppercase">{{ title }}</h3>
-            <p class="mb-4 text-2xl uppercase text-zinc-800/80">{{ location }}</p>
-            <p class="text-2xl text-zinc-800/80">{{ description }}</p>
-            <div class="mt-8">
-              {{ partial:common/button style="primary" }}
-            </div>
-          </div>
-          <div class="relative overflow-hidden">
+{{ if projects }}
+  <div class="block-project-slider">
+    <div class="project-slider">
+      {{ projects }}
+        <div>
+          <div class="grid grid-cols-1 lg:grid-cols-2">
             <div
-              class="absolute top-0 transform rotate-45 -translate-x-1/2 -translate-y-1/2 bg-white left-1/2 size-14 lg:left-0 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:size-28 lg:top-1/2">
+              class="relative mx-auto bg-white px-6 sm:max-w-[540px] md:max-w-[720px] lg:ml-auto lg:mr-0 lg:max-w-[480px] xl:max-w-[570px] 2xl:max-w-[720px] 3xl:max-w-[768px]"
+            >
+              <div class="relative z-[1] py-14 lg:flex lg:h-full lg:flex-col lg:justify-center lg:px-0">
+                <p class="text-xl uppercase">Project</p>
+                {{ if title }}
+                  <h3>{{ title }}</h3>
+                {{ /if }}
+                {{ if location }}
+                  <p class="text-lg">
+                    <span class="uppercase">Location</span>
+                    : {{ location }}
+                  </p>
+                {{ /if }}
+                {{ if description }}
+                  <p>{{ description }}</p>
+                {{ /if }}
+                {{ if button }}
+                  <div>
+                    {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+                  </div>
+                {{ /if }}
+              </div>
+              <div
+                class="absolute right-1/2 top-full size-20 -translate-y-1/2 translate-x-1/2 rotate-45 bg-white lg:right-0 lg:top-1/2 lg:-translate-y-1/2 xl:size-28"
+              ></div>
             </div>
-            <div class="">
-              {{ partial:common/image class="object-cover max-h-[50vh] w-full lg:h-[50vh] lg:max-h-full" }}
+            <div>
+              {{ if image }}
+                {{ partial:common/image :url="image" :alt="image:alt" class="size-full object-cover" }}
+              {{ /if }}
             </div>
           </div>
         </div>
-      </div>
-    {{ /projects }}
+      {{ /projects }}
+    </div>
   </div>
-</div>
+{{ /if }}
