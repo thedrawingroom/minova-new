@@ -1,39 +1,23 @@
-{{ if large_banner }}
-  <div class="relative h-[600px]">
-    <img src="{{ background_image }}" alt="{{ image_block:alt }}" class="h-full w-full object-cover" />
-
-    <div class="absolute inset-0 bg-white opacity-75"></div>
-
-    <div class="absolute bottom-[150px] left-0 translate-y-1/2 transform pl-5 sm:pl-5 md:pl-10 lg:pl-10 xl:pl-24">
-      <div class="font-flamablack text-4xl font-bold uppercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-        {{ title }}
-      </div>
-
-      <div class="bg-minova-gold mt-5 h-1 w-full"></div>
-      {{ if description }}
-        <div class="mt-5 font-flama text-xl">
-          {{ description }}
+{{ if title }}
+  <div
+    class="block-hero-banner {{ ['md:h-[600px]' => large_banner, 'h-[350px]' => !large_banner] | classes }} relative mb-10"
+  >
+    <div class="container relative z-[1] flex h-full flex-col py-14">
+      <div class="mt-auto">
+        <div class="{{ ['mb-6' => description] | classes }}">
+          <div class="border-minova-gold inline-block border-b-4">
+            <h1>{{ title }}</h1>
+          </div>
         </div>
-      {{ endif }}
-    </div>
-  </div>
-{{ else }}
-  <div class="relative h-[300px]">
-    <img src="{{ background_image }}" alt="{{ image_block:alt }}" class="h-full w-full object-cover" />
-
-    <div class="absolute inset-0 bg-white opacity-75"></div>
-
-    <div class="absolute bottom-[150px] left-0 translate-y-1/2 transform pl-5 sm:pl-5 md:pl-10 lg:pl-10 xl:pl-24">
-      <div class="font-flamablack text-4xl font-bold uppercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-        {{ title }}
+        {{ if description }}
+          <p class="mb-0">{{ description }}</p>
+        {{ /if }}
       </div>
-
-      <div class="bg-minova-gold mt-5 h-1 w-full"></div>
-      {{ if description }}
-        <div class="mt-5 font-flama text-xl">
-          {{ description }}
-        </div>
-      {{ endif }}
     </div>
+    {{ if background_image }}
+      <div class="absolute left-0 top-0 h-full w-full bg-white">
+        <img src="{{ background_image }}" alt="{{ image_block:alt }}" class="h-full w-full object-cover opacity-30" />
+      </div>
+    {{ /if }}
   </div>
 {{ /if }}
