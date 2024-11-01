@@ -46,6 +46,9 @@ export default {
         md: '720px',
         sm: '540px',
       },
+      aspectRatio: {
+        '4/3': '4 / 3',
+      },
       safelist: ['sm:text-xl', 'text-4xl', 'sm:text-6xl', 'text-7xl', 'bg-blue-500', 'sm:bg-red-500'],
     },
   },

@@ -1,0 +1,49 @@
+<footer>
+  <div class="w-full">
+    <div class="flex flex-row justify-between bg-[#f3f3f3] pb-14 pl-20 pr-20 pt-14">
+      {{ if nav:footer }}
+        <div class="grid auto-cols-fr grid-flow-col grid-rows-5 gap-x-64 gap-y-4">
+          {{ nav:footer }}
+            <a href="{{ url }}" class="group relative">
+              <span
+                class="after:bg-minova-gold relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] group-hover:after:w-full"
+              >
+                {{ title }}
+              </span>
+            </a>
+          {{ /nav:footer }}
+        </div>
+      {{ /if }}
+      <div class="h-auto w-48">
+        <img src="/assets/minova_logo_grey.svg" alt="Minova Logo" />
+      </div>
+    </div>
+    <div class="mb-4 mt-4">
+      {{ if nav:legal }}
+        <div class="text-md flex justify-center space-x-4 text-black/70">
+          {{ nav:legal }}
+            <a href="{{ url }}" class="group relative">
+              <span
+                class="relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out after:content-[''] group-hover:after:w-full"
+              >
+                {{ title }}
+              </span>
+            </a>
+          {{ /nav:legal }}
+        </div>
+      {{ /if }}
+      {{ if nav:social }}
+        <div class="flex flex-row space-x-4 pl-10">
+          {{ nav:social }}
+            <div class="">
+              <i class="fa-brands {{ icon }}" style="color: #b8b8b8"></i>
+            </div>
+          {{ /nav:social }}
+        </div>
+      {{ /if }}
+      <div class="mt-4 flex justify-center text-black/50">
+        <div>Copyright Minova 2024. All rights reserved.</div>
+      </div>
+    </div>
+  </div>
+</footer>

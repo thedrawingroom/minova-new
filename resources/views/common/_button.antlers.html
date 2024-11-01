@@ -1,7 +1,7 @@
 <a
   href="{{ url ?? '#' }}"
-  class="{{ ['bg-minova-gold text-black' => !style || style == 'gold'
- , 'bg-black text-white' => style == 'black', 'bg-white text-black' => style == 'white'] | classes }} inline-block cursor-pointer whitespace-nowrap rounded-full px-7 py-2.5 font-flamablack text-lg font-bold uppercase shadow-[inset_0_-10px_15px_rgba(0,0,0,0.2)] transition-all hover:brightness-125"
+  class="{{ ['font-flamablack  px-7 py-2.5 rounded-full shadow-[inset_0_-10px_15px_rgba(0,0,0,0.2)] transition-all hover:brightness-125 font-bold' => style !== 'inline', 'bg-minova-gold text-black' => !style || style == 'gold'
+ , 'bg-black text-white' => style == 'black', 'bg-white text-black' => style == 'white', 'text-white hover:text-gray-300' => style == 'inline'] | classes }} inline-block cursor-pointer whitespace-nowrap text-lg uppercase"
 >
   {{ text ?? 'Read more' }}
 </a>

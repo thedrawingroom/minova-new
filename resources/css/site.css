@@ -30,7 +30,14 @@
   h4,
   h5,
   h6 {
-    @apply mb-6 font-flamablack font-bold uppercase leading-tight;
+    @apply mb-6 leading-tight;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-flamablack font-bold uppercase;
   }
 
   h1 {
