@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'fontawesome' => [
+        'key' => env('FONTAWESOME_PACKAGE_TOKEN'),
+    ]
+
 ];

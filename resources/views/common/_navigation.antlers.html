@@ -1,0 +1,38 @@
+<div class="flex flex-row justify-between">
+
+    <div class="w-48 ml-24">
+        <a href="/"><img src="/assets/minova_logo.svg" alt="Minova Logo" /></a>
+    </div>
+
+    <div class="mr-24 flex flex-row space-x-6 font-flama uppercase text-xl">
+        <ul class="flex space-x-8 list-none relative z-20">
+            {{ nav:header }}
+                {{ if depth == 1 }}
+                    <li class="relative group z-30">
+                        <a href="{{ url }}"
+                            class="relative group-hover:text-minovaGold inline-block py-2 px-2 transition-colors">
+                            <span class="relative z-10 whitespace-nowrap">{{ title }}</span>
+                            <span
+                                class="absolute left-0 bottom-0 w-0 h-[4px] bg-minovaGold transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                        {{ if children }}
+                            <ul
+                                class="absolute left-0 top-full hidden group-hover:block bg-white/75 mt-0 py-4 px-4 shadow-lg min-w-[200px] z-40 transition-all list-none">
+                                {{ *recursive children* }}
+                            </ul>
+                        {{ /if }}
+                    </li>
+                {{ elseif depth == 2 }}
+                    <li class="py-2 px-2">
+                        <a href="{{ url }}"
+                            class="relative inline-block w-full text-black hover:underline underline-offset-2 decoration-4 hover:decoration-minovaGold transition-colors duration-200 ease-in-out">
+                            <span class="relative z-10 whitespace-nowrap">{{ title }}</span>
+                        </a>
+                    </li>
+                {{ /if }}
+            {{ /nav:header }}
+        </ul>
+    </div>
+
+</div>

@@ -14,6 +14,7 @@
         "vite": "^5.2.8"
     },
     "dependencies": {
+        "@awesome.me/kit-04ebf634dd": "^1.0.7",
         "slick-carousel": "^1.8.1"
     }
 }
