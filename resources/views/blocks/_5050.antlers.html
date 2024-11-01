@@ -1,4 +1,4 @@
-{{ if content || link_grid || image_block }}
+{{ if content || page_links || image }}
   <div class="block-5050 mb-10">
     <div class="container grid grid-cols-1 gap-7 lg:grid-cols-2 lg:gap-10">
       <div class="lg:order-2 lg:flex lg:flex-col lg:justify-center">
@@ -12,27 +12,27 @@
             {{ partial:common/button :url="group_field:button_url" :text="group_field:button_text" style="gold" }}
           </div>
         {{ /if }}
-        {{ if link_grid }}
+        {{ if page_links }}
           <ul class="pt-4">
-            {{ link_grid }}
-              {{ if grid_title }}
+            {{ page_links }}
+              {{ if title && url }}
                 <li>
                   <a
-                    href="{{ grid_url ?? '#' }}"
+                    href="{{ url }}"
                     class="border-minova-gold mb-5 block border-b-4 pb-2 font-flamablack text-2xl uppercase"
                   >
-                    {{ grid_title }}
+                    {{ title }}
                     >
                   </a>
                 </li>
               {{ /if }}
-            {{ /link_grid }}
+            {{ /page_links }}
           </ul>
         {{ /if }}
       </div>
       <div class="lg:order-1">
-        {{ if image_block }}
-          <img src="{{ image_block }}" alt="{{ image_block:alt }}" class="h-auto w-full object-contain" />
+        {{ if image }}
+          {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
         {{ /if }}
       </div>
     </div>

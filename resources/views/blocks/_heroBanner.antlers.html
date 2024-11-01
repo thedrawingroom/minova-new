@@ -5,7 +5,7 @@
     <div class="container relative z-[1] flex h-full flex-col py-14">
       <div class="mt-auto">
         <div class="{{ ['mb-6' => description] | classes }}">
-          <div class="border-minova-gold inline-block border-b-4">
+          <div class="border-minova-gold border-b-6 inline-block">
             <h1>{{ title }}</h1>
           </div>
         </div>
@@ -14,9 +14,9 @@
         {{ /if }}
       </div>
     </div>
-    {{ if background_image }}
+    {{ if image }}
       <div class="absolute left-0 top-0 h-full w-full bg-white">
-        <img src="{{ background_image }}" alt="{{ image_block:alt }}" class="h-full w-full object-cover opacity-30" />
+        {{ partial:common/image class="h-full w-full object-cover opacity-30" :url="image" :alt="image:alt" }}
       </div>
     {{ /if }}
   </div>

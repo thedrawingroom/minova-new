@@ -1,20 +1,25 @@
-<div class="py-20 bg-gradient-to-r from-zinc-600 to-neutral-400">
-  <div class="container relative mx-auto lg:pr-24">
-    <div class="-mx-4 product-slider [&_.slick-track]:flex [&_.slick-slide]:h-[initial] [&_div]:h-full"
-      style="position: unset;">
-      {{ slider_products }}
-        <div class="mx-4 bg-white group">
-          <a href="{{ slug }}" class="flex flex-col h-full">
-            <div class=" aspect-square basis-1">
-              {{ partial:common/image }}
-            </div>
-            <h3
-              class="flex items-center justify-center flex-1 h-full px-4 py-2 mb-0 font-normal text-center font-flama">
-              {{ title }}
-            </h3>
-          </a>
-        </div>
-      {{ /slider_products }}
+{{ if slider_products }}
+  <div class="block-product-slider bg-gradient-to-r from-neutral-500 to-neutral-400">
+    <div class="container py-20">
+      <div
+        class="product-slider -mx-4 [&_.slick-slide]:h-[initial] [&_.slick-track]:flex [&_div]:h-full"
+        style="position: unset"
+      >
+        {{ slider_products }}
+          <div class="mx-4 h-full bg-white">
+            <a href="{{ slug }}" class="flex h-full flex-col">
+              <div class="aspect-square basis-1">
+                {{ if image }}
+                  {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
+                {{ /if }}
+              </div>
+              <div class="py-3">
+                <p class="mb-0 text-center font-flama text-2xl">{{ title }}</p>
+              </div>
+            </a>
+          </div>
+        {{ /slider_products }}
+      </div>
     </div>
   </div>
-</div>
+{{ /if }}

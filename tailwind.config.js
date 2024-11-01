@@ -34,6 +34,10 @@ export default {
       borderRadius: {
         button: '25px',
       },
+      borderWidth: {
+        3: '3px',
+        6: '6px',
+      },
       screens: {
         '3xl': '1536px',
         '2xl': '1440px',
