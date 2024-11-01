@@ -20,7 +20,7 @@ export default {
         inter: ['Inter', 'sans-serif'],
         flama: ['Flama', 'sans-serif'],
         flamablack: ['FlamaBlack', 'sans-serif'],
-        helvetica: ['helvetica', 'sans-serif'],
+        helvetica: ['Helvetica', 'sans-serif'],
       },
       letterSpacing: {
         '00': '0',
@@ -35,7 +35,7 @@ export default {
         button: '25px',
       },
       screens: {
-        '3xl': '2100px',
+        '3xl': '1536px',
         '2xl': '1440px',
         xl: '1140px',
         lg: '960px',
