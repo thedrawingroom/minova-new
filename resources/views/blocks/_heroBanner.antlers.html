@@ -1,41 +1,39 @@
 {{ if large_banner }}
-<div class="relative h-[600px]">
-    <img src="{{ background_image }}" alt="{{ image_block:alt }}" class="object-cover w-full h-full">
+  <div class="relative h-[600px]">
+    <img src="{{ background_image }}" alt="{{ image_block:alt }}" class="h-full w-full object-cover" />
 
     <div class="absolute inset-0 bg-white opacity-75"></div>
 
-    <div class="absolute bottom-[150px] left-0 pl-5 sm:pl-5 md:pl-10 lg:pl-10 xl:pl-24 transform translate-y-1/2">
-        <div class="text-4xl font-bold uppercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-flamablack">
-            {{ title }}
-        </div>
+    <div class="absolute bottom-[150px] left-0 translate-y-1/2 transform pl-5 sm:pl-5 md:pl-10 lg:pl-10 xl:pl-24">
+      <div class="font-flamablack text-4xl font-bold uppercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+        {{ title }}
+      </div>
 
-        <div class="w-full h-1 mt-5 bg-minovaGold"></div>
-
-        {{ if description }}
-        <div class="mt-5 text-xl font-flama">
-            {{ description }}
+      <div class="bg-minova-gold mt-5 h-1 w-full"></div>
+      {{ if description }}
+        <div class="mt-5 font-flama text-xl">
+          {{ description }}
         </div>
-        {{ endif }}
+      {{ endif }}
     </div>
-</div>
+  </div>
 {{ else }}
-<div class="relative h-[300px]">
-    <img src="{{ background_image }}" alt="{{ image_block:alt }}" class="object-cover w-full h-full">
+  <div class="relative h-[300px]">
+    <img src="{{ background_image }}" alt="{{ image_block:alt }}" class="h-full w-full object-cover" />
 
     <div class="absolute inset-0 bg-white opacity-75"></div>
 
-    <div class="absolute bottom-[150px] left-0 pl-5 sm:pl-5 md:pl-10 lg:pl-10 xl:pl-24 transform translate-y-1/2">
-        <div class="text-4xl font-bold uppercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-flamablack">
-            {{ title }}
-        </div>
+    <div class="absolute bottom-[150px] left-0 translate-y-1/2 transform pl-5 sm:pl-5 md:pl-10 lg:pl-10 xl:pl-24">
+      <div class="font-flamablack text-4xl font-bold uppercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+        {{ title }}
+      </div>
 
-        <div class="w-full h-1 mt-5 bg-minovaGold"></div>
-
-        {{ if description }}
-        <div class="mt-5 text-xl font-flama">
-            {{ description }}
+      <div class="bg-minova-gold mt-5 h-1 w-full"></div>
+      {{ if description }}
+        <div class="mt-5 font-flama text-xl">
+          {{ description }}
         </div>
-        {{ endif }}
+      {{ endif }}
     </div>
-</div>
+  </div>
 {{ /if }}

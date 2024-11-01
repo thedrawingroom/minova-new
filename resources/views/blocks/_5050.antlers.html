@@ -1,26 +1,40 @@
-<div class="mt-10 mb-10 grid grid-cols-1 grid-rows-1 sm:grid-cols-2 sm:grid-rows-1 gap-2">
-  <div class="flex items-center justify-center order-2 sm:order-1">
-    <img src="{{ image_block }}" alt="{{ image_block:alt }}" class="object-contain w-full h-auto">
-  </div>
-  <div class="flex flex-col justify-center order-1 w-5/6 pl-8 md:order-2">
-    <div class="text-wrap">
-      {{ content }}
-    </div>
-
-    <div class="pt-4">
-      {{ if group_field:use_button }}
-        {{ partial:common/button url="{{ group_field:button_url }}" text="{{ group_field:button_text }}" style="primary" }}
-      {{ /if }}
-    </div>
-
-    <div class="pt-4 space-y-4">
-      {{ if link_grid }}
-        {{ link_grid }}
-          <div class="border-b-4 border-minovaGold">
-            <a href="{{ grid_url }}" class="text-xl uppercase font-flamablack">{{ grid_title }} ></a>
+{{ if content || link_grid || image_block }}
+  <div class="block-5050 mb-10">
+    <div class="container grid grid-cols-1 gap-7 lg:grid-cols-2 lg:gap-10">
+      <div class="lg:order-2 lg:flex lg:flex-col lg:justify-center">
+        {{ if content }}
+          <div class="text-wrap">
+            {{ content }}
           </div>
-        {{ /link_grid }}
-      {{ /if }}
+        {{ /if }}
+        {{ if group_field:use_button }}
+          <div class="pt-4">
+            {{ partial:common/button :url="group_field:button_url" :text="group_field:button_text" style="gold" }}
+          </div>
+        {{ /if }}
+        {{ if link_grid }}
+          <ul class="pt-4">
+            {{ link_grid }}
+              {{ if grid_title }}
+                <li>
+                  <a
+                    href="{{ grid_url ?? '#' }}"
+                    class="border-minova-gold mb-5 block border-b-4 pb-2 font-flamablack text-2xl uppercase"
+                  >
+                    {{ grid_title }}
+                    >
+                  </a>
+                </li>
+              {{ /if }}
+            {{ /link_grid }}
+          </ul>
+        {{ /if }}
+      </div>
+      <div class="lg:order-1">
+        {{ if image_block }}
+          <img src="{{ image_block }}" alt="{{ image_block:alt }}" class="h-auto w-full object-contain" />
+        {{ /if }}
+      </div>
     </div>
   </div>
-</div>
+{{ /if }}

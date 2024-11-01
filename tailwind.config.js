@@ -29,8 +29,7 @@ export default {
         'x1-57': '1.57',
       },
       colors: {
-        minovaGold: '#FAB90A',
-        minovaGoldClicked: 'rgba(250, 185, 10, 0.7)',
+        'minova-gold': '#FAB90A',
       },
       borderRadius: {
         button: '25px',

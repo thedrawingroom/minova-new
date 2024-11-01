@@ -1,7 +1,9 @@
-<div class="w-screen h-[20vh] sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[60vh] overflow-hidden relative flex justify-center items-center">
-    {{ if video_asset }}
-    <video class="absolute inset-0 object-cover w-full h-full" autoplay muted loop>
-        <source src="{{ video_asset }}" type="video/mp4">
-    </video>
-    {{ /if }}
-</div>
+{{ if video_asset }}
+  <div class="block-video-banner mb-10">
+    <div class="relative h-[20vh] w-screen overflow-hidden sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[60vh]">
+      <video class="absolute left-0 top-0 h-full w-full object-cover" autoplay muted loop>
+        <source src="{{ video_asset }}" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+{{ /if }}

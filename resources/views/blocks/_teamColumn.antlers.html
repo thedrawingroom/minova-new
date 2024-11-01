@@ -1,23 +1,23 @@
-<div class="bg-[#F3F3F3] border-t-[6px] border-b-[6px] border-minovaGold py-28">
+<div class="border-minova-gold border-b-[6px] border-t-[6px] bg-[#F3F3F3] py-28">
   <div class="container">
     {{ if team_members }}
       <h2 class="mb-12 text-3xl uppercase">Meet our team</h2>
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-12">
+      <div class="grid gap-6 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
         {{ team_members }}
-          <div class="flex flex-col group rounded bg-white shadow-[0px_0px_30px_0px_rgba(0,_0,_0,_0.3)] h-full">
-            <img src="{{ image }}" alt="{{ image:alt }}" class="object-cover w-full md:aspect-square">
+          <div class="group flex h-full flex-col rounded bg-white shadow-[0px_0px_30px_0px_rgba(0,_0,_0,_0.3)]">
+            <img src="{{ image }}" alt="{{ image:alt }}" class="w-full object-cover md:aspect-square" />
             <div
-              class="bg-gradient-to-r from-neutral-300 to-zinc-50 p-4 flex flex-col justify-center items-center text-center *:text-zinc-800/80">
+              class="flex flex-col items-center justify-center bg-gradient-to-r from-neutral-300 to-zinc-50 p-4 text-center *:text-zinc-800/80"
+            >
               <h3 class="mb-2 text-lg">{{ name }}</h3>
-              <p class="uppercase ">{{ job_title }}</p>
+              <p class="uppercase">{{ job_title }}</p>
             </div>
             <div class="grid bg-white *:p-5 *:text-center">
-              <p class="text-sm/relaxed bg-zinc-100">{{ about }}</p>
+              <p class="bg-zinc-100 text-sm/relaxed">{{ about }}</p>
               <p class="text-xs/relaxed">{{ quote }}</p>
             </div>
           </div>
         {{ /team_members }}
-
       </div>
     {{ /if }}
   </div>
