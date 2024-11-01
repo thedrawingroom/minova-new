@@ -1,14 +1,14 @@
 title: 'Video Banner'
 fields:
   -
-    handle: video_file
     field:
       type: video
       display: 'Video File'
+    handle: video_file
   -
-    handle: video_asset
     field:
-      max_files: 1
-      container: assets
       type: assets
       display: 'Video Asset'
+      container: assets
+      max_files: 1
+    handle: video_asset

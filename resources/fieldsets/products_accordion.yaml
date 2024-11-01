@@ -1,45 +1,45 @@
 title: 'Products Accordion'
 fields:
   -
-    handle: title
     field:
       type: text
       display: Title
+    handle: title
   -
-    handle: sections
     field:
-      type: grid
-      display: Sections
       mode: stacked
-      add_row: 'Add Section'
+      type: grid
       fields:
         -
-          handle: label
           field:
             type: text
             display: Label
+          handle: label
         -
-          handle: inner_sections
           field:
-            type: grid
-            display: 'Inner Sections'
             mode: stacked
-            add_row: 'Add Inner Section'
+            type: grid
             fields:
               -
-                handle: title
                 field:
                   type: text
                   display: Title
+                handle: title
               -
-                handle: description
                 field:
                   type: textarea
                   display: Description
+                handle: description
               -
-                handle: products
                 field:
-                  collections:
-                    - products
                   type: entries
                   display: Products
+                  collections:
+                    - products
+                handle: products
+            add_row: 'Add Inner Section'
+            display: 'Inner Sections'
+          handle: inner_sections
+      add_row: 'Add Section'
+      display: Sections
+    handle: sections

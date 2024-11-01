@@ -1,14 +1,14 @@
 title: 'Product Slider'
 fields:
   -
-    handle: slider_title
     field:
       type: text
       display: 'Slider Title'
+    handle: slider_title
   -
-    handle: slider_products
     field:
-      collections:
-        - products
       type: entries
       display: 'Slider Products'
+      collections:
+        - products
+    handle: slider_products

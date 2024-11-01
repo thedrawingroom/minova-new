@@ -1,34 +1,34 @@
 title: 'Hero Banner'
 fields:
   -
-    handle: title
     field:
       type: text
       display: Title
       validate:
         - required
+    handle: title
   -
-    handle: description
     field:
       type: text
       display: Description
+    handle: description
   -
-    handle: background_image
     field:
-      max_files: 1
-      container: assets
       type: assets
       display: 'Background Image'
       validate:
         - required
+      container: assets
+      max_files: 1
+    handle: background_image
   -
-    handle: large_banner
     field:
       type: toggle
       display: 'Large Banner'
+    handle: large_banner
   -
-    handle: include_breadcrumbs
     field:
-      default: true
       type: toggle
+      default: true
       display: 'Include Breadcrumbs'
+    handle: include_breadcrumbs

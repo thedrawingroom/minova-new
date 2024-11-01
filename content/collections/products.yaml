@@ -7,7 +7,6 @@ taxonomies:
   - indust
   - common_use
 revisions: false
-route: '/products/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -17,3 +16,6 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
+structure:
+  root: false
+  slugs: true

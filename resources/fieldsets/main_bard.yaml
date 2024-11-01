@@ -1,8 +1,55 @@
 title: Content
 fields:
   -
-    handle: content
     field:
+      sets:
+        bard_blocks:
+          icon: addon-boxes-stack
+          sets:
+            video:
+              icon: media-webcam-video
+              fields:
+                -
+                  import: video
+              display: Video
+            button:
+              icon: align-object-center
+              fields:
+                -
+                  import: button
+              display: Button
+            subtitle:
+              icon: align-object-bottom
+              fields:
+                -
+                  import: bard_subtitle
+              display: Subtitle
+            address_table:
+              icon: home-house
+              fields:
+                -
+                  import: address_table
+              display: 'Address Table'
+            image_columns:
+              icon: dashboard-layout
+              fields:
+                -
+                  import: bard_image_columns
+              display: 'Image Columns'
+            numbered_list:
+              icon: dashboard-layout
+              fields:
+                -
+                  import: bard_numbered_list
+              display: 'Numbered List'
+            project_image_block:
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: project_bard
+              display: 'Project Image Block'
+          display: 'Bard Blocks'
+      type: bard
       buttons:
         - h2
         - h3
@@ -21,53 +68,6 @@ fields:
         - h6
         - underline
         - horizontalrule
-      remove_empty_nodes: false
-      type: bard
       display: Content
-      sets:
-        bard_blocks:
-          display: 'Bard Blocks'
-          icon: addon-boxes-stack
-          sets:
-            project_image_block:
-              display: 'Project Image Block'
-              icon: media-image-picture-orientation
-              fields:
-                -
-                  import: project_bard
-            video:
-              display: Video
-              icon: media-webcam-video
-              fields:
-                -
-                  import: video
-            button:
-              display: Button
-              icon: align-object-center
-              fields:
-                -
-                  import: button
-            address_table:
-              display: 'Address Table'
-              icon: home-house
-              fields:
-                -
-                  import: address_table
-            subtitle:
-              display: Subtitle
-              icon: align-object-bottom
-              fields:
-                -
-                  import: bard_subtitle
-            numbered_list:
-              display: 'Numbered List'
-              icon: dashboard-layout
-              fields:
-                -
-                  import: bard_numbered_list
-            image_columns:
-              display: 'Image Columns'
-              icon: dashboard-layout
-              fields:
-                -
-                  import: bard_image_columns
+      remove_empty_nodes: false
+    handle: content

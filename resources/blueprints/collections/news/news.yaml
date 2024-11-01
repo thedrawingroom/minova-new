@@ -1,4 +1,3 @@
-title: News
 tabs:
   main:
     display: Main
@@ -6,66 +5,61 @@ tabs:
       -
         fields:
           -
-            handle: title
             field:
               type: text
               required: true
               validate:
                 - required
+            handle: title
           -
-            handle: image
             field:
-              container: assets
               type: assets
               display: Image
+              container: assets
               max_files: 1
+            handle: image
           -
-            handle: banner
             field:
               type: group
-              display: Banner
               fields:
                 -
-                  handle: title
                   field:
                     type: text
                     display: Title
+                  handle: title
                 -
-                  handle: image
                   field:
-                    container: assets
                     type: assets
                     display: Image
-          -
-            handle: short_description
-            field:
-              character_limit: 110
-              type: textarea
-              display: 'Short Description'
+                    container: assets
+                  handle: image
+              display: Banner
+            handle: banner
           -
             import: main_bard
           -
-            handle: template
             field:
               type: template
               display: Template
               localizable: true
+            handle: template
   sidebar:
     display: Sidebar
     sections:
       -
         fields:
           -
-            handle: slug
             field:
               type: slug
-              localizable: true
               validate: 'max:200'
+              localizable: true
+            handle: slug
           -
-            handle: date
             field:
               type: date
-              required: true
               default: now
+              required: true
               validate:
                 - required
+            handle: date
+title: News
