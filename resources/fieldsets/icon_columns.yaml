@@ -19,12 +19,12 @@ fields:
         -
           field:
             type: text
-            display: 'Card Title'
-          handle: card_title
+            display: Title
+          handle: title
         -
           field:
             type: textarea
-            display: 'Card Body'
-          handle: card_body
+            display: Description
+          handle: description
       display: Cards
     handle: cards

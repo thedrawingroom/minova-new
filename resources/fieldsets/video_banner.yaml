@@ -2,13 +2,10 @@ title: 'Video Banner'
 fields:
   -
     field:
-      type: video
-      display: 'Video File'
-    handle: video_file
-  -
-    field:
       type: assets
-      display: 'Video Asset'
+      display: Video
+      validate:
+        - 'mimes:mp4'
       container: assets
       max_files: 1
-    handle: video_asset
+    handle: video

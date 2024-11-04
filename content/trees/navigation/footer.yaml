@@ -1,1 +1,33 @@
-{  }
+tree:
+  -
+    id: b38165b2-538c-464a-843e-e048b8ac0ef7
+    url: /about
+    title: About
+  -
+    id: 36f50300-d487-435a-a9c0-3f88bcf357d2
+    url: /applications
+    title: Applications
+  -
+    id: 1f168790-3b51-443b-ac59-d70db0d1fa9c
+    url: /products
+    title: Products
+  -
+    id: 64adf0b9-3f6d-4a53-92f4-817eddc8880a
+    url: /services
+    title: Services
+  -
+    id: cb605458-dda1-44a1-a8b9-f25691f4c8e2
+    url: /news
+    title: News
+  -
+    id: eae70745-ad97-4450-ba4c-f3c306652961
+    url: /contacts
+    title: Contacts
+  -
+    id: c7227354-a7c5-4a9a-9a7e-bc61624e7539
+    url: /downloads
+    title: Downloads
+  -
+    id: 01d6bfa3-aaff-4e3b-9736-3f9bd7564984
+    url: /careers
+    title: Careers

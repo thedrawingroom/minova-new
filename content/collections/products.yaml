@@ -7,6 +7,7 @@ taxonomies:
   - indust
   - common_use
 revisions: false
+route: '/products/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

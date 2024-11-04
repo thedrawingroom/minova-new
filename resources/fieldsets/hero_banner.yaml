@@ -15,12 +15,10 @@ fields:
   -
     field:
       type: assets
-      display: 'Background Image'
-      validate:
-        - required
+      display: Image
       container: assets
       max_files: 1
-    handle: background_image
+    handle: image
   -
     field:
       type: toggle

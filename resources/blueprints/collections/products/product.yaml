@@ -7,15 +7,11 @@ tabs:
           -
             field:
               type: text
-              display: 'Product Title'
+              display: Title
+              required: true
               validate:
                 - required
-            handle: product_title
-          -
-            config:
-              title:
-                required: true
-            import: hero_banner
+            handle: title
           -
             field:
               type: assets
@@ -23,6 +19,24 @@ tabs:
               container: assets
               max_files: 1
             handle: image
+          -
+            field:
+              type: group
+              fields:
+                -
+                  field:
+                    type: text
+                    display: Title
+                  handle: title
+                -
+                  field:
+                    type: assets
+                    display: Image
+                    container: assets
+                    max_files: 1
+                  handle: image
+              display: Banner
+            handle: banner
           -
             import: main_bard
           -
@@ -81,13 +95,4 @@ tabs:
               taxonomies:
                 - common_use
             handle: common_use
-          -
-            field:
-              type: entries
-              listable: false
-              max_items: 1
-              collections:
-                - products
-              localizable: true
-            handle: parent
 title: Product

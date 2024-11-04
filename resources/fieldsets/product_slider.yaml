@@ -3,12 +3,12 @@ fields:
   -
     field:
       type: text
-      display: 'Slider Title'
-    handle: slider_title
+      display: Title
+    handle: title
   -
     field:
       type: entries
-      display: 'Slider Products'
+      display: Products
       collections:
         - products
-    handle: slider_products
+    handle: products

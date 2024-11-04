@@ -3,21 +3,7 @@ fields:
   -
     field:
       type: text
-      display: Text
-    handle: text
+      display: Title
+    handle: title
   -
-    field:
-      type: group
-      fields:
-        -
-          field:
-            type: text
-            display: 'Button Text'
-          handle: button_text
-        -
-          field:
-            type: link
-            display: url
-          handle: url
-      display: Button
-    handle: button
+    import: button
