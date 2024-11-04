@@ -1,8 +1,16 @@
 title: '50/50 Block'
 fields:
   -
+    handle: image
+    field:
+      type: assets
+      display: Image
+      container: assets
+      max_files: 1
+  -
     handle: content
     field:
+      type: bard
       buttons:
         - h2
         - h3
@@ -18,51 +26,24 @@ fields:
         - h6
         - underline
         - horizontalrule
-      remove_empty_nodes: false
-      type: bard
       display: Content
       smart_typography: true
+      remove_empty_nodes: false
   -
-    handle: image_block
-    field:
-      container: assets
-      type: assets
-      display: 'Image Block'
-      max_files: 1
-  -
-    handle: group_field
-    field:
-      type: group
-      display: Button
-      fields:
-        -
-          handle: use_button
-          field:
-            type: toggle
-            display: 'Use Button'
-        -
-          handle: button_text
-          field:
-            type: text
-            display: 'Button Text'
-        -
-          handle: button_url
-          field:
-            type: link
-            display: 'Button URL'
-  -
-    handle: link_grid
+    handle: page_links
     field:
       type: grid
-      display: 'Link Grid'
+      display: 'Page Links'
       fields:
         -
-          handle: grid_title
           field:
             type: text
-            display: 'Grid Title'
+            display: Title
+          handle: title
         -
-          handle: grid_url
           field:
             type: link
-            display: 'Grid URL'
+            display: Link
+          handle: link
+  -
+    import: button

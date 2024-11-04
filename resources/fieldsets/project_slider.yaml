@@ -1,34 +1,34 @@
 title: 'Project Slider'
 fields:
   -
-    handle: projects
     field:
       mode: stacked
       type: grid
-      display: Projects
-      add_row: 'Add Project'
       fields:
         -
-          handle: image
           field:
-            max_files: 1
-            container: assets
             type: assets
             display: Image
+            container: assets
+            max_files: 1
+          handle: image
         -
-          handle: title
           field:
             type: text
             display: Title
+          handle: title
         -
-          handle: location
           field:
             type: text
             display: Location
+          handle: location
         -
-          handle: description
           field:
             type: textarea
             display: Description
+          handle: description
         -
           import: button
+      add_row: 'Add Project'
+      display: Projects
+    handle: projects

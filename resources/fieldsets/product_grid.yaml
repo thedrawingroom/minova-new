@@ -1,14 +1,14 @@
 title: 'Product Grid'
 fields:
   -
-    handle: title
     field:
       type: text
       display: Title
+    handle: title
   -
-    handle: products
     field:
-      collections:
-        - products
       type: entries
       display: Products
+      collections:
+        - products
+    handle: products

@@ -1,14 +1,14 @@
 title: 'Bard Numbered List'
 fields:
   -
-    handle: numbered_list
     field:
-      add_row: 'Add List Item'
       type: grid
-      display: 'Numbered List'
       fields:
         -
-          handle: title
           field:
             type: text
             display: Title
+          handle: title
+      add_row: 'Add List Item'
+      display: 'Numbered List'
+    handle: numbered_list

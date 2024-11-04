@@ -1,23 +1,9 @@
 title: 'CTA Strip'
 fields:
   -
-    handle: text
     field:
       type: text
-      display: Text
+      display: Title
+    handle: title
   -
-    handle: button
-    field:
-      type: group
-      display: Button
-      fields:
-        -
-          handle: button_text
-          field:
-            type: text
-            display: 'Button Text'
-        -
-          handle: url
-          field:
-            type: link
-            display: url
+    import: button

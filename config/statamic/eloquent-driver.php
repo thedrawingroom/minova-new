@@ -17,20 +17,20 @@ return [
     ],
 
     'blueprints' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Fields\BlueprintModel::class,
         'namespaces' => 'all',
     ],
 
     'collections' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Collections\CollectionModel::class,
         'update_entry_order_queue' => 'default',
         'update_entry_order_connection' => 'default',
     ],
 
     'collection_trees' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Structures\TreeModel::class,
         'tree' => \Statamic\Eloquent\Structures\CollectionTree::class,
     ],
@@ -43,7 +43,7 @@ return [
     ],
 
     'fieldsets' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Fields\FieldsetModel::class,
     ],
 
