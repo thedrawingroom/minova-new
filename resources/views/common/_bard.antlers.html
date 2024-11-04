@@ -1,5 +1,73 @@
 {{ data }}
   {{ if type == "text" }}
     {{ text }}
+  {{ elseif type == "subtitle" }}
+    {{ if subtitle }}
+      <div class="mb-8">
+        {{ partial:common/subtitle :text="subtitle" }}
+      </div>
+    {{ /if }}
+  {{ elseif type == "button" }}
+    {{ if button }}
+      <div class="mb-8">
+        {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+      </div>
+    {{ /if }}
+  {{ elseif type == "image_columns" }}
+    <div class="mb-8">
+      {{ if images }}
+        <div class="grid grid-cols-3 gap-2">
+          {{ images }}
+            <div class="flex aspect-square items-center justify-center bg-neutral-100">
+              {{ partial:common/image class="w-auto h-auto max-w-[90%] max-h-[90%] object-contain" :url="url" :alt="alt" }}
+            </div>
+          {{ /images }}
+        </div>
+      {{ /if }}
+    </div>
+  {{ elseif type == "numbered_list" }}
+    <div class="mb-8">
+      {{ if numbered_list }}
+        <ol class="flex flex-col gap-5 md:flex-row lg:flex-wrap">
+          {{ numbered_list }}
+            <li class="flex">
+              <span class="mr-3 flex size-10 items-center justify-center bg-black font-bold text-white">
+                {{ index }}
+              </span>
+              <span class="pt-2 font-bold">{{ title }}</span>
+            </li>
+          {{ /numbered_list }}
+        </ol>
+      {{ /if }}
+    </div>
+  {{ elseif type == "project_image_block" }}
+    <div class="mb-8">
+      <div class="mb-6 lg:mb-0">
+        {{ if project_image }}
+          {{ partial:common/image class="h-auto w-full max-w-[90%]" :url="project_image" :alt="project_image:alt" }}
+        {{ /if }}
+        {{ if project_title }}
+          <div class="-mt-12 flex justify-end">
+            <div class="bg-neutral-800 p-5 2xl:p-8 max-w-[70%] lg:max-w-[50%]">
+              <p class="mb-0 font-flamablack text-3xl text-white 2xl:text-4xl">{{ project_title }}</p>
+            </div>
+          </div>
+        {{ /if }}
+      </div>
+      <div class="{{ ['w-full' => full_width, 'lg:w-1/2 lg:-mt-12' => !full_width] | classes }}">
+        {{ if subtitle }}
+          {{ partial:common/subtitle :text="subtitle" }}
+        {{ /if }}
+        {{ if location }}
+          <p class="text-base">Location:&nbsp;{{ location }}</p>
+        {{ /if }}
+        {{ if description }}
+          {{ description }}
+        {{ /if }}
+        {{ if button }}
+          {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+        {{ /if }}
+      </div>
+    </div>
   {{ /if }}
 {{ /data }}
