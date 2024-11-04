@@ -1,0 +1,31 @@
+<div class="block-content-sidebar">
+  <div class="container grid py-14 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">sidebar links here</div>
+    <div class="lg:col-span-8">
+      <div class="{{ ['lg:grid-cols-7' => downloads] | classes }} grid gap-10">
+        <div class="{{ ['lg:col-span-4' => downloads] | classes }}">
+          {{ if bard_field }}
+            {{ partial:common/bard :data="bard_field" }}
+          {{ /if }}
+        </div>
+        <div class="lg:col-span-3">
+          {{ if downloads }}
+            <div class="bg-gray-200 p-5">
+              <h4>Downloads</h4>
+              <ul>
+                {{ downloads }}
+                  <li class="mb-1">
+                    <a href="{{ file }}" download class="flex bg-white px-3 py-2 justify-between items-center text-black">
+                      <span class="text-xl">{{ title }}</span>
+                      <span class="bg-minova-gold size-10 flex items-center justify-center text-white">icon</span>
+                    </a>
+                  </li>
+                {{ /downloads }}
+              </ul>
+            </div>
+          {{ /if }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
