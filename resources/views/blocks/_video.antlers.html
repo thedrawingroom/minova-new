@@ -1,0 +1,11 @@
+{{ if video_type == 'link' }}
+  {{ if video_link }}
+    <iframe class="aspect-video w-full" width="100%" height="auto" src="{{ video_link }}" allowfullscreen></iframe>
+  {{ /if }}
+{{ elseif video_type == 'file' }}
+  {{ if video_file }}
+    <video class="aspect-video w-full" controls>
+      <source src="{{ video_file }}" type="video/mp4" />
+    </video>
+  {{ /if }}
+{{ /if }}

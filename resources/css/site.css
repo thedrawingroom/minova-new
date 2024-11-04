@@ -67,6 +67,40 @@
   p {
     @apply mb-4 font-helvetica text-lg;
   }
+
+  table {
+    @apply mb-8 w-full;
+
+    tr {
+      td {
+        p {
+          @apply m-0 p-2;
+        }
+
+        &:not(:last-of-type) {
+          @apply border-r border-neutral-200;
+        }
+      }
+
+      &:first-of-type {
+        td {
+          @apply bg-neutral-700 uppercase text-minova-gold;
+        }
+      }
+
+      &:nth-child(odd):not(:first-of-type) {
+        td {
+          @apply bg-neutral-100;
+        }
+      }
+
+      &:nth-child(even) {
+        td {
+          @apply bg-neutral-50;
+        }
+      }
+    }
+  }
 }
 
 @layer components {

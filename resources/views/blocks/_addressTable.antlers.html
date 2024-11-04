@@ -1,0 +1,34 @@
+<ul class="grid grid-cols-1 lg:grid-cols-2">
+  {{ addresses }}
+    <li
+      class="border-b border-neutral-200 bg-neutral-50 px-3 py-5 lg:border-0 xl:px-5 xl:py-7 lg:[&:nth-child(even):not(:nth-child(4n+2))]:bg-neutral-200 lg:[&:nth-child(odd):not(:nth-child(4n+3))]:bg-neutral-200"
+    >
+      <h5 class="mb-3 text-sm font-bold">{{ title }}</h5>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div>
+          <p class="text-sm">{{ address_field }}</p>
+        </div>
+        <div>
+          <ul>
+            {{ contact_list }}
+              <li class="mb-1">
+                <p class="mb-0 text-sm">
+                  {{ if type == 'email' }}
+                    <span class="font-bold">E.</span>
+                    <a href="mailto:{{ contact | spaceless }}" class="underline text-blue-600">{{ contact }}</a>
+                  {{ elseif type == 'phone' }}
+                    <span class="font-bold">T.</span>
+                    <a href="tel:{{ contact | spaceless }}" class="underline text-blue-600">{{ contact }}</a>
+                  {{ elseif type == 'fax' }}
+                    <span class="font-bold">F.</span>
+                    <a href="tel:{{ contact | spaceless }}" class="underline text-blue-600">{{ contact }}</a>
+                  {{ /if }}
+                </p>
+              </li>
+            {{ /contact_list }}
+          </ul>
+        </div>
+      </div>
+    </li>
+  {{ /addresses }}
+</ul>

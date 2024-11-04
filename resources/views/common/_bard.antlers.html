@@ -1,20 +1,16 @@
 {{ data }}
-  {{ if type == "text" }}
-    {{ text }}
-  {{ elseif type == "subtitle" }}
-    {{ if subtitle }}
-      <div class="mb-8">
+  <div class="mb-10">
+    {{ if type == "text" }}
+      {{ text }}
+    {{ elseif type == "subtitle" }}
+      {{ if subtitle }}
         {{ partial:common/subtitle :text="subtitle" }}
-      </div>
-    {{ /if }}
-  {{ elseif type == "button" }}
-    {{ if button }}
-      <div class="mb-8">
+      {{ /if }}
+    {{ elseif type == "button" }}
+      {{ if button }}
         {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
-      </div>
-    {{ /if }}
-  {{ elseif type == "image_columns" }}
-    <div class="mb-8">
+      {{ /if }}
+    {{ elseif type == "image_columns" }}
       {{ if images }}
         <div class="grid grid-cols-3 gap-2">
           {{ images }}
@@ -24,9 +20,7 @@
           {{ /images }}
         </div>
       {{ /if }}
-    </div>
-  {{ elseif type == "numbered_list" }}
-    <div class="mb-8">
+    {{ elseif type == "numbered_list" }}
       {{ if numbered_list }}
         <ol class="flex flex-col gap-5 md:flex-row lg:flex-wrap">
           {{ numbered_list }}
@@ -39,16 +33,14 @@
           {{ /numbered_list }}
         </ol>
       {{ /if }}
-    </div>
-  {{ elseif type == "project_image_block" }}
-    <div class="mb-8">
+    {{ elseif type == "project_image_block" }}
       <div class="mb-6 lg:mb-0">
         {{ if project_image }}
           {{ partial:common/image class="h-auto w-full max-w-[90%]" :url="project_image" :alt="project_image:alt" }}
         {{ /if }}
         {{ if project_title }}
           <div class="-mt-12 flex justify-end">
-            <div class="bg-neutral-800 p-5 2xl:p-8 max-w-[70%] lg:max-w-[50%]">
+            <div class="max-w-[70%] bg-neutral-800 p-5 lg:max-w-[50%] 2xl:p-8">
               <p class="mb-0 font-flamablack text-3xl text-white 2xl:text-4xl">{{ project_title }}</p>
             </div>
           </div>
@@ -68,6 +60,12 @@
           {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
         {{ /if }}
       </div>
-    </div>
-  {{ /if }}
+    {{ elseif type == "video" }}
+      {{ partial:blocks/video :video_type="video_type" :video_link="video_link" :video_file="video_file" }}
+    {{ elseif type == "address_table" }}
+      {{ if addresses }}
+        {{ partial:blocks/addressTable :addresses="addresses" }}
+      {{ /if }}
+    {{ /if }}
+  </div>
 {{ /data }}

@@ -1,7 +1,9 @@
 {{ if video }}
   <div class="block-video-banner mb-10">
     <div class="relative h-[20vh] w-full overflow-hidden sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[60vh]">
-      {{ partial:common/video class="absolute left-0 top-0 size-full object-cover" :url="video" autoplay="true" muted="true" loop="true" }}
+      <video class="absolute left-0 top-0 size-full object-cover" autoplay muted loop>
+        <source src="{{ video }}" type="video/mp4" />
+      </video>
     </div>
   </div>
 {{ /if }}
