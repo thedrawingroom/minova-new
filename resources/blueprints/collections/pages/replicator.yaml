@@ -5,27 +5,34 @@ tabs:
       -
         fields:
           -
+            handle: title
             field:
               type: text
-              display: 'Page Title'
               required: true
+              display: 'Page Title'
               validate:
                 - required
-            handle: title
+              localizable: true
           -
+            handle: featured_image
             field:
               type: assets
               display: 'Featured Image'
               container: assets
               max_files: 1
-            handle: featured_image
+              localizable: true
           -
+            handle: short_description
             field:
               type: textarea
               display: 'Short Description'
-            handle: short_description
+              localizable: true
           -
+            handle: replicator
             field:
+              type: replicator
+              display: Blocks
+              localizable: true
               sets:
                 new_set_group:
                   sets:
@@ -107,40 +114,39 @@ tabs:
                           import: products_accordion
                       display: 'Products Accordion'
                   display: 'New Set Group'
-              type: replicator
-              display: Blocks
-            handle: replicator
           -
+            handle: template
             field:
               type: template
               display: Template
-            handle: template
+              localizable: true
   sidebar:
     display: Sidebar
     sections:
       -
         fields:
           -
+            handle: slug
             field:
               type: slug
-              validate: 'max:200'
               localizable: true
-            handle: slug
+              validate: 'max:200'
           -
+            handle: parent
             field:
               type: entries
-              listable: false
-              max_items: 1
               collections:
                 - pages
+              max_items: 1
+              listable: false
               localizable: true
-            handle: parent
           -
+            handle: locale
             field:
               mode: select
               type: terms
               display: Locale
               taxonomies:
                 - locale
-            handle: locale
+              localizable: false
 title: Replicator
