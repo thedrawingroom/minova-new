@@ -2,24 +2,15 @@
   <div class="block-product-slider bg-gradient-to-r from-neutral-500 to-neutral-400">
     <div class="container py-14">
       {{ if title }}
-        <h3 class="mb-10">{{ title }}</h3>
+        {{ partial:common/sectionTitle :text="title" }}
       {{ /if }}
       <div
         class="product-slider -mx-4 [&_.slick-slide]:h-[initial] [&_.slick-track]:flex [&_div]:h-full"
         style="position: unset"
       >
         {{ products }}
-          <div class="mx-4 h-full bg-white">
-            <a href="{{ slug }}" class="flex h-full flex-col">
-              <div class="aspect-square basis-1">
-                {{ if image }}
-                  {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
-                {{ /if }}
-              </div>
-              <div class="py-3">
-                <p class="mb-0 text-center font-flama text-2xl">{{ title }}</p>
-              </div>
-            </a>
+          <div class="h-full px-4">
+            {{ partial:common/productCard :slug="slug" :image="image" :title="title" }}
           </div>
         {{ /products }}
       </div>

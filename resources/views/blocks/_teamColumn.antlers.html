@@ -1,7 +1,9 @@
 {{ if team_members }}
   <div class="block-team-members mb-10 bg-neutral-200">
     <div class="container py-14">
-      <h3 class="mb-10">Meet our team</h3>
+      {{ if title }}
+        {{ partial:common/sectionTitle text="Meet our team" }}
+      {{ /if }}
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
         {{ team_members }}
           <div class="bg-white text-center shadow-xl">

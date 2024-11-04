@@ -5,147 +5,146 @@ tabs:
       -
         fields:
           -
+            handle: title
             field:
               type: text
-              display: 'Page Title'
               required: true
+              display: 'Page Title'
               validate:
                 - required
-            handle: title
           -
+            handle: featured_image
             field:
               type: assets
               display: 'Featured Image'
               container: assets
               max_files: 1
-            handle: featured_image
           -
+            handle: short_description
             field:
               type: textarea
               display: 'Short Description'
-            handle: short_description
           -
+            handle: replicator
             field:
+              type: replicator
+              display: Blocks
               sets:
                 new_set_group:
+                  display: 'New Set Group'
                   sets:
                     content:
+                      display: Content
                       icon: content-book-open
                       fields:
                         -
                           import: main_bard
-                      display: Content
                     cta_strip:
+                      display: 'CTA Strip'
                       icon: align-object-center
                       fields:
                         -
                           import: cta_strip
-                      display: 'CTA Strip'
                     50_50_block:
+                      display: '50 50 Block'
                       icon: layout-split-verical
                       fields:
                         -
                           import: fifty_fifty_block
-                      display: '50 50 Block'
                     hero_banner:
+                      display: 'Hero Banner'
                       icon: align-object-top
                       fields:
                         -
                           import: hero_banner
-                      display: 'Hero Banner'
                     icon_column:
+                      display: 'Icon Column'
                       icon: dashboard-layout
                       fields:
                         -
                           import: icon_columns
-                      display: 'Icon Column'
                     latest_news:
-                      icon: globe-world-wide-web
-                      fields: {  }
                       display: 'Latest News'
                       instructions: 'This block automatically pulls the latest three news articles'
+                      icon: globe-world-wide-web
+                      fields: {  }
                     page_columns:
+                      display: 'Page Columns'
                       icon: layout-three-columns
                       fields:
                         -
                           import: page_columns
-                      display: 'Page Columns'
                     product_grid:
-                      icon: layout-grid-dots
-                      fields:
-                        -
-                          import: product_grid
                       display: 'Product Grid'
+                      instructions: 'This block automatically pulls your top level products'
+                      icon: layout-grid-dots
+                      fields: {  }
                     team_columns:
+                      display: 'Team Columns'
                       icon: user-avatar
                       fields:
                         -
                           import: team_columns
-                      display: 'Team Columns'
                     video_banner:
+                      display: 'Video Banner'
                       icon: media-webcam-video
                       fields:
                         -
                           import: video_banner
-                      display: 'Video Banner'
                     product_slider:
+                      display: 'Product Slider'
                       icon: arrows-fit-to-width
                       fields:
                         -
                           import: product_slider
-                      display: 'Product Slider'
                     project_slider:
+                      display: 'Project Slider'
                       icon: arrows-fit-to-width
                       fields:
                         -
                           import: project_slider
-                      display: 'Project Slider'
                     content_sidebar:
+                      display: 'Content Sidebar'
                       fields:
                         -
                           import: content_sidebar
-                      display: 'Content Sidebar'
                     products_accordion:
+                      display: 'Products Accordion'
                       icon: dashboard-layout
                       fields:
                         -
                           import: products_accordion
-                      display: 'Products Accordion'
-                  display: 'New Set Group'
-              type: replicator
-              display: Blocks
-            handle: replicator
           -
+            handle: template
             field:
               type: template
               display: Template
-            handle: template
   sidebar:
     display: Sidebar
     sections:
       -
         fields:
           -
+            handle: slug
             field:
               type: slug
-              validate: 'max:200'
               localizable: true
-            handle: slug
+              validate: 'max:200'
           -
+            handle: parent
             field:
               type: entries
-              listable: false
-              max_items: 1
               collections:
                 - pages
+              max_items: 1
+              listable: false
               localizable: true
-            handle: parent
           -
+            handle: locale
             field:
               mode: select
               type: terms
               display: Locale
               taxonomies:
                 - locale
-            handle: locale
 title: Replicator
