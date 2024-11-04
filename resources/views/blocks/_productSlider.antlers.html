@@ -5,12 +5,12 @@
         {{ partial:common/sectionTitle :text="title" }}
       {{ /if }}
       <div
-        class="product-slider -mx-4 [&_.slick-slide]:h-[initial] [&_.slick-track]:flex [&_div]:h-full"
+        class="product-slider -mx-4 [&_.slick-slide]:h-[initial] [&_.slick-track]:flex"
         style="position: unset"
       >
         {{ products }}
           <div class="h-full px-4">
-            {{ partial:common/productCard :slug="slug" :image="image" :title="title" }}
+            {{ partial:common/entryCard :slug="slug" :image="image" :title="title" button_text="Explore products" }}
           </div>
         {{ /products }}
       </div>

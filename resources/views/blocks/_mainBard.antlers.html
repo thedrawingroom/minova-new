@@ -1,3 +1,7 @@
-<div>
-    <p>This is a test</p>
+<div class="block-content">
+  <div class="container py-14">
+    {{ if bard_field }}
+      {{ partial:common/bard :data="bard_field" }}
+    {{ /if }}
+  </div>
 </div>

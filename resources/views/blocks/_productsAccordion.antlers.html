@@ -1,0 +1,60 @@
+{{# @REF: https://www.penguinui.com/components/accordion #}}
+<div class="block-products-accordion">
+  {{ if title }}
+    <div class="container">
+      {{ partial:common/sectionTitle :text="title" }}
+    </div>
+  {{ /if }}
+  {{ sections }}
+    <div class="border-t-4 border-neutral-300" x-data="{ isExpanded: false }">
+      <button
+        id="controlsAccordionItem{{ index }}"
+        type="button"
+        aria-controls="accordionItem{{ index }}"
+        class="w-full bg-neutral-200"
+        @click="isExpanded = ! isExpanded"
+        :aria-expanded="isExpanded ? 'true' : 'false'"
+      >
+        <div class="container flex justify-between py-6">
+          {{ if label }}
+            <h4 class="mb-0">{{ label }}</h4>
+          {{ /if }}
+          <div></div>
+        </div>
+      </button>
+      <div
+        x-cloak
+        x-show="isExpanded"
+        id="accordionItem{{ index }}"
+        role="region"
+        class="w-full bg-neutral-50"
+        aria-labelledby="controlsAccordionItem{{ index }}"
+        x-collapse
+      >
+        <div class="container py-6">
+          {{ inner_sections }}
+            <div class="mb-8">
+              <div class="mb-6">
+                {{ if title }}
+                  <h4>{{ title }}</h4>
+                {{ /if }}
+                {{ if description }}
+                  <p>{{ description }}</p>
+                {{ /if }}
+              </div>
+              {{ if products }}
+                <ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {{ products }}
+                    <li>
+                      {{ partial:common/entryCard :slug="url" :image="image" :title="title" button_text="Explore product" }}
+                    </li>
+                  {{ /products }}
+                </ul>
+              {{ /if }}
+            </div>
+          {{ /inner_sections }}
+        </div>
+      </div>
+    </div>
+  {{ /sections }}
+</div>

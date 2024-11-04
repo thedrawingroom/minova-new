@@ -4,7 +4,7 @@
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       {{ collection:products }}
         <li>
-          {{ partial:common/productCard :slug="url" :image="image" :title="title" }}
+          {{ partial:common/entryCard :slug="url" :image="image" :title="title" button_text="Explore products" }}
         </li>
       {{ /collection:products }}
     </ul>

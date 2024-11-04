@@ -21,7 +21,11 @@
     {{ partial:blocks/contentSidebar }}
   {{ elseif type == "product_grid" }}
     {{ partial:blocks/productGrid }}
-  {{ elseif type == "main_bard" }}
+  {{ elseif type == "page_columns" }}
+    {{ partial:blocks/pageColumns }}
+  {{ elseif type == "products_accordion" }}
+    {{ partial:blocks/productsAccordion }}
+  {{ elseif type == "content" }}
     {{ partial:blocks/mainBard }}
   {{ /if }}
 {{ /replicator }}

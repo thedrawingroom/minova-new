@@ -1,0 +1,14 @@
+<div class="block-page-columns bg-neutral-100">
+  <div class="container py-14">
+    {{ if title }}
+      {{ partial:common/sectionTitle :text="title" }}
+    {{ /if }}
+    <ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {{ pages }}
+        <li>
+          {{ partial:common/entryCard :slug="url" :image="image" :title="title" :button_text="button_text" }}
+        </li>
+      {{ /pages }}
+    </ul>
+  </div>
+</div>

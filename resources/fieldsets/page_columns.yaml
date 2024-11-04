@@ -1,16 +1,17 @@
 title: 'Page Columns'
 fields:
   -
+    handle: title
     field:
       type: text
       display: Title
-    handle: title
   -
+    handle: button_text
     field:
       type: text
       display: 'Button Text'
-    handle: button_text
   -
+    handle: pages
     field:
       type: entries
       create: false
@@ -18,4 +19,4 @@ fields:
       max_items: 3
       collections:
         - pages
-    handle: pages
+        - products

@@ -18,7 +18,9 @@
     "vite": "^5.2.8"
   },
   "dependencies": {
+    "@alpinejs/collapse": "^3.14.3",
     "@awesome.me/kit-04ebf634dd": "^1.0.7",
+    "alpinejs": "^3.14.3",
     "slick-carousel": "^1.8.1"
   }
 }
