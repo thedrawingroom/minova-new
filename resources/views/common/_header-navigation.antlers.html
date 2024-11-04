@@ -6,7 +6,7 @@
           <a href="{{ url }}" class="relative inline-block cursor-pointer py-2 transition-colors">
             <span class="relative z-10 whitespace-nowrap">{{ title }}</span>
             <span
-              class="bg-minova-gold absolute bottom-0 left-0 h-[4px] w-0 transition-all duration-300 ease-in-out group-hover/parent:w-full"
+              class="absolute bottom-0 left-0 h-[4px] w-0 bg-minova-gold transition-all duration-300 ease-in-out group-hover/parent:w-full"
             ></span>
           </a>
           {{ if children }}
@@ -21,11 +21,11 @@
         <li class="px-2 py-2">
           <a
             href="{{ url }}"
-            class="group/child group-hover/child:text-minova-gold relative w-full pb-2 text-black transition-colors"
+            class="group/child relative w-full pb-2 text-black transition-colors group-hover/child:text-minova-gold"
           >
             <span class="relative z-10 whitespace-nowrap">{{ title }}</span>
             <span
-              class="bg-minova-gold absolute bottom-0 left-0 h-[4px] w-0 transition-all duration-300 ease-in-out group-hover/child:w-full"
+              class="absolute bottom-0 left-0 h-[4px] w-0 bg-minova-gold transition-all duration-300 ease-in-out group-hover/child:w-full"
             ></span>
           </a>
         </li>
