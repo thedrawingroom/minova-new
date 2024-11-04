@@ -1,8 +1,8 @@
 title: 'Bard Image Columns'
 fields:
   -
-    handle: images
     field:
-      container: assets
       type: assets
       display: Images
+      container: assets
+    handle: images

@@ -1,21 +1,21 @@
 title: 'Page Columns'
 fields:
   -
-    handle: title
     field:
       type: text
       display: Title
+    handle: title
   -
-    handle: button_text
     field:
       type: text
       display: 'Button Text'
+    handle: button_text
   -
-    handle: pages
     field:
-      max_items: 3
+      type: entries
       create: false
+      display: Pages
+      max_items: 3
       collections:
         - pages
-      type: entries
-      display: Pages
+    handle: pages

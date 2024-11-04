@@ -1,36 +1,33 @@
 title: 'Address Table'
 fields:
   -
-    handle: addresses
     field:
       mode: stacked
       type: grid
-      display: Addresses
       fields:
         -
-          handle: title
           field:
             type: text
             display: Title
+          handle: title
         -
-          handle: address_field
           field:
             type: textarea
             display: 'Address Field'
+          handle: address_field
         -
-          handle: contact_list
           field:
             type: grid
-            display: 'Contact List'
             fields:
               -
-                handle: contact_detials
                 field:
                   type: text
                   display: 'Contact Detials'
+                handle: contact_detials
               -
-                handle: contact_type
                 field:
+                  type: select
+                  display: 'Contact Type'
                   options:
                     -
                       key: tel
@@ -41,5 +38,8 @@ fields:
                     -
                       key: fax
                       value: 'FAX:'
-                  type: select
-                  display: 'Contact Type'
+                handle: contact_type
+            display: 'Contact List'
+          handle: contact_list
+      display: Addresses
+    handle: addresses

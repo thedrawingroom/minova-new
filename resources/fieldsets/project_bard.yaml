@@ -1,34 +1,34 @@
 title: 'Project Bard Block'
 fields:
   -
-    handle: project_image
     field:
-      container: assets
       type: assets
       display: 'Project Image'
       validate:
         - required
+      container: assets
       max_files: 1
+    handle: project_image
   -
-    handle: project_title
     field:
       type: text
       display: 'Project Title'
       validate:
         - required
+    handle: project_title
   -
-    handle: subtitle
     field:
       type: text
       display: Subtitle
+    handle: subtitle
   -
-    handle: location
     field:
       type: text
       display: Location
+    handle: location
   -
-    handle: description
     field:
+      type: bard
       buttons:
         - h2
         - h3
@@ -43,32 +43,32 @@ fields:
         - h5
         - h6
         - underline
-      remove_empty_nodes: false
-      type: bard
       display: Description
+      remove_empty_nodes: false
+    handle: description
   -
-    handle: button
     field:
       type: group
-      display: Button
       fields:
         -
-          handle: button_text
           field:
             type: text
             display: 'Button Text'
+          handle: button_text
         -
-          handle: button_url
           field:
             type: link
             display: 'Button URL'
+          handle: button_url
+      display: Button
+    handle: button
   -
-    handle: flip
     field:
       type: toggle
       display: 'Flip Orientation'
+    handle: flip
   -
-    handle: full_width
     field:
       type: toggle
       display: 'Full Width'
+    handle: full_width
