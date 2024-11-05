@@ -114,11 +114,6 @@ tabs:
                       fields:
                         -
                           import: products_accordion
-          -
-            handle: template
-            field:
-              type: template
-              display: Template
   sidebar:
     display: Sidebar
     sections:

@@ -1,5 +1,5 @@
 title: Products
-template: default
+template: products/single
 layout: layout
 mount: a13f0f45-0246-45bb-9d78-2af2c8d58b1e
 taxonomies:

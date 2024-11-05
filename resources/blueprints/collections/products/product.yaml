@@ -52,12 +52,6 @@ tabs:
               display: 'Related Products'
               collections:
                 - products
-          -
-            handle: template
-            field:
-              type: template
-              display: Template
-              localizable: true
   sidebar:
     display: Sidebar
     sections:

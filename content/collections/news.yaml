@@ -1,5 +1,5 @@
 title: News
-template: news/show
+template: news/single
 layout: layout
 revisions: false
 route: '/news/{year}-{month}-{day}/{slug}'
@@ -8,3 +8,8 @@ sort_dir: asc
 date_behavior:
   past: public
   future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
