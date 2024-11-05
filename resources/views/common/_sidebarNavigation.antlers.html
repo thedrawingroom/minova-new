@@ -1,41 +1,27 @@
 <ul class="block-products-accordion">
   {{ nav :handle="handle" }}
-    <li x-data="{ isExpanded: false }">
-      <div class="container flex justify-between items-center py-">
-
+    <li x-data="{ isExpanded: {{ parent:url == url }} }">
+      <div class="container flex justify-between items-center py-2">
         <div class="flex flex-row">
-          <div class="h-6 w-1 mr-4 {{ if url == current_url }}bg-yellow-400{{ else }}bg-gray-400{{ /if }}"></div>
+          <div class="h-6 w-1 mr-4 {{ if url == current_uri }}bg-yellow-400{{ else }}bg-gray-400{{ /if }}"></div>
           <a href="{{ url }}" class="mb-0">{{ title }}</a>
         </div>
 
-        <button
-          type="button"
-          @click="isExpanded = ! isExpanded"
-          :aria-expanded="isExpanded ? 'true' : 'false'"
-          aria-controls="accordionItem{{ id }}"
-          class="focus:outline-none"
-        >
+        <button type="button" @click="isExpanded = ! isExpanded" :aria-expanded="isExpanded ? 'true' : 'false'"
+          aria-controls="accordionItem{{ id }}" class="focus:outline-none">
           <span x-show="!isExpanded">[+]</span>
           <span x-show="isExpanded">[-]</span>
         </button>
-        
       </div>
-      
       {{ if children }}
-        <div
-          x-show="isExpanded"
-          x-cloak
-          id="accordionItem{{ id }}"
-          role="region"
-          class="w-full"
-          aria-labelledby="controlsAccordionItem{{ id }}"
-          x-collapse
-        >
+        <div x-show="isExpanded" x-cloak id="accordionItem{{ id }}" role="region" class="w-full"
+          aria-labelledby="controlsAccordionItem{{ id }}" x-collapse>
           <ul class="px-6 py-4">
             {{ children }}
               <li class="px-6 py-2">
                 <div class="flex flex-row">
-                  <div class="h-6 w-1 mr-4 {{ if url == current_uri }}bg-yellow-400{{ else }}bg-gray-400{{ /if }}"></div>
+                  <div class="h-6 w-1 mr-4 {{ if url == current_uri }}bg-yellow-400{{ else }}bg-gray-400{{ /if }}">
+                  </div>
                   <a href="{{ url }}" class="mb-0">{{ title }}</a>
                 </div>
               </li>

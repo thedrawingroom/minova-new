@@ -1,13 +1,14 @@
 title: Products
 template: products/show
 layout: layout
+mount: 15db0f71-3808-4546-b86f-a692f83c9a4e
 taxonomies:
   - locale
   - region
   - indust
   - common_use
 revisions: false
-route: '/products/{slug}'
+route: '{{ if depth == 1 }}{{ mount }}{{ /if }}{{ parent_uri }}/{{ slug }}'
 sort_dir: asc
 date_behavior:
   past: public
