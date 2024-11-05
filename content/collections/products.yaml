@@ -13,10 +13,14 @@ date_behavior:
   past: public
   future: private
 preview_targets:
-  -
-    label: Entry
+  - label: Entry
     url: '{permalink}'
     refresh: true
 structure:
   root: false
   slugs: true
+sites:
+  - default
+  - americas
+  - asia_pacific
+  - emea_cis

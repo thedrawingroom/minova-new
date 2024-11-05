@@ -5,3 +5,8 @@ revisions: false
 route: '{parent_uri}/{slug}'
 structure:
   root: true
+sites:
+  - default
+  - americas
+  - asia_pacific
+  - emea_cis

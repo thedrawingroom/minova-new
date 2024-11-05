@@ -8,3 +8,8 @@ sort_dir: asc
 date_behavior:
   past: public
   future: private
+sites:
+  - default
+  - americas
+  - asia_pacific
+  - emea_cis

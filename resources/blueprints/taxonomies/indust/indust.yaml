@@ -5,43 +5,45 @@ tabs:
       -
         fields:
           -
+            handle: title
             field:
               type: text
               required: true
               validate:
                 - required
-            handle: title
+              localizable: true
           -
+            handle: content
             field:
               type: markdown
               display: Content
               localizable: true
-            handle: content
           -
+            handle: author
             field:
               type: users
               default: current
               display: Author
               max_items: 1
               localizable: true
-            handle: author
           -
+            handle: template
             field:
               type: template
               display: Template
               localizable: true
-            handle: template
   sidebar:
     display: Sidebar
     sections:
       -
         fields:
           -
+            handle: slug
             field:
               type: slug
               required: true
               validate:
                 - required
                 - 'max:200'
-            handle: slug
+              localizable: false
 title: Industry

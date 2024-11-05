@@ -5,23 +5,28 @@ tabs:
       -
         fields:
           -
+            handle: title
             field:
               type: text
-              display: Title
               required: true
+              display: Title
               validate:
                 - required
-            handle: title
+              localizable: true
           -
+            handle: image
             field:
               type: assets
               display: Image
               container: assets
               max_files: 1
-            handle: image
+              localizable: true
           -
+            handle: banner
             field:
               type: group
+              display: Banner
+              localizable: true
               fields:
                 -
                   field:
@@ -35,64 +40,76 @@ tabs:
                     container: assets
                     max_files: 1
                   handle: image
-              display: Banner
-            handle: banner
           -
             import: main_bard
           -
+            handle: related_products
             field:
               type: entries
               display: 'Related Products'
               collections:
                 - products
-            handle: related_products
+              localizable: true
           -
+            handle: template
             field:
               type: template
               display: Template
               localizable: true
-            handle: template
   sidebar:
     display: Sidebar
     sections:
       -
         fields:
           -
+            handle: slug
             field:
               type: slug
-              validate: 'max:200'
               localizable: true
-            handle: slug
+              validate: 'max:200'
           -
+            handle: locale
             field:
               mode: select
               type: terms
               display: Locale
               taxonomies:
                 - locale
-            handle: locale
+              localizable: false
           -
+            handle: region
             field:
               mode: select
               type: terms
               display: Region
               taxonomies:
                 - region
-            handle: region
+              localizable: false
           -
+            handle: indust
             field:
               mode: select
               type: terms
               display: Industries
               taxonomies:
                 - indust
-            handle: indust
+              localizable: false
           -
+            handle: common_use
             field:
               mode: select
               type: terms
               display: 'Common Use'
               taxonomies:
                 - common_use
-            handle: common_use
+              localizable: false
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - products
+              max_items: 1
+              listable: false
+              localizable: true
 title: Product
