@@ -1,33 +1,31 @@
 {{ if team_members }}
-  <div class="block-team-members mb-10 bg-neutral-200">
-    <div class="container py-14">
+  <div class="block-team-members bg-slate-200 py-8 lg:py-12">
+    <div class="container">
       {{ if title }}
         {{ partial:common/sectionTitle text="Meet our team" }}
       {{ /if }}
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10 xl:grid-cols-3 2xl:grid-cols-4">
         {{ team_members }}
-          <div class="bg-white text-center shadow-xl">
+          <div class="relative overflow-hidden rounded-2xl bg-white text-center">
             {{ if image }}
               {{ partial:common/image class="w-full object-cover md:aspect-square" :url="image" :alt="image:alt" }}
             {{ /if }}
-            <div
-              class="flex flex-col items-center justify-center bg-gradient-to-r from-neutral-300 to-zinc-50 p-5 text-center"
-            >
+            <div class="bg-minova-blue flex flex-col items-center justify-center p-5 text-center text-white">
               {{ if name }}
-                <h4 class="mb-2 capitalize">{{ name }}</h4>
+                <p class="mb-1 text-2xl">{{ name }}</p>
               {{ /if }}
               {{ if job_title }}
-                <p class="mb-0 uppercase">{{ job_title }}</p>
+                <p class="mb-0 text-sm uppercase">{{ job_title }}</p>
               {{ /if }}
             </div>
             {{ if about }}
-              <div class="bg-zinc-100 p-5">
-                <p class="bg-zinc-100 text-lg/relaxed">{{ about }}</p>
+              <div class="bg-slate-100 p-5 text-base">
+                <p>{{ about }}</p>
               </div>
             {{ /if }}
             {{ if quote }}
               <div class="p-5">
-                <p class="text-base/relaxed">{{ quote }}</p>
+                <p class="text-sm">{{ quote }}</p>
               </div>
             {{ /if }}
           </div>

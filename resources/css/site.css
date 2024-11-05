@@ -1,19 +1,16 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import '@fortawesome/fontawesome-pro/css/all';
 
 @font-face {
-  font-family: 'Flama';
-  src: url('/public/fonts/flama-basic.woff') format('woff');
+  font-family: 'Flama Book';
+  src:
+    url('/public/fonts/Flama-Book.woff2') format('woff2'),
+    url('/public/fonts/Flama-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'FlamaBlack';
-  src: url('/public/fonts/flamablack.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
@@ -24,28 +21,16 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply mb-6 leading-tight;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-flamablack font-bold uppercase;
+  body {
+    @apply text-minova-blue m-0 p-0;
   }
 
   h1 {
-    @apply text-5xl md:text-7xl;
+    @apply text-5xl md:text-6xl;
   }
 
   h2 {
-    @apply text-4xl md:text-6xl;
+    @apply text-4xl md:text-5xl;
   }
 
   h3 {
@@ -64,8 +49,17 @@
     @apply text-lg;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-flama-book mb-6 uppercase leading-tight tracking-wider;
+  }
+
   p {
-    @apply mb-4 font-helvetica text-lg;
+    @apply mb-4 font-inter text-lg leading-relaxed;
   }
 
   table {
@@ -84,19 +78,19 @@
 
       &:first-of-type {
         td {
-          @apply bg-neutral-700 uppercase text-minova-gold;
+          @apply bg-slate-700 uppercase text-minova-gold;
         }
       }
 
       &:nth-child(odd):not(:first-of-type) {
         td {
-          @apply bg-neutral-100;
+          @apply bg-slate-100;
         }
       }
 
       &:nth-child(even) {
         td {
-          @apply bg-neutral-50;
+          @apply bg-slate-50;
         }
       }
     }
@@ -104,8 +98,16 @@
 }
 
 @layer components {
+  .slick-track {
+    @apply !flex;
+  }
+
+  .slick-slide {
+    @apply !float-none;
+  }
   .slick-dots {
-    @apply absolute -bottom-12 left-1/2 z-10 m-0 flex -translate-x-1/2 list-none flex-wrap p-0;
+    @apply flex justify-center pt-6;
+    /* @apply absolute -bottom-12 left-1/2 z-10 m-0 flex -translate-x-1/2 list-none flex-wrap p-0; */
   }
 
   .slick-dots li {
@@ -113,7 +115,21 @@
   }
 
   .slick-dots button {
-    @apply block size-4 cursor-pointer rounded-full border-0 bg-white/20 p-0 text-[0]/[0] shadow outline-0 transition;
+    @apply block size-4 cursor-pointer rounded-full border-0 bg-white/40 p-0 text-[0]/[0] shadow outline-0 transition;
+  }
+
+  .slick-dots-invert {
+    .slick-dots {
+      button {
+        @apply bg-minova-blue/40;
+      }
+
+      .slick-active {
+        button {
+          @apply bg-minova-gold opacity-100;
+        }
+      }
+    }
   }
 
   .product-slider .slick-dots .slick-active button {

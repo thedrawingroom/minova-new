@@ -20,6 +20,7 @@
   "dependencies": {
     "@alpinejs/collapse": "^3.14.3",
     "@awesome.me/kit-04ebf634dd": "^1.0.7",
+    "@fortawesome/fontawesome-pro": "^6.6.0",
     "alpinejs": "^3.14.3",
     "slick-carousel": "^1.8.1"
   }

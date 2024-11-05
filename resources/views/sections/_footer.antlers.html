@@ -1,21 +1,7 @@
 <footer class="border-t border-neutral-300">
-  <div class="bg-neutral-100 py-10 lg:py-14">
+  <div class="bg-slate-200 py-10 lg:py-14">
     <div class="container grid grid-cols-1 lg:grid-cols-2">
-      <nav class="mb-10 lg:mb-0">
-        <ul class="grid grid-cols-1 gap-3 lg:grid-cols-2 text-center lg:text-left">
-          {{ nav:footer }}
-            <li>
-              <a href="{{ url }}" class="group relative">
-                <span
-                  class="relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-0 after:bg-minova-gold after:transition-all after:duration-300 after:ease-in-out after:content-[''] group-hover:after:w-full"
-                >
-                  {{ title }}
-                </span>
-              </a>
-            </li>
-          {{ /nav:footer }}
-        </ul>
-      </nav>
+      {{ partial:common/navigationFooter }}
       <div class="flex justify-end">
         <div class="mx-auto lg:mr-0">
           {{ partial:common/image class="w-full max-w-40 lg:max-w-56 h-auto" url="/assets/minova_logo_grey.svg" alt="Minova Logo" }}
@@ -26,43 +12,8 @@
   <div class="bg-white py-10">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-3 lg:items-center mb-6">
-        <nav class="mb-4 lg:mb-0">
-          <ul class="-mx-1 flex items-center justify-center lg:justify-start">
-            {{ nav:social }}
-              <li class="px-1">
-                <a
-                  href="{{ url }}"
-                  class="flex size-10 items-center justify-center rounded-full bg-gray-300 text-white"
-                >
-                  {{ if icon == 'facebook' }}
-                    <i class="fa-brands fa-facebook-f"></i>
-                  {{ elseif icon == 'youtube' }}
-                    <i class="fa-brands fa-youtube"></i>
-                  {{ elseif icon == 'twitter' }}
-                    <i class="fa-brands fa-x-twitter"></i>
-                  {{ elseif icon == 'linkedin' }}
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  {{ /if }}
-                </a>
-              </li>
-            {{ /nav:social }}
-          </ul>
-        </nav>
-        <nav class="lg:col-span-4 xl:col-span-3">
-          <ul class="-mx-1 flex flex-col lg:flex-row items-center justify-center lg:justify-end xl:justify-center gap-3 text-center">
-            {{ nav:legal }}
-              <li class="px-1">
-                <a href="{{ url }}" class="group relative text-sm">
-                  <span
-                    class="relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out after:content-[''] group-hover:after:w-full"
-                  >
-                    {{ title }}
-                  </span>
-                </a>
-              </li>
-            {{ /nav:legal }}
-          </ul>
-        </nav>
+        {{ partial:common/navigationSocial }}
+        {{ partial:common/navigationLegal }}
         <div class="hidden lg:block"></div>
       </div>
       <p class="mb-0 text-center text-sm text-gray-600">Copyright Minova 2024. All rights reserved.</p>

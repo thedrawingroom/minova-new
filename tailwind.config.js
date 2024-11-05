@@ -18,9 +18,7 @@ export default {
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        flama: ['Flama', 'sans-serif'],
-        flamablack: ['FlamaBlack', 'sans-serif'],
-        helvetica: ['Helvetica', 'sans-serif'],
+        'flama-book': ['Flama Book', 'sans-serif'],
       },
       letterSpacing: {
         '00': '0',
@@ -30,6 +28,8 @@ export default {
       },
       colors: {
         'minova-gold': '#FAB90A',
+        'minova-blue': '#1D2B4C',
+        'minova-grey': '#C8C8C8',
       },
       borderRadius: {
         button: '25px',

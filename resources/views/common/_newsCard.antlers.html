@@ -1,0 +1,25 @@
+<a href="{{ slug }}" class="group bg-white shadow-xl relative overflow-hidden rounded-2xl">
+  {{ if image }}
+    <div class="aspect-4/3 overflow-hidden">
+      {{ partial:common/image class="size-full object-cover transition-transform duration-500 group-hover:scale-105" :url="image" :alt="image:alt" }}
+    </div>
+  {{ /if }}
+  <div class="px-6 py-8">
+    <div class="mb-8">
+      {{ if title }}
+        <h5 class="mb-4 line-clamp-1">{{ title }}</h5>
+      {{ /if }}
+      {{ if short_description }}
+        <p class="mb-0 line-clamp-2">{{ short_description }}</p>
+      {{ /if }}
+    </div>
+    <div class="flex justify-end">
+      <p class="font-flama-book mb-0 uppercase text-base">
+        <span class="flex items-center justify-center">
+          <span>Read more</span>
+          <i class="fa-regular fa-chevron-right ml-2"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</a>

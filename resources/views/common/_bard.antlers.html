@@ -1,5 +1,5 @@
 {{ data }}
-  <div class="mb-10">
+  <div class="mb-10 2xl:mb-14">
     {{ if type == "text" }}
       {{ text }}
     {{ elseif type == "subtitle" }}
@@ -14,7 +14,7 @@
       {{ if images }}
         <div class="grid grid-cols-3 gap-2">
           {{ images }}
-            <div class="flex aspect-square items-center justify-center bg-neutral-100">
+            <div class="flex aspect-square items-center justify-center bg-slate-100">
               {{ partial:common/image class="w-auto h-auto max-w-[90%] max-h-[90%] object-contain" :url="url" :alt="alt" }}
             </div>
           {{ /images }}
@@ -36,29 +36,42 @@
     {{ elseif type == "project_image_block" }}
       <div class="mb-6 lg:mb-0">
         {{ if project_image }}
-          {{ partial:common/image class="h-auto w-full max-w-[90%]" :url="project_image" :alt="project_image:alt" }}
+          <div class="{{ ['justify-start lg:justify-end' => flip, 'justify-start' => !flip] | classes }} flex">
+            <div class="max-w-[90%]">
+              {{ partial:common/image class="h-auto w-full rounded-2xl " :url="project_image" :alt="project_image:alt" }}
+            </div>
+          </div>
         {{ /if }}
         {{ if project_title }}
-          <div class="-mt-12 flex justify-end">
-            <div class="max-w-[70%] bg-neutral-800 p-5 lg:max-w-[50%] 2xl:p-8">
-              <p class="mb-0 font-flamablack text-3xl text-white 2xl:text-4xl">{{ project_title }}</p>
+          <div class="{{ ['justify-end lg:justify-start' => flip, 'justify-end' => !flip] | classes }} -mt-12 flex">
+            <div class="bg-minova-blue max-w-[70%] rounded-2xl p-5 text-center lg:max-w-[50%] lg:p-8 2xl:p-14">
+              <h4 class="mb-0 text-white">{{ project_title }}</h4>
             </div>
           </div>
         {{ /if }}
       </div>
-      <div class="{{ ['w-full' => full_width, 'lg:w-1/2 lg:-mt-12' => !full_width] | classes }}">
-        {{ if subtitle }}
-          {{ partial:common/subtitle :text="subtitle" }}
-        {{ /if }}
-        {{ if location }}
-          <p class="text-base">Location:&nbsp;{{ location }}</p>
-        {{ /if }}
-        {{ if description }}
-          {{ description }}
-        {{ /if }}
-        {{ if button }}
-          {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
-        {{ /if }}
+      <div class="{{ ['justify-start lg:justify-end' => flip, 'justify-start' => !flip] | classes }} flex">
+        <div class="{{ ['w-full' => full_width, 'lg:w-[45%] lg:-mt-12' => !full_width] | classes }}">
+          <div class="mb-6">
+            <div class="mb-6">
+              {{ if subtitle }}
+                <h4 class="mb-3">{{ subtitle }}</h4>
+              {{ /if }}
+              {{ if location }}
+                <p class="font-flama-book mb-0 text-lg">
+                  <span class="uppercase">Location</span>
+                  : {{ location }}
+                </p>
+              {{ /if }}
+            </div>
+            {{ if description }}
+              {{ description }}
+            {{ /if }}
+          </div>
+          {{ if button }}
+            {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+          {{ /if }}
+        </div>
       </div>
     {{ elseif type == "video" }}
       {{ partial:blocks/video :video_type="video_type" :video_link="video_link" :video_file="video_file" }}

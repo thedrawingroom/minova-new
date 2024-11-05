@@ -1,19 +1,21 @@
-<div class="flex h-full flex-col bg-white p-5 xl:p-7">
-  <a class="mb-5 block aspect-square bg-neutral-50" href="{{ slug }}">
+<div
+  class="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white p-5 transition-transform lg:hover:scale-105 xl:p-7"
+>
+  <a class="relative mb-5 block aspect-square overflow-hidden rounded-2xl bg-slate-50" href="{{ slug }}">
     {{ if image }}
       {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
     {{ /if }}
   </a>
-  {{ if title }}
-    <div class="mb-5">
-      <h5 class="mb-0 font-flama text-2xl">{{ title }}</h5>
-    </div>
-  {{ /if }}
-  {{ if short_description }}
-    <div class="mb-5">
-      <p class="mb-0 line-clamp-2">{{ short_description }}</p>
-    </div>
-  {{ /if }}
+  <div class="mb-6">
+    {{ if title }}
+      <div class="mb-3">
+        <h5 class="mb-0 text-2xl">{{ title }}</h5>
+      </div>
+    {{ /if }}
+    {{ if short_description }}
+      <p class="mb-0 line-clamp-2 text-sm">{{ short_description }}</p>
+    {{ /if }}
+  </div>
   <div class="mt-auto">
     <div>
       {{ partial:common/button :url="slug" :text="button_text" style="gold" size="small" }}

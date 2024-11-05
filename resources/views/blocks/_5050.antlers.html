@@ -1,5 +1,5 @@
 {{ if content || page_links || image }}
-  <div class="block-5050 mb-10">
+  <div class="block-5050 py-8 lg:py-12">
     <div class="container grid grid-cols-1 gap-7 lg:grid-cols-2 lg:gap-10">
       <div class="lg:order-2 lg:flex lg:flex-col lg:justify-center">
         {{ if content }}
@@ -14,17 +14,17 @@
                 <li>
                   <a
                     href="{{ url }}"
-                    class="border-minova-gold mb-5 block border-b-4 pb-2 font-flamablack text-2xl uppercase"
+                    class="border-minova-gold mb-5 flex items-center border-b-4 pb-2 text-xl uppercase"
                   >
-                    {{ title }}
-                    >
+                    <span>{{ title }}</span>
+                    <i class="fa-regular fa-chevron-right fa-2xs ml-2"></i>
                   </a>
                 </li>
               {{ /if }}
             {{ /page_links }}
           </ul>
         {{ /if }}
-        {{ if button }}
+        {{ if button:label }}
           <div>
             {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
           </div>

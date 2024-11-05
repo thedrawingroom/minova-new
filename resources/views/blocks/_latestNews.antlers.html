@@ -1,31 +1,12 @@
-<div class="block-latest-news bg-gradient-to-r from-neutral-500 to-neutral-400">
-  <div class="container py-14">
+<div class="block-latest-news bg-minova-blue py-8 lg:py-12">
+  <div class="container">
     <div class="mb-10 flex items-center justify-between">
-      <h3 class="mb-0 text-white">Latest news</h3>
+      {{ partial:common/sectionTitle text="Latest news" invert="true" noMargin="true" }}
       {{ partial:common/button text="All news" style="inline" }}
     </div>
     <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
       {{ collection:news limit="3" }}
-        <a href="{{ slug }}" class="group bg-white shadow-xl">
-          {{ if image }}
-            <div class="aspect-4/3 overflow-hidden">
-              {{ partial:common/image class="size-full object-cover transition-transform duration-500 group-hover:scale-105" :url="image" :alt="image:alt" }}
-            </div>
-          {{ /if }}
-          <div class="p-6 2xl:p-10">
-            <div class="mb-8">
-              {{ if title }}
-                <h5 class="mb-4 line-clamp-1 text-2xl font-bold">{{ title }}</h5>
-              {{ /if }}
-              {{ if short_description }}
-                <p class="mb-0 line-clamp-2">{{ short_description }}</p>
-              {{ /if }}
-            </div>
-            <div class="flex justify-end">
-              <p class="mb-0 uppercase">Read more</p>
-            </div>
-          </div>
-        </a>
+        {{ partial:common/newsCard :image="image" :slug="slug" :title="title" :short_description="short_description" }}
       {{ /collection:news }}
     </div>
   </div>
