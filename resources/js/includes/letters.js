@@ -9,8 +9,9 @@ export default {
       const length = words.length;
 
       if (length > 1) {
-        const lastItem = ' <span style="color: #FAB90A;">' + words.splice(-1) + '</span>';
-        heading.html([words, lastItem].join(''));
+        const lastItem = ['<span style="color: #FAB90A;"> ' + words.splice(-1) + '</span>'];
+        const allWords = words.concat(lastItem);
+        heading.html(allWords.join(' '));
       }
     });
   },
