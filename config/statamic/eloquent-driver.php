@@ -30,7 +30,7 @@ return [
     ],
 
     'collection_trees' => [
-        'driver' => 'file',
+        'driver' => 'eloquent',
         'model' => \Statamic\Eloquent\Structures\TreeModel::class,
         'tree' => \Statamic\Eloquent\Structures\CollectionTree::class,
     ],
