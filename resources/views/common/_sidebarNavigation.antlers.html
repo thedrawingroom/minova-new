@@ -1,6 +1,6 @@
 <ul class="block-products-accordion">
   {{ nav :handle="handle" }}
-    <li x-data="{ isExpanded: {{ parent:url == url }} }">
+    <li x-data="{ isExpanded: false }">
       <div class="container flex justify-between items-center py-2">
         <div class="flex flex-row">
           <div class="h-6 w-1 mr-4 {{ if url == current_uri }}bg-yellow-400{{ else }}bg-gray-400{{ /if }}"></div>
