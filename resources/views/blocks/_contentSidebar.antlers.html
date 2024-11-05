@@ -1,6 +1,8 @@
 <div class="block-content-sidebar">
   <div class="container grid gap-10 lg:grid-cols-12 py-8 lg:py-12">
-    <div class="lg:col-span-3"></div>
+    <div class="lg:col-span-3">
+      {{ partial:common/navigationSidebar }}
+    </div>
     <div class="lg:col-span-9">
       <div class="{{ ['lg:grid-cols-9' => downloads] | classes }} grid gap-10">
         <div class="{{ ['lg:col-span-6' => downloads] | classes }}">
