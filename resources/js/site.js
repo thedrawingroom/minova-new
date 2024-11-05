@@ -3,8 +3,9 @@ import Alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
 
 // Component files
-import sliders from './components/sliders';
-import letters from './components/letters';
+import sliders from './includes/sliders';
+import letters from './includes/letters';
+import global from './includes/global';
 
 // Alpine
 window.Alpine = Alpine;
@@ -15,4 +16,5 @@ Alpine.start();
 window.addEventListener('DOMContentLoaded', () => {
   sliders.init();
   letters.init();
+  global.init();
 });
