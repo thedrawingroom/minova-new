@@ -1,19 +1,16 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import '@fortawesome/fontawesome-pro/css/all';
 
 @font-face {
-  font-family: 'Flama';
-  src: url('/public/fonts/flama-basic.woff') format('woff');
+  font-family: 'Flama Book';
+  src:
+    url('/public/fonts/Flama-Book.woff2') format('woff2'),
+    url('/public/fonts/Flama-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'FlamaBlack';
-  src: url('/public/fonts/flamablack.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
@@ -24,28 +21,16 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply mb-6 leading-tight;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-flamablack font-bold uppercase;
+  body {
+    @apply text-minova-blue m-0 p-0;
   }
 
   h1 {
-    @apply text-5xl md:text-7xl;
+    @apply text-5xl md:text-6xl;
   }
 
   h2 {
-    @apply text-4xl md:text-6xl;
+    @apply text-4xl md:text-5xl;
   }
 
   h3 {
@@ -64,8 +49,17 @@
     @apply text-lg;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-flama-book mb-6 uppercase leading-tight tracking-wider;
+  }
+
   p {
-    @apply mb-4 font-helvetica text-lg;
+    @apply mb-4 font-inter text-lg leading-relaxed;
   }
 
   table {

@@ -1,4 +1,4 @@
-<div class="flex h-full flex-col bg-white p-5 xl:p-7">
+<div class="flex h-full flex-col bg-white relative overflow-hidden rounded-2xl p-5 xl:p-7">
   <a class="mb-5 block aspect-square bg-neutral-50" href="{{ slug }}">
     {{ if image }}
       {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
@@ -6,7 +6,7 @@
   </a>
   {{ if title }}
     <div class="mb-5">
-      <h5 class="mb-0 font-flama text-2xl">{{ title }}</h5>
+      <h5 class="mb-0  text-2xl">{{ title }}</h5>
     </div>
   {{ /if }}
   {{ if short_description }}

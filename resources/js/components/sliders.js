@@ -1,5 +1,5 @@
-const prevArrow = `<button type="button" class="slick-arrow slick-arrow--prev absolute content-[''] size-0 border-y-transparent border-y-[25px] border-r-white border-r-[40px] top-1/2 right-6 opacity-60"></button></button>`;
-const nextArrow = `<button type="button" class="slick-arrow slick-arrow--next absolute content-[''] size-0 border-y-transparent border-y-[25px] border-l-white border-l-[40px] top-1/2 right-6 opacity-60"></button>`;
+const prevArrow = `<button class="slick-arrow slick-arrow--prev"><i class="fa-regular fa-chevron-left fa-2x text-minova-gold absolute left-0 top-1/2 -translate-y-1/2 p-4"></i></button>`;
+const nextArrow = `<button class="slick-arrow slick-arrow--next"><i class="fa-regular fa-chevron-right fa-2x text-minova-gold absolute right-0 top-1/2 -translate-y-1/2 p-4"></i></button>`;
 
 export default {
   init() {
@@ -16,7 +16,7 @@ export default {
         slidesToScroll: 1,
         arrows: true,
         dots: false,
-        prevArrow: '',
+        prevArrow: prevArrow,
         nextArrow: nextArrow,
         rows: 0,
         autoplay: false,
@@ -26,6 +26,7 @@ export default {
             breakpoint: 992,
             settings: {
               arrows: false,
+              dots: true,
               autoplay: true,
               adaptiveHeight: true,
             },
@@ -36,7 +37,7 @@ export default {
 
     if (this.sliderProductEl.length) {
       this.sliderProductEl.slick({
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         arrows: true,
         dots: false,
@@ -48,6 +49,12 @@ export default {
         responsive: [
           {
             breakpoint: 1440,
+            settings: {
+              slidesToShow: 4,
+            },
+          },
+          {
+            breakpoint: 1280,
             settings: {
               slidesToShow: 3,
             },

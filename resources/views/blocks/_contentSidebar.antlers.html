@@ -15,9 +15,11 @@
               <ul>
                 {{ downloads }}
                   <li class="mb-1">
-                    <a href="{{ file }}" download class="flex bg-white px-3 py-2 justify-between items-center text-black">
-                      <span class="text-xl">{{ title }}</span>
-                      <span class="bg-minova-gold size-10 flex items-center justify-center text-white">icon</span>
+                    <a href="{{ file }}" download class="flex bg-white px-3 py-2 justify-between items-center">
+                      <span>{{ title }}</span>
+                      <span class="bg-minova-gold size-8 flex items-center justify-center text-white">
+                        <i class="fa-regular fa-arrow-down"></i>
+                      </span>
                     </a>
                   </li>
                 {{ /downloads }}

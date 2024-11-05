@@ -1,39 +1,38 @@
 {{ if projects }}
   <div class="block-project-slider">
-    <div class="project-slider">
+    <div class="project-slider py-14">
       {{ projects }}
         <div>
-          <div class="grid grid-cols-1 lg:grid-cols-2">
-            <div
-              class="relative mx-auto bg-white px-6 sm:max-w-[540px] md:max-w-[720px] lg:ml-auto lg:mr-0 lg:max-w-[480px] xl:max-w-[570px] 2xl:max-w-[720px] 3xl:max-w-[768px]"
-            >
-              <div class="relative z-[1] py-14 lg:flex lg:h-full lg:flex-col lg:justify-center lg:px-0">
-                <p class="text-xl uppercase">Project</p>
-                {{ if title }}
-                  <h3>{{ title }}</h3>
-                {{ /if }}
-                {{ if location }}
-                  <p class="text-lg">
-                    <span class="uppercase">Location</span>
-                    : {{ location }}
-                  </p>
-                {{ /if }}
+          <div class="container grid grid-cols-1 gap-10 lg:grid-cols-2 gap-10">
+            <div class="lg:flex lg:flex-col lg:justify-center">
+              <div class="mb-6">
+                <div class="mb-6">
+                  <p class="mb-2 text-lg uppercase">Project</p>
+                  {{ if title }}
+                    <h3 class="mb-3">{{ title }}</h3>
+                  {{ /if }}
+                  {{ if location }}
+                    <p class="font-flama-book mb-0 text-lg">
+                      <span class="uppercase">Location</span>
+                      : {{ location }}
+                    </p>
+                  {{ /if }}
+                </div>
                 {{ if description }}
-                  <p>{{ description }}</p>
-                {{ /if }}
-                {{ if button }}
-                  <div>
-                    {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
-                  </div>
+                  <p class="mb-0 text-base leading-relaxed">{{ description }}</p>
                 {{ /if }}
               </div>
-              <div
-                class="absolute right-1/2 top-full size-20 -translate-y-1/2 translate-x-1/2 rotate-45 bg-white lg:right-0 lg:top-1/2 lg:-translate-y-1/2 xl:size-28"
-              ></div>
+              {{ if button }}
+                <div>
+                  {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+                </div>
+              {{ /if }}
             </div>
             <div>
               {{ if image }}
-                {{ partial:common/image :url="image" :alt="image:alt" class="size-full object-cover" }}
+                <div class="relative aspect-4/3 overflow-hidden rounded-2xl">
+                  {{ partial:common/image :url="image" :alt="image:alt" class="absolute top-0 left-0 size-full object-cover" }}
+                </div>
               {{ /if }}
             </div>
           </div>

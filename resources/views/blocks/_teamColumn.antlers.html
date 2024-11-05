@@ -6,7 +6,7 @@
       {{ /if }}
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
         {{ team_members }}
-          <div class="bg-white text-center shadow-xl">
+          <div class="bg-white text-center relative overflow-hidden rounded-2xl">
             {{ if image }}
               {{ partial:common/image class="w-full object-cover md:aspect-square" :url="image" :alt="image:alt" }}
             {{ /if }}
@@ -14,7 +14,7 @@
               class="flex flex-col items-center justify-center bg-gradient-to-r from-neutral-300 to-zinc-50 p-5 text-center"
             >
               {{ if name }}
-                <h4 class="mb-2 capitalize">{{ name }}</h4>
+                <h4 class="mb-2">{{ name }}</h4>
               {{ /if }}
               {{ if job_title }}
                 <p class="mb-0 uppercase">{{ job_title }}</p>
