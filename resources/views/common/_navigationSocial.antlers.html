@@ -1,0 +1,22 @@
+<nav class="mb-4 lg:mb-0">
+  <ul class="-mx-1 flex items-center justify-center lg:justify-start">
+    {{ nav:social }}
+      <li class="px-1">
+        <a
+          href="{{ url }}"
+          class="flex size-10 items-center justify-center rounded-full bg-gray-300 text-white"
+        >
+          {{ if icon == 'facebook' }}
+            <i class="fa-brands fa-facebook-f"></i>
+          {{ elseif icon == 'youtube' }}
+            <i class="fa-brands fa-youtube"></i>
+          {{ elseif icon == 'twitter' }}
+            <i class="fa-brands fa-x-twitter"></i>
+          {{ elseif icon == 'linkedin' }}
+            <i class="fa-brands fa-linkedin-in"></i>
+          {{ /if }}
+        </a>
+      </li>
+    {{ /nav:social }}
+  </ul>
+</nav>
