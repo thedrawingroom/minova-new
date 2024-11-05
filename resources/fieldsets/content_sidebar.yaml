@@ -3,8 +3,10 @@ fields:
   -
     import: main_bard
   -
+    handle: downloads
     field:
       type: grid
+      display: Downloads
       fields:
         -
           field:
@@ -18,5 +20,8 @@ fields:
             container: assets
             max_files: 1
           handle: file
-      display: Downloads
-    handle: downloads
+  -
+    handle: sidebar_navigation
+    field:
+      type: navs
+      display: 'Sidebar Navigation'

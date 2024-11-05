@@ -1,9 +1,15 @@
 <div class="block-content-sidebar">
   <div class="container grid py-14 lg:grid-cols-12 gap-10">
-    <div class="lg:col-span-3"></div>
-    <div class="lg:col-span-9">
-      <div class="{{ ['lg:grid-cols-9' => downloads] | classes }} grid gap-10">
-        <div class="{{ ['lg:col-span-6' => downloads] | classes }}">
+    <div class="lg:col-span-4">
+
+      {{ sidebar_navigation }}
+        {{ partial:common/sidebarNavigation }}
+      {{ /sidebar_navigation }}
+
+    </div>
+    <div class=" lg:col-span-8">
+      <div class="{{ ['lg:grid-cols-7' => downloads] | classes }} grid gap-10">
+        <div class="{{ ['lg:col-span-4' => downloads] | classes }}">
           {{ if bard_field }}
             {{ partial:common/bard :data="bard_field" }}
           {{ /if }}
@@ -15,7 +21,8 @@
               <ul>
                 {{ downloads }}
                   <li class="mb-1">
-                    <a href="{{ file }}" download class="flex bg-white px-3 py-2 justify-between items-center text-black">
+                    <a href="{{ file }}" download
+                      class="flex bg-white px-3 py-2 justify-between items-center text-black">
                       <span class="text-xl">{{ title }}</span>
                       <span class="bg-minova-gold size-10 flex items-center justify-center text-white">icon</span>
                     </a>

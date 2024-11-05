@@ -44,7 +44,7 @@ tabs:
                     max_files: 1
                   handle: image
           -
-            import: main_bard
+            import: content_sidebar
           -
             handle: related_products
             field:
