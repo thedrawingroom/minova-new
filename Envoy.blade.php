@@ -106,7 +106,7 @@
 
 @task('autodump')
     cd {{ $new_release_dir }}
-    composer run-script post-autoload-dump
+    sudo -S composer run-script post-autoload-dump
 @endtask
 
 @task('verify_install', ['on' => 'web'])
