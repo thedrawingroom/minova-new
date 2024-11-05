@@ -1,13 +1,14 @@
 title: Products
 template: default
 layout: layout
+mount: a13f0f45-0246-45bb-9d78-2af2c8d58b1e
 taxonomies:
   - locale
   - region
   - indust
   - common_use
 revisions: false
-route: '/products/{slug}'
+route: '{{ if depth == 1 }}{{ mount }}{{ /if }}{{ parent_uri }}/{{ slug }}'
 sort_dir: asc
 date_behavior:
   past: public
