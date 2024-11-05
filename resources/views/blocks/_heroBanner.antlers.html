@@ -1,8 +1,8 @@
 {{ if title }}
   <div
-    class="block-hero-banner {{ ['md:h-[600px]' => large_banner, 'h-[400px]' => !large_banner] | classes }} relative overflow-hidden"
+    class="block-hero-banner {{ ['md:h-[600px]' => large_banner, 'h-[450px]' => !large_banner] | classes }} relative overflow-hidden"
   >
-    <div class="container relative z-[2] flex h-full flex-col justify-center py-14">
+    <div class="container relative z-[2] flex h-full flex-col justify-center py-8 lg:py-12">
       <div class="text-white">
         <div class="{{ ['mb-4' => description] | classes }}">
           <h1 class="title-split mb-0">{{ title }}</h1>
