@@ -1,12 +1,12 @@
 {{ if cards }}
-  <div class="block-icon-columns border-minova-gold border-y-6 mb-10 bg-neutral-100">
-    <div class="container py-14">
+  <div class="block-icon-columns border-y-6 border-minova-gold bg-slate-100 py-8 lg:py-12">
+    <div class="container">
       {{ if title }}
         {{ partial:common/sectionTitle :text="title" }}
       {{ /if }}
       <div class="grid grid-cols-2 gap-5 lg:grid-cols-4 2xl:gap-10">
         {{ cards }}
-          <div class="bg-white px-4 py-6 text-center 2xl:px-5 2xl:py-10 relative overflow-hidden rounded-2xl">
+          <div class="relative overflow-hidden rounded-2xl bg-white px-4 py-6 text-center 2xl:px-5 2xl:py-10">
             {{ if icon }}
               <div class="flex h-32 items-center justify-center lg:h-48">
                 {{ partial:common/image class="max-h-full max-w-full" :url="icon" :alt="icon:alt" }}

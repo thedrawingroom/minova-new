@@ -1,15 +1,12 @@
 {{ if products }}
-  <div class="block-product-slider bg-minova-blue">
-    <div class="container py-14">
+  <div class="block-product-slider bg-minova-blue relative py-8 lg:py-12">
+    <div class="container">
       {{ if title }}
         {{ partial:common/sectionTitle :text="title" invert="true" }}
       {{ /if }}
-      <div
-        class="product-slider -mx-4 [&_.slick-slide]:h-[initial] [&_.slick-track]:flex"
-        style="position: unset"
-      >
+      <div class="product-slider 4xl:px-0 -mx-4 px-0 xl:px-8" style="position: unset">
         {{ products }}
-          <div class="h-full p-4">
+          <div class="!h-auto p-4">
             {{ partial:common/productCard :slug="slug" :image="image" :title="title" }}
           </div>
         {{ /products }}

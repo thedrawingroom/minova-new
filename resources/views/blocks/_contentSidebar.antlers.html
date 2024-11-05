@@ -1,5 +1,5 @@
-<div class="block-content-sidebar">
-  <div class="container grid py-14 lg:grid-cols-12 gap-10">
+<div class="block-content-sidebar py-8 lg:py-12">
+  <div class="container grid gap-10 lg:grid-cols-12">
     <div class="lg:col-span-3"></div>
     <div class="lg:col-span-9">
       <div class="{{ ['lg:grid-cols-9' => downloads] | classes }} grid gap-10">
@@ -15,9 +15,9 @@
               <ul>
                 {{ downloads }}
                   <li class="mb-1">
-                    <a href="{{ file }}" download class="flex bg-white px-3 py-2 justify-between items-center">
+                    <a href="{{ file }}" download class="flex items-center justify-between bg-white px-3 py-2">
                       <span>{{ title }}</span>
-                      <span class="bg-minova-gold size-8 flex items-center justify-center text-white">
+                      <span class="flex size-8 items-center justify-center bg-minova-gold text-white">
                         <i class="fa-regular fa-arrow-down"></i>
                       </span>
                     </a>

@@ -12,5 +12,7 @@ Alpine.plugin(collapse);
 Alpine.start();
 
 // Components init
-sliders.init();
-letters.init();
+window.addEventListener('DOMContentLoaded', () => {
+  sliders.init();
+  letters.init();
+});

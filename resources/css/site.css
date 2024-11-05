@@ -78,19 +78,19 @@
 
       &:first-of-type {
         td {
-          @apply bg-neutral-700 uppercase text-minova-gold;
+          @apply bg-slate-700 uppercase text-minova-gold;
         }
       }
 
       &:nth-child(odd):not(:first-of-type) {
         td {
-          @apply bg-neutral-100;
+          @apply bg-slate-100;
         }
       }
 
       &:nth-child(even) {
         td {
-          @apply bg-neutral-50;
+          @apply bg-slate-50;
         }
       }
     }
@@ -98,8 +98,16 @@
 }
 
 @layer components {
+  .slick-track {
+    @apply !flex;
+  }
+
+  .slick-slide {
+    @apply !float-none;
+  }
   .slick-dots {
-    @apply absolute -bottom-12 left-1/2 z-10 m-0 flex -translate-x-1/2 list-none flex-wrap p-0;
+    @apply flex justify-center pt-6;
+    /* @apply absolute -bottom-12 left-1/2 z-10 m-0 flex -translate-x-1/2 list-none flex-wrap p-0; */
   }
 
   .slick-dots li {
@@ -107,7 +115,21 @@
   }
 
   .slick-dots button {
-    @apply block size-4 cursor-pointer rounded-full border-0 bg-white/20 p-0 text-[0]/[0] shadow outline-0 transition;
+    @apply block size-4 cursor-pointer rounded-full border-0 bg-white/40 p-0 text-[0]/[0] shadow outline-0 transition;
+  }
+
+  .slick-dots-invert {
+    .slick-dots {
+      button {
+        @apply bg-minova-blue/40;
+      }
+
+      .slick-active {
+        button {
+          @apply bg-minova-gold opacity-100;
+        }
+      }
+    }
   }
 
   .product-slider .slick-dots .slick-active button {

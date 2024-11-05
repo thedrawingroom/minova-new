@@ -1,12 +1,17 @@
-<a class="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white hover:scale-105 transition-transform" href="{{ slug }}">
-  <div class="block aspect-square bg-neutral-50">
+<a
+  class="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white transition-transform lg:hover:scale-105"
+  href="{{ slug }}"
+>
+  <div class="block aspect-square bg-slate-50">
     {{ if image }}
       {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
     {{ /if }}
   </div>
   <div class="px-5 py-7 text-center">
     {{ if title }}
-      <h5 class="{{ ['mb-3' => include_description && short_description, 'mb-0' => !include_description] | classes }}">{{ title }}</h5>
+      <h5 class="{{ ['mb-3' => include_description && short_description, 'mb-0' => !include_description] | classes }}">
+        {{ title }}
+      </h5>
     {{ /if }}
     {{ if include_description && short_description }}
       <p class="mb-0 line-clamp-2 text-sm">{{ short_description }}</p>
