@@ -13,3 +13,8 @@ preview_targets:
     refresh: true
 structure:
   root: true
+sites:
+  - default
+  - americas
+  - asia_pacific
+  - emea_cis

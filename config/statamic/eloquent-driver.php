@@ -6,12 +6,12 @@ return [
     'table_prefix' => env('STATAMIC_ELOQUENT_PREFIX', ''),
 
     'asset_containers' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Assets\AssetContainerModel::class,
     ],
 
     'assets' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Assets\AssetModel::class,
         'asset' => \Statamic\Eloquent\Assets\Asset::class,
     ],
@@ -30,13 +30,13 @@ return [
     ],
 
     'collection_trees' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Structures\TreeModel::class,
         'tree' => \Statamic\Eloquent\Structures\CollectionTree::class,
     ],
 
     'entries' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Entries\UuidEntryModel::class,
         'entry' => \Statamic\Eloquent\Entries\Entry::class,
         'map_data_to_columns' => false,
@@ -48,32 +48,32 @@ return [
     ],
 
     'forms' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model'  => \Statamic\Eloquent\Forms\FormModel::class,
     ],
 
     'form_submissions' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model'  => \Statamic\Eloquent\Forms\SubmissionModel::class,
     ],
 
     'global_sets' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Globals\GlobalSetModel::class,
     ],
 
     'global_set_variables' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Globals\VariablesModel::class,
     ],
 
     'navigations' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Structures\NavModel::class,
     ],
 
     'navigation_trees' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Structures\TreeModel::class,
         'tree' => \Statamic\Eloquent\Structures\NavTree::class,
     ],
@@ -84,22 +84,22 @@ return [
     ],
 
     'taxonomies' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Taxonomies\TaxonomyModel::class,
     ],
 
     'terms' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Taxonomies\TermModel::class,
     ],
 
     'tokens' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Tokens\TokenModel::class,
     ],
 
     'sites' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Sites\SiteModel::class,
     ],
 ];

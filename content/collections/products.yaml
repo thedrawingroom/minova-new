@@ -21,3 +21,8 @@ preview_targets:
 structure:
   root: false
   slugs: true
+sites:
+  - default
+  - americas
+  - asia_pacific
+  - emea_cis
