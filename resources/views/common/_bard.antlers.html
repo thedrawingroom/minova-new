@@ -25,7 +25,9 @@
         <ol class="flex flex-col gap-5 md:flex-row lg:flex-wrap">
           {{ numbered_list }}
             <li class="flex">
-              <span class="mr-3 flex size-10 items-center justify-center bg-black font-bold text-white">
+              <span
+                class="mr-3 flex size-10 items-center justify-center rounded-full bg-minova-gold font-bold text-minova-blue"
+              >
                 {{ index }}
               </span>
               <span class="pt-2 font-bold">{{ title }}</span>
@@ -44,7 +46,7 @@
         {{ /if }}
         {{ if project_title }}
           <div class="{{ ['justify-end lg:justify-start' => flip, 'justify-end' => !flip] | classes }} -mt-12 flex">
-            <div class="bg-minova-blue max-w-[70%] rounded-2xl p-5 text-center lg:max-w-[50%] lg:p-8 2xl:p-14">
+            <div class="max-w-[70%] rounded-2xl bg-minova-blue p-5 text-center lg:max-w-[50%] lg:p-8 2xl:p-14">
               <h4 class="mb-0 text-white">{{ project_title }}</h4>
             </div>
           </div>
@@ -58,7 +60,7 @@
                 <h4 class="mb-3">{{ subtitle }}</h4>
               {{ /if }}
               {{ if location }}
-                <p class="font-flama-book mb-0 text-lg">
+                <p class="mb-0 font-flama-book text-lg">
                   <span class="uppercase">Location</span>
                   : {{ location }}
                 </p>

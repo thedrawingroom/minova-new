@@ -1,0 +1,16 @@
+<li class="{{ ['mb-4' => !last] | classes }} flex items-center">
+  <span class="mr-3 flex size-8 items-center justify-center">
+    {{ if url == '/industries/coal-mining' }}
+      <img src="/icons/icon_soft_rock_coal.svg" alt="soft rock icon" class="max-h-full max-w-full" />
+    {{ elseif url == '/industries/hard-rock-mining' }}
+      <img src="/icons/icon_hard_rock.svg" alt="hard rock icon" class="max-h-full max-w-full" />
+    {{ elseif url == '/industries/construction' }}
+      <img src="/icons/icon_structural_repair.svg" alt="construction icon" class="max-h-full max-w-full" />
+    {{ elseif url == '/industries/energy' }}
+      <img src="/icons/energy.png" alt="energy icon" class="max-h-full max-w-full" />
+    {{ /if }}
+  </span>
+  <span class="pt-0.5 text-lg font-bold text-white">
+    {{ title }}
+  </span>
+</li>

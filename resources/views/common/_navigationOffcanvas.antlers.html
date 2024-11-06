@@ -1,0 +1,48 @@
+<nav>
+  <ul>
+    {{ nav:offcanvas }}
+      <li x-data="{ isExpanded: false }" class="{{ ['border-b-2 border-slate-600' => !last] | classes }} text-white">
+        <div class="flex items-center justify-between">
+          <a href="{{ url }}" class="py-3 font-flama-book text-xl uppercase leading-tight tracking-wider">
+            {{ title }}
+          </a>
+          {{ if children }}
+            <button
+              type="button"
+              @click="isExpanded = ! isExpanded"
+              :aria-expanded="isExpanded ? 'true' : 'false'"
+              aria-controls="navAccordionItem{{ id }}"
+              class="focus:outline-none"
+            >
+              <i
+                class="fa-regular fa-chevron-down fa-lg ml-2 text-minova-gold transition-transform"
+                :class="isExpanded ? 'rotate-180' : ''"
+              ></i>
+            </button>
+          {{ /if }}
+        </div>
+        {{ if children }}
+          <div
+            x-show="isExpanded"
+            x-cloak
+            id="navAccordionItem{{ id }}"
+            role="region"
+            class="w-full"
+            aria-labelledby="controlsnavAccordionItem{{ id }}"
+            x-collapse
+          >
+            <ul class="pb-4 pl-3 pt-3">
+              {{ children }}
+                <li class="{{ ['mb-3' => !last] | classes }}">
+                  <a href="{{ url }}" class="font-flama-book text-lg uppercase leading-tight tracking-wider">
+                    {{ title }}
+                  </a>
+                </li>
+              {{ /children }}
+            </ul>
+          </div>
+        {{ /if }}
+      </li>
+    {{ /nav:offcanvas }}
+  </ul>
+</nav>

@@ -1,16 +1,12 @@
 <a
   href="{{ url ?? '#' }}"
-  class="{{ ['rounded-full transition-all font-bold' => style !== 'inline', 'px-4 py-1.5' => size =='small' && style !== 'inline'
+  class="{{ ['rounded-full transition-all font-bold' => style !== 'inline', 'px-4 py-1.5' => size == 'small' && style !== 'inline'
  , 'px-6 py-2' => size !== 'small' && style !== 'inline'
- , 'text-lg' => size !== 'small'
- , 'text-base' => size == 'small'
- , 'bg-minova-gold text-minova-blue border-4 border-minova-gold hover:bg-transparent active:bg-minova-gold active:opacity-70' => !style || style == 'gold'
- , 'bg-minova-blue text-white border-4 border-minova-blue hover:bg-transparent hover:text-minova-blue active:bg-minova-blue active:opacity-70' => style == 'blue'
- , 'bg-white text-minova-blue border-4 border-white hover:bg-transparent active:bg-white active:opacity-70' => style == 'white'
-, 'text-white hover:text-gray-300' => style == 'inline'] | classes }} font-flama-book tracking-wider inline-block cursor-pointer whitespace-nowrap uppercase"
+ , 'text-xl' => size !== 'small', 'text-base' => size == 'small', 'bg-minova-gold text-minova-blue border-4 border-minova-gold hover:bg-transparent active:bg-minova-gold active:opacity-70' => !style || style == 'gold'
+ , 'bg-minova-blue text-white border-4 border-minova-blue hover:bg-transparent hover:text-minova-blue active:bg-minova-blue active:opacity-70' => style == 'blue', 'bg-white text-minova-blue border-4 border-white hover:bg-transparent active:bg-white active:opacity-70' => style == 'white', 'text-white hover:text-gray-300' => style == 'inline'] | classes }} inline-block cursor-pointer whitespace-nowrap font-flama-book uppercase tracking-wider"
 >
-<span class="flex items-center justify-center">
-  <span>{{ text ?? 'Read more' }}</span>
-  <i class="fa-regular fa-chevron-right ml-2"></i>
-</span>
+  <span class="flex items-center justify-center">
+    <span>{{ text ?? 'Read more' }}</span>
+    <i class="fa-regular fa-chevron-right ml-2"></i>
+  </span>
 </a>

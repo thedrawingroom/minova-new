@@ -1,6 +1,6 @@
 {{ if content || page_links || image }}
   <div class="block-5050">
-    <div class="container grid grid-cols-1 gap-7 lg:grid-cols-2 lg:gap-10 py-8 lg:py-12">
+    <div class="container grid grid-cols-1 gap-7 py-8 lg:grid-cols-2 lg:gap-10 lg:py-12 2xl:py-14">
       <div class="lg:order-2 lg:flex lg:flex-col lg:justify-center">
         {{ if content }}
           <div class="{{ ['mb-4' => button || page_links] | classes }} text-wrap">
@@ -12,11 +12,8 @@
             {{ page_links }}
               {{ if title && url }}
                 <li>
-                  <a
-                    href="{{ url }}"
-                    class="border-minova-gold mb-5 flex items-center border-b-4 pb-2 text-xl uppercase"
-                  >
-                    <span>{{ title }}</span>
+                  <a href="{{ url }}" class="mb-5 flex items-center border-b-4 border-minova-gold pb-2">
+                    <h5 class="mb-0">{{ title }}</h5>
                     <i class="fa-regular fa-chevron-right fa-2xs ml-2"></i>
                   </a>
                 </li>

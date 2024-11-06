@@ -9,5 +9,9 @@ export default {
     window.addEventListener('resize', () => {
       addTopBlockPadding();
     });
+
+    $('.offcanvas-toggle').on('click', () => {
+      $('body').toggleClass('offcanvas-open');
+    });
   },
 };

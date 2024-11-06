@@ -1,8 +1,10 @@
 <div class="block-content-sidebar">
-  <div class="container grid gap-10 lg:grid-cols-12 py-8 lg:py-12">
-    <div class="lg:col-span-3">
-      {{ partial:common/navigationSidebar }}
-    </div>
+  <div class="container grid gap-10 py-8 lg:grid-cols-12 lg:py-12 2xl:gap-14 2xl:py-14">
+    {{ if is_product || sidebar_navigation }}
+      <div class="lg:col-span-3">
+        {{ partial:common/navigationSidebar }}
+      </div>
+    {{ /if }}
     <div class="lg:col-span-9">
       <div class="{{ ['lg:grid-cols-9' => downloads] | classes }} grid gap-10">
         <div class="{{ ['lg:col-span-6' => downloads] | classes }}">
@@ -11,14 +13,50 @@
           {{ /if }}
         </div>
         <div class="lg:col-span-3">
+          {{ if industry_sectors }}
+            <div class="rounded-t-2xl bg-minova-gold px-5 py-7">
+              <p class="mb-4 text-xl font-extrabold text-white">Industry sectors</p>
+              <ul>
+                {{ industry_sectors }}
+                  {{ partial:common/taxTermSector }}
+                {{ /industry_sectors }}
+              </ul>
+            </div>
+          {{ /if }}
+          {{ if common_uses }}
+            <div
+              class="{{ ['rounded-t-2xl' => !industry_sectors] | classes }} border-t-2 border-white bg-slate-100 px-5 py-7"
+            >
+              <p class="mb-5 text-xl font-extrabold">Common use</p>
+              <ul>
+                {{ common_uses }}
+                  {{ partial:common/taxTermItem }}
+                {{ /common_uses }}
+              </ul>
+            </div>
+          {{ /if }}
+          {{ if available_regions }}
+            <div
+              class="{{ ['rounded-t-2xl' => !industry_sectors && !common_uses] | classes }}border-t-2 border-white bg-slate-100 px-5 py-7"
+            >
+              <p class="mb-5 text-xl font-extrabold">Available Regions</p>
+              <ul>
+                {{ available_regions }}
+                  {{ partial:common/taxTermItem }}
+                {{ /available_regions }}
+              </ul>
+            </div>
+          {{ /if }}
           {{ if downloads }}
-            <div class="bg-gray-200 p-5">
-              <h4>Downloads</h4>
+            <div
+              class="{{ ['rounded-b-2xl border-t-2 border-white' => is_product, 'rounded-t-2xl' => !industry_sectors && !common_uses && !available_regions] | classes }} bg-slate-100 px-5 py-7"
+            >
+              <p class="mb-5 text-xl font-extrabold">Downloads</p>
               <ul>
                 {{ downloads }}
                   <li class="mb-1">
                     <a href="{{ file }}" download class="flex items-center justify-between bg-white px-3 py-2">
-                      <span>{{ title }}</span>
+                      <span class="text-base">{{ title }}</span>
                       <span class="flex size-8 items-center justify-center bg-minova-gold text-white">
                         <i class="fa-regular fa-arrow-down"></i>
                       </span>

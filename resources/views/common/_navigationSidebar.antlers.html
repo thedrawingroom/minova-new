@@ -1,46 +1,13 @@
-{{ sidebar_navigation }}
-  <ul class="block-products-accordion">
-    {{ nav :handle="handle" }}
-      <li x-data="{ isExpanded: {{ is_parent ? 'true' : 'false' }} }" class="{{ ['mb-3' => !last] | classes }}">
-        <div class="flex items-center justify-between">
-          {{ partial:common/sidebarNavItem :url="url" :current_uri="current_uri" :is_parent="is_parent" :title="title" }}
-          <div>
-            {{ if children }}
-              <button
-                type="button"
-                @click="isExpanded = ! isExpanded"
-                :aria-expanded="isExpanded ? 'true' : 'false'"
-                aria-controls="accordionItem{{ id }}"
-                class="focus:outline-none"
-              >
-                <i
-                  class="fa-regular fa-chevron-down ml-2 text-slate-400 transition-transform"
-                  :class="isExpanded ? 'rotate-180' : ''"
-                ></i>
-              </button>
-            {{ /if }}
-          </div>
-        </div>
-        {{ if children }}
-          <div
-            x-show="isExpanded"
-            x-cloak
-            id="accordionItem{{ id }}"
-            role="region"
-            class="w-full"
-            aria-labelledby="controlsAccordionItem{{ id }}"
-            x-collapse
-          >
-            <ul class="py-4 pl-3">
-              {{ children }}
-                <li class="{{ ['mb-3' => !last] | classes }}">
-                  {{ partial:common/sidebarNavItem :url="url" :current_uri="current_uri" :is_parent="is_parent" :title="title" }}
-                </li>
-              {{ /children }}
-            </ul>
-          </div>
-        {{ /if }}
-      </li>
-    {{ /nav }}
-  </ul>
-{{ /sidebar_navigation }}
+<ul class="block-products-accordion">
+  {{ if is_product }}
+    {{ nav:products }}
+      {{ partial:common/sidebarNavItem }}
+    {{ /nav:products }}
+  {{ else }}
+    {{ sidebar_navigation }}
+      {{ nav :handle="handle" }}
+        {{ partial:common/sidebarNavItem }}
+      {{ /nav }}
+    {{ /sidebar_navigation }}
+  {{ /if }}
+</ul>
