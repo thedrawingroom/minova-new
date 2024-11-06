@@ -52,6 +52,24 @@ tabs:
               display: 'Related Products'
               collections:
                 - products
+          -
+            handle: downloads
+            field:
+              type: grid
+              display: Downloads
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: file
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: File
   sidebar:
     display: Sidebar
     sections:
@@ -64,38 +82,6 @@ tabs:
               localizable: true
               validate: 'max:200'
           -
-            handle: locale
-            field:
-              mode: select
-              type: terms
-              display: Locale
-              taxonomies:
-                - locale
-          -
-            handle: region
-            field:
-              mode: select
-              type: terms
-              display: Region
-              taxonomies:
-                - region
-          -
-            handle: indust
-            field:
-              mode: select
-              type: terms
-              display: Industries
-              taxonomies:
-                - indust
-          -
-            handle: common_use
-            field:
-              mode: select
-              type: terms
-              display: 'Common Use'
-              taxonomies:
-                - common_use
-          -
             handle: parent
             field:
               type: entries
@@ -104,4 +90,28 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: industry_sectors
+            field:
+              taxonomies:
+                - industries
+              type: terms
+              display: 'Industry Sectors'
+              mode: select
+          -
+            handle: available_regions
+            field:
+              taxonomies:
+                - region
+              type: terms
+              display: 'Available Regions'
+              mode: select
+          -
+            handle: common_uses
+            field:
+              taxonomies:
+                - common_use
+              type: terms
+              display: 'Common Uses'
+              mode: select
 title: Product

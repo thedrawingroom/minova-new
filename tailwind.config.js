@@ -9,7 +9,7 @@ export default {
     './resources/js/components/sliders.js',
     './resources/css/site.css',
   ],
-
+  safelist: ['text-3xl', '3xl:text-5xl'],
   theme: {
     container: {
       center: true,
@@ -49,7 +49,6 @@ export default {
       aspectRatio: {
         '4/3': '4 / 3',
       },
-      safelist: ['sm:text-xl', 'text-4xl', 'sm:text-6xl', 'text-7xl', 'bg-blue-500', 'sm:bg-red-500'],
     },
   },
 

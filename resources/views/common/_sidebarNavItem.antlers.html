@@ -1,9 +1,40 @@
-<a
-  href="{{ url }}"
-  class="{{ ['border-minova-gold' => is_current || is_parent, 'border-slate-200' => !is_current && !is_parent, 'flex items-center justify-between w-full' => !children] | classes }} mb-0 border-l-3 pl-3 text-base"
->
-  {{ title }}
-  {{ if !children }}
-    <i class="fa-regular fa-chevron-right ml-2 text-slate-400"></i>
+<li x-data="{ isExpanded: {{ is_parent ? 'true' : 'false' }} }" class="{{ ['mb-4' => !last] | classes }}">
+  <div class="flex items-center justify-between">
+    {{ partial:common/sidebarNavLink }}
+    <div>
+      {{ if children }}
+        <button
+          type="button"
+          @click="isExpanded = ! isExpanded"
+          :aria-expanded="isExpanded ? 'true' : 'false'"
+          aria-controls="accordionItem{{ id }}"
+          class="focus:outline-none"
+        >
+          <i
+            class="fa-regular fa-chevron-down ml-2 text-slate-400 transition-transform"
+            :class="isExpanded ? 'rotate-180' : ''"
+          ></i>
+        </button>
+      {{ /if }}
+    </div>
+  </div>
+  {{ if children }}
+    <div
+      x-show="isExpanded"
+      x-cloak
+      id="accordionItem{{ id }}"
+      role="region"
+      class="w-full"
+      aria-labelledby="controlsAccordionItem{{ id }}"
+      x-collapse
+    >
+      <ul class="pb-3 pl-3 pt-4">
+        {{ children }}
+          <li class="{{ ['mb-4' => !last] | classes }}">
+            {{ partial:common/sidebarNavLink }}
+          </li>
+        {{ /children }}
+      </ul>
+    </div>
   {{ /if }}
-</a>
+</li>

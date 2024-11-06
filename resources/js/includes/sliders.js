@@ -1,12 +1,12 @@
 const prevArrow =
-  '<button class="slick-arrow slick-arrow--prev absolute left-0 top-1/2 -translate-y-1/2"><i class="fa-regular fa-chevron-left fa-2x text-minova-gold p-2"></i></button>';
+  '<button class="slick-arrow slick-arrow--prev absolute left-0 top-1/2 -translate-y-1/2 text-3xl 3xl:text-5xl px-3 inline-block"><i class="fa-regular fa-chevron-left text-minova-gold"></i></button>';
 const nextArrow =
-  '<button class="slick-arrow slick-arrow--next absolute right-0 top-1/2 -translate-y-1/2"><i class="fa-regular fa-chevron-right fa-2x text-minova-gold p-2"></i></button>';
+  '<button class="slick-arrow slick-arrow--next absolute right-0 top-1/2 -translate-y-1/2 text-3xl 3xl:text-5xl px-3 inline-block"><i class="fa-regular fa-chevron-right text-minova-gold"></i></button>';
 
 const prevArrowInvert =
-  '<button class="slick-arrow slick-arrow--prev absolute left-0 top-1/2 -translate-y-1/2"><i class="fa-regular fa-chevron-left fa-2x text-white p-2"></i></button>';
+  '<button class="slick-arrow slick-arrow--prev absolute left-0 top-1/2 -translate-y-1/2 text-3xl 3xl:text-5xl px-3 inline-block"><i class="fa-regular fa-chevron-left text-white"></i></button>';
 const nextArrowInvert =
-  '<button class="slick-arrow slick-arrow--next absolute right-0 top-1/2 -translate-y-1/2"><i class="fa-regular fa-chevron-right fa-2x text-white p-2"></i></button>';
+  '<button class="slick-arrow slick-arrow--next absolute right-0 top-1/2 -translate-y-1/2 text-3xl 3xl:text-5xl px-3 inline-block"><i class="fa-regular fa-chevron-right text-white"></i></button>';
 
 export default {
   init() {
