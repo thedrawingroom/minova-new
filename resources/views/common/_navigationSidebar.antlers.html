@@ -1,7 +1,7 @@
 {{ sidebar_navigation }}
   <ul class="block-products-accordion">
     {{ nav :handle="handle" }}
-      <li x-data="{ isExpanded: {{ is_parent ? 'true' : 'false' }} }" class="{{ ['mb-3' => !last] | classes }}">
+      <li x-data="{ isExpanded: {{ is_parent ? 'true' : 'false' }} }" class="{{ ['mb-4' => !last] | classes }}">
         <div class="flex items-center justify-between">
           {{ partial:common/sidebarNavItem :url="url" :current_uri="current_uri" :is_parent="is_parent" :title="title" }}
           <div>
@@ -31,7 +31,7 @@
             aria-labelledby="controlsAccordionItem{{ id }}"
             x-collapse
           >
-            <ul class="py-4 pl-3">
+            <ul class="pb-3 pl-3 pt-6">
               {{ children }}
                 <li class="{{ ['mb-3' => !last] | classes }}">
                   {{ partial:common/sidebarNavItem :url="url" :current_uri="current_uri" :is_parent="is_parent" :title="title" }}
