@@ -67,7 +67,7 @@
   h4,
   h5,
   h6 {
-    @apply mb-6 font-flama-book uppercase leading-tight tracking-wider;
+    @apply mb-6 font-flama-book uppercase leading-none tracking-wider;
   }
 
   p {

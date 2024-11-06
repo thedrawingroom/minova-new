@@ -1,7 +1,7 @@
 <div class="block-products-grid bg-slate-100">
-  <div class="container py-8 lg:py-12">
+  <div class="container py-8 lg:py-12 2xl:py-14">
     {{ partial:common/sectionTitle text="Our Products" }}
-    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10">
+    <ul class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
       {{ collection:products }}
         <li>
           {{ partial:common/entryCard :slug="url" :image="image" :title="title" button_text="Explore products" }}

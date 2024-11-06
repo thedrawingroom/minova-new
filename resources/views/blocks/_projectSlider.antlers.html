@@ -1,9 +1,9 @@
 {{ if projects }}
   <div class="block-project-slider">
-    <div class="project-slider slick-dots-invert px-0 xl:px-8 4xl:px-0 py-8 lg:py-12">
+    <div class="project-slider slick-dots-invert 4xl:px-0 px-0 py-8 lg:py-12 xl:px-8 2xl:py-14">
       {{ projects }}
         <div>
-          <div class="container grid grid-cols-1 gap-10 lg:grid-cols-2 gap-10">
+          <div class="container grid grid-cols-1 gap-10 lg:grid-cols-2">
             <div class="lg:flex lg:flex-col lg:justify-center">
               <div class="mb-6">
                 <div class="mb-6">
@@ -12,7 +12,7 @@
                     <h3 class="mb-3">{{ title }}</h3>
                   {{ /if }}
                   {{ if location }}
-                    <p class="font-flama-book mb-0 text-lg">
+                    <p class="mb-0 font-flama-book text-lg">
                       <span class="uppercase">Location</span>
                       : {{ location }}
                     </p>

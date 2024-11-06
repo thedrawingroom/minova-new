@@ -1,8 +1,10 @@
 <div class="block-content-sidebar">
-  <div class="container grid gap-10 py-8 lg:grid-cols-12 lg:py-12 2xl:gap-14">
-    <div class="lg:col-span-3">
-      {{ partial:common/navigationSidebar }}
-    </div>
+  <div class="container grid gap-10 py-8 lg:grid-cols-12 lg:py-12 2xl:gap-14 2xl:py-14">
+    {{ if is_product || sidebar_navigation }}
+      <div class="lg:col-span-3">
+        {{ partial:common/navigationSidebar }}
+      </div>
+    {{ /if }}
     <div class="lg:col-span-9">
       <div class="{{ ['lg:grid-cols-9' => downloads] | classes }} grid gap-10">
         <div class="{{ ['lg:col-span-6' => downloads] | classes }}">
@@ -13,7 +15,7 @@
         <div class="lg:col-span-3">
           {{ if industry_sectors }}
             <div class="rounded-t-2xl bg-minova-gold px-5 py-7">
-              <h5 class="mb-4 text-white">Industry sectors</h5>
+              <p class="mb-4 text-xl font-extrabold text-white">Industry sectors</p>
               <ul>
                 {{ industry_sectors }}
                   {{ partial:common/taxTermSector }}
@@ -25,7 +27,7 @@
             <div
               class="{{ ['rounded-t-2xl' => !industry_sectors] | classes }} border-t-2 border-white bg-slate-100 px-5 py-7"
             >
-              <h5 class="mb-5">Common use</h5>
+              <p class="mb-5 text-xl font-extrabold">Common use</p>
               <ul>
                 {{ common_uses }}
                   {{ partial:common/taxTermItem }}
@@ -37,7 +39,7 @@
             <div
               class="{{ ['rounded-t-2xl' => !industry_sectors && !common_uses] | classes }}border-t-2 border-white bg-slate-100 px-5 py-7"
             >
-              <h5 class="mb-5">Available Regions</h5>
+              <p class="mb-5 text-xl font-extrabold">Available Regions</p>
               <ul>
                 {{ available_regions }}
                   {{ partial:common/taxTermItem }}
@@ -49,7 +51,7 @@
             <div
               class="{{ ['rounded-b-2xl border-t-2 border-white' => is_product, 'rounded-t-2xl' => !industry_sectors && !common_uses && !available_regions] | classes }} bg-slate-100 px-5 py-7"
             >
-              <h5 class="mb-5">Downloads</h5>
+              <p class="mb-5 text-xl font-extrabold">Downloads</p>
               <ul>
                 {{ downloads }}
                   <li class="mb-1">
