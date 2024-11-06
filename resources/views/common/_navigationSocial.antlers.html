@@ -2,7 +2,10 @@
   <ul class="-mx-1 flex items-center justify-center lg:justify-start">
     {{ nav:social }}
       <li class="px-1">
-        <a href="{{ url }}" class="flex size-10 items-center justify-center rounded-full bg-slate-400 text-white">
+        <a
+          href="{{ url }}"
+          class="flex size-10 items-center justify-center rounded-full bg-slate-400 text-white hover:bg-slate-600"
+        >
           {{ if icon == 'facebook' }}
             <i class="fa-brands fa-facebook-f fa-lg"></i>
           {{ elseif icon == 'youtube' }}

@@ -16,7 +16,7 @@
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 358.97 410.25"
-        class="absolute -right-[40%] top-1/2 z-[1] h-[170%] -translate-y-1/2 mix-blend-overlay md:-right-[5%]"
+        class="absolute -right-[50%] top-1/2 z-[1] h-full -translate-y-1/2 mix-blend-overlay md:-right-[5%] md:h-[170%]"
       >
         <g>
           <path
@@ -28,6 +28,7 @@
       </svg>
       {{ if image }}
         <div class="absolute left-0 top-0 h-full w-full">
+          <div class="absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black to-transparent opacity-50"></div>
           {{ partial:common/image class="h-full w-full object-cover" :url="image" :alt="image:alt" }}
         </div>
       {{ /if }}

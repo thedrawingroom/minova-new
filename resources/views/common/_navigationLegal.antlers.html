@@ -1,13 +1,11 @@
 <nav class="lg:col-span-4 xl:col-span-3">
-  <ul class="-mx-1 flex flex-col lg:flex-row items-center justify-center lg:justify-end xl:justify-center gap-3 text-center">
+  <ul
+    class="-mx-1 flex flex-col items-center justify-center gap-3 text-center lg:flex-row lg:justify-end xl:justify-center"
+  >
     {{ nav:legal }}
       <li class="px-1">
-        <a href="{{ url }}" class="group relative text-sm">
-          <span
-            class="relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out after:content-[''] group-hover:after:w-full"
-          >
-            {{ title }}
-          </span>
+        <a href="{{ url }}" class="group relative text-sm hover:underline">
+          {{ title }}
         </a>
       </li>
     {{ /nav:legal }}

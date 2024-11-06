@@ -22,7 +22,15 @@
   }
 
   body {
-    @apply text-minova-blue m-0 p-0;
+    @apply m-0 p-0 text-minova-blue;
+
+    &.offcanvas-open {
+      @apply overflow-y-hidden;
+
+      .offcanvas {
+        @apply translate-y-0;
+      }
+    }
 
     main {
       min-height: 70vh;
@@ -59,7 +67,7 @@
   h4,
   h5,
   h6 {
-    @apply font-flama-book mb-6 uppercase leading-tight tracking-wider;
+    @apply mb-6 font-flama-book uppercase leading-tight tracking-wider;
   }
 
   p {
