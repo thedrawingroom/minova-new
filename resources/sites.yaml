@@ -1,0 +1,16 @@
+default:
+  name: '{{ config:app:name }}'
+  locale: en_US
+  url: /
+americas:
+  name: Americas
+  url: /americas
+  locale: en_US
+asia_pacific:
+  name: 'Asia Pacific'
+  url: /apac
+  locale: en_AP
+emea_cis:
+  name: 'EMEA & CIS'
+  url: /emea-cis
+  locale: en_GB

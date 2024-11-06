@@ -23,7 +23,7 @@ return [
     ],
 
     'collections' => [
-        'driver' => 'file',
+        'driver' => 'eloquent',
         'model' => \Statamic\Eloquent\Collections\CollectionModel::class,
         'update_entry_order_queue' => 'default',
         'update_entry_order_connection' => 'default',
