@@ -121,7 +121,13 @@ tabs:
                     news_listing:
                       display: 'News Listing'
                       icon: media-news-paper
-                      fields: {  }
+                      fields:
+                        -
+                          handle: sidebar_navigation
+                          field:
+                            type: navs
+                            display: 'Sidebar Navigation'
+                            localizable: false
   sidebar:
     display: Sidebar
     sections:

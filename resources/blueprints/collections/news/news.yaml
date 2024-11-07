@@ -41,10 +41,24 @@ tabs:
           -
             handle: downloads
             field:
-              container: assets
-              type: assets
+              type: grid
               display: Downloads
               localizable: false
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                    localizable: false
+                -
+                  handle: file
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: File
+                    localizable: false
   sidebar:
     display: Sidebar
     sections:
