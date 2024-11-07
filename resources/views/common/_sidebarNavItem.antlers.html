@@ -1,4 +1,4 @@
-<li x-data="{ isExpanded: {{ is_parent ? 'true' : 'false' }} }" class="{{ ['mb-4' => !last] | classes }}">
+<li x-data="{ isExpanded: {{ is_parent || is_current ? 'true' : 'false' }} }" class="{{ ['mb-4' => !last] | classes }}">
   <div class="flex items-center justify-between">
     {{ partial:common/sidebarNavLink }}
     <div>
@@ -10,10 +10,9 @@
           aria-controls="accordionItem{{ id }}"
           class="focus:outline-none"
         >
-          <i
-            class="fa-regular fa-chevron-down ml-2 text-slate-400 transition-transform"
-            :class="isExpanded ? 'rotate-180' : ''"
-          ></i>
+          <div :class="isExpanded ? 'rotate-270' : 'rotate-90'">
+            {{ partial:common/chevron chevron_style="grey" chevron_size="xs" }}
+          </div>
         </button>
       {{ /if }}
     </div>

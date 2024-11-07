@@ -49,6 +49,9 @@ export default {
       aspectRatio: {
         '4/3': '4 / 3',
       },
+      rotate: {
+        270: '270deg',
+      },
     },
   },
 

@@ -12,6 +12,7 @@ tabs:
               display: Title
               validate:
                 - required
+              localizable: false
           -
             handle: image
             field:
@@ -19,17 +20,20 @@ tabs:
               display: Image
               container: assets
               max_files: 1
+              localizable: false
           -
             handle: short_description
             field:
               character_limit: 150
               type: textarea
               display: 'Short Description'
+              localizable: false
           -
             handle: banner
             field:
               type: group
               display: Banner
+              localizable: false
               fields:
                 -
                   field:
@@ -52,11 +56,13 @@ tabs:
               display: 'Related Products'
               collections:
                 - products
+              localizable: false
           -
             handle: downloads
             field:
               type: grid
               display: Downloads
+              localizable: false
               fields:
                 -
                   handle: title
@@ -98,6 +104,7 @@ tabs:
               type: terms
               display: 'Industry Sectors'
               mode: select
+              localizable: false
           -
             handle: available_regions
             field:
@@ -106,6 +113,7 @@ tabs:
               type: terms
               display: 'Available Regions'
               mode: select
+              localizable: false
           -
             handle: common_uses
             field:
@@ -114,4 +122,5 @@ tabs:
               type: terms
               display: 'Common Uses'
               mode: select
+              localizable: false
 title: Product
