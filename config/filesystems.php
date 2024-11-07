@@ -55,16 +55,21 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
-            // 'visibility' => 'public', // https://statamic.dev/assets#visibility
+            'visibility' => 'public', // https://statamic.dev/assets#visibility
         ],
 
-        'assets' => [
+        'local_assets' => [
             'driver' => 'local',
             'root' => public_path('assets'),
             'url' => '/assets',
             'visibility' => 'public',
             'throw' => false,
         ],
+
+        'assets' => [
+            'driver' => 'alias',
+            'target' => env('STATAMIC_ASSETS_DISK', 'local_assets')
+        ]
 
     ],
 
