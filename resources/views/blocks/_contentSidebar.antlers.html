@@ -6,8 +6,12 @@
       </div>
     {{ /if }}
     <div class="lg:col-span-9">
-      <div class="{{ ['lg:grid-cols-9' => downloads] | classes }} grid gap-10">
-        <div class="{{ ['lg:col-span-6' => downloads] | classes }}">
+      <div
+        class="{{ ['lg:grid-cols-9' => downloads || industry_sectors || common_uses || available_regions] | classes }} grid gap-10"
+      >
+        <div
+          class="{{ ['lg:col-span-6' => downloads || industry_sectors || common_uses || available_regions] | classes }}"
+        >
           {{ if bard_field }}
             {{ partial:common/bard :data="bard_field" }}
           {{ /if }}
@@ -37,7 +41,7 @@
           {{ /if }}
           {{ if available_regions }}
             <div
-              class="{{ ['rounded-t-2xl' => !industry_sectors && !common_uses] | classes }}border-t-2 border-white bg-slate-100 px-5 py-7"
+              class="{{ ['rounded-t-2xl' => !industry_sectors && !common_uses] | classes }} border-t-2 border-white bg-slate-100 px-5 py-7"
             >
               <p class="mb-5 text-xl font-extrabold">Available Regions</p>
               <ul>
@@ -57,7 +61,9 @@
                   <li class="mb-1">
                     <a href="{{ file }}" download class="flex items-center justify-between bg-white px-3 py-2">
                       <span class="text-base">{{ title }}</span>
-                      <span class="flex size-8 items-center justify-center bg-minova-gold text-white flex-shrink-0 ml-3">
+                      <span
+                        class="ml-3 flex size-8 flex-shrink-0 items-center justify-center bg-minova-gold text-white"
+                      >
                         <i class="fa-regular fa-arrow-down"></i>
                       </span>
                     </a>
