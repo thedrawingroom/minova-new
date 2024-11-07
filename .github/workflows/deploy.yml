@@ -63,7 +63,9 @@ jobs:
           touch database/database.sqlite
 
       - name: Temporarily set Statamic to use static files
-        run: php -r "file_put_contents('./config/statamic/eloquent-driver.php', str_replace('\'driver\' => \'eloquent\'', '\'driver\' => \'file\'', file_get_contents('./config/statamic/eloquent-driver.php')));"
+        run: |
+          cp ./config/statamic/eloquent-driver.php ./config/statamic/eloquent-driver.original.php
+          php -r "file_put_contents('./config/statamic/eloquent-driver.php', str_replace('\'driver\' => \'eloquent\'', '\'driver\' => \'file\'', file_get_contents('./config/statamic/eloquent-driver.php')));"
 
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-suggest

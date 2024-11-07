@@ -104,7 +104,7 @@
     sudo -S ln -nfs {{ $shared_dir }}/storage {{ $new_release_dir }}/storage
 @endtask
 
-@task('autodump')
+@task('autodump', ['on' => 'web'])
     cd {{ $new_release_dir }}
     sudo -S composer run-script post-autoload-dump
 @endtask
@@ -112,7 +112,8 @@
 @task('verify_install', ['on' => 'web'])
     echo "* Verifying install ({{ $new_release_dir }}) *"
     cd {{ $new_release_dir }}
-    sudo -S {{ $php }} -r "file_put_contents('./config/statamic/eloquent-driver.php', str_replace('\'driver\' => \'file\'', '\'driver\' => \'eloquent\'', file_get_contents('./config/statamic/eloquent-driver.php')));"
+    sudo -S rm ./config/statamic/eloquent-driver.php
+    sudo -S mv ./config/statamic/eloquent-driver.original.php ./config/statamic/eloquent-driver.php
     sudo -S {{ $php }} artisan --version
 @endtask
 
@@ -133,6 +134,12 @@
 
     sudo -S {{ $php }} artisan optimize:clear
     sudo -S {{ $php }} artisan optimize
+
+    sudo -S {{ $php }} artisan statamic:stache:warm
+    sudo -S {{ $php }} artisan statamic:search:update --all
+    sudo -S {{ $php }} artisan statamic:static:clear
+    # sudo -S {{ $php }} artisan statamic:static:warm
+    sudo -S {{ $php }} artisan statamic:assets:generate-presets --queue
 
     echo '* Reloading php-fpm *'
     sudo -S service php8.3-fpm reload
