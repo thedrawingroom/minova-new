@@ -1,7 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-/* @import '@fortawesome/fontawesome-pro/css/all'; */
+@import '@fortawesome/fontawesome-pro/css/all';
 
 @font-face {
   font-family: 'Flama Book';
