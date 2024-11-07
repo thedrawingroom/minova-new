@@ -11,6 +11,7 @@ tabs:
               required: true
               validate:
                 - required
+              localizable: false
           -
             handle: image
             field:
@@ -18,31 +19,32 @@ tabs:
               display: Image
               container: assets
               max_files: 1
+              localizable: false
           -
             handle: short_description
             field:
               type: textarea
               display: 'Short Description'
               character_limit: 150
+              localizable: false
           -
             handle: banner
             field:
               type: group
               display: Banner
+              localizable: false
               fields:
                 -
-                  field:
-                    type: text
-                    display: Title
-                  handle: title
-                -
-                  field:
-                    type: assets
-                    display: Image
-                    container: assets
-                  handle: image
+                  import: hero_banner
           -
             import: main_bard
+          -
+            handle: downloads
+            field:
+              container: assets
+              type: assets
+              display: Downloads
+              localizable: false
   sidebar:
     display: Sidebar
     sections:
@@ -62,4 +64,14 @@ tabs:
               default: now
               validate:
                 - required
+              localizable: false
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - news
+              max_items: 1
+              listable: false
+              localizable: true
 title: News
