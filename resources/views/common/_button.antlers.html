@@ -8,5 +8,6 @@
   <span class="flex items-center justify-center">
     <span>{{ text ?? 'Read more' }}</span>
     <i class="fa-regular fa-chevron-right ml-2"></i>
+    {{ partial:common/chevron :style="chevron_style" :size="size == 'small' ? 'xs' : 'sm'" }}
   </span>
 </a>

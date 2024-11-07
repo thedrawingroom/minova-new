@@ -2,7 +2,7 @@
   <div class="container py-8 lg:py-12 2xl:py-14">
     <div class="mb-10 flex items-center justify-between lg:mb-14">
       {{ partial:common/sectionTitle text="Latest news" invert="true" noMargin="true" }}
-      {{ partial:common/button text="All news" style="inline" }}
+      {{ partial:common/button text="All news" style="inline" chevron_style="gold" chevron_size="xs" }}
     </div>
     <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
       {{ collection:news limit="3" }}

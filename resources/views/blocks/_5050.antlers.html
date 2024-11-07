@@ -14,7 +14,9 @@
                 <li>
                   <a href="{{ url }}" class="mb-5 flex items-center border-b-4 border-minova-gold pb-2">
                     <h5 class="mb-0">{{ title }}</h5>
-                    <i class="fa-regular fa-chevron-right fa-2xs ml-2"></i>
+                    <div class="ml-2">
+                      {{ partial:common/chevron chevron_size="xs" }}
+                    </div>
                   </a>
                 </li>
               {{ /if }}

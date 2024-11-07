@@ -9,7 +9,7 @@ export default {
     './resources/js/components/sliders.js',
     './resources/css/site.css',
   ],
-  safelist: ['text-3xl', '3xl:text-5xl'],
+  safelist: ['size-10', 'fill-minova-gold', 'rotate-180'],
   theme: {
     container: {
       center: true,
