@@ -55,21 +55,7 @@
             <div
               class="{{ ['rounded-b-2xl border-t-2 border-white' => is_product, 'rounded-t-2xl' => !industry_sectors && !common_uses && !available_regions] | classes }} bg-slate-100 px-5 py-7"
             >
-              <p class="mb-5 text-xl font-extrabold">Downloads</p>
-              <ul>
-                {{ downloads }}
-                  <li class="mb-1">
-                    <a href="{{ file }}" download class="flex items-center justify-between bg-white px-3 py-2">
-                      <span class="text-base">{{ title }}</span>
-                      <span
-                        class="ml-3 flex size-8 flex-shrink-0 items-center justify-center bg-minova-gold text-white"
-                      >
-                        <i class="fa-regular fa-arrow-down"></i>
-                      </span>
-                    </a>
-                  </li>
-                {{ /downloads }}
-              </ul>
+              {{ partial:common/downloads }}
             </div>
           {{ /if }}
         </div>

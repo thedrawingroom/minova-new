@@ -3,6 +3,10 @@
     {{ nav:products }}
       {{ partial:common/sidebarNavItem }}
     {{ /nav:products }}
+  {{ elseif is_news }}
+    {{ nav:news }}
+      {{ partial:common/sidebarNavItem }}
+    {{ /nav:news }}
   {{ else }}
     {{ sidebar_navigation }}
       {{ nav :handle="handle" }}

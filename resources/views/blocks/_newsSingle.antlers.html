@@ -1,0 +1,24 @@
+<div class="block-content-sidebar">
+  <div class="container grid gap-10 py-8 lg:grid-cols-12 lg:py-12 2xl:gap-14 2xl:py-14">
+    <div class="lg:col-span-3">
+      {{ partial:common/navigationSidebar is_news="true" }}
+    </div>
+    <div class="lg:col-span-9">
+      <div class="{{ ['lg:grid-cols-9' => downloads] | classes }} grid gap-10">
+        <div class="{{ ['lg:col-span-6' => downloads] | classes }}">
+          <h6 class="text-sm">{{ date }}</h6>
+          {{ if bard_field }}
+            {{ partial:common/bard :data="bard_field" }}
+          {{ /if }}
+        </div>
+        {{ if downloads }}
+          <div class="lg:col-span-3">
+            <div class="rounded-2xl bg-slate-100 px-5 py-7">
+              {{ partial:common/downloads }}
+            </div>
+          </div>
+        {{ /if }}
+      </div>
+    </div>
+  </div>
+</div>
