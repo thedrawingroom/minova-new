@@ -1,7 +1,0 @@
-title: 'Bard Subtitle'
-fields:
-  -
-    field:
-      type: text
-      display: Subtitle
-    handle: subtitle

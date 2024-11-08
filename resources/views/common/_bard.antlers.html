@@ -2,9 +2,9 @@
   <div class="mb-10 2xl:mb-14">
     {{ if type == "text" }}
       {{ text }}
-    {{ elseif type == "subtitle" }}
-      {{ if subtitle }}
-        {{ partial:common/subtitle :text="subtitle" }}
+    {{ elseif type == "image" }}
+      {{ if image }}
+        {{ partial:common/image class="w-full h-auto rounded-3xl" :url="image" :alt="image:alt" }}
       {{ /if }}
     {{ elseif type == "button" }}
       {{ if button }}
@@ -40,7 +40,7 @@
         {{ if project_image }}
           <div class="{{ ['justify-start lg:justify-end' => flip, 'justify-start' => !flip] | classes }} flex">
             <div class="max-w-[90%]">
-              {{ partial:common/image class="h-auto w-full rounded-2xl " :url="project_image" :alt="project_image:alt" }}
+              {{ partial:common/image class="h-auto w-full rounded-3xl " :url="project_image" :alt="project_image:alt" }}
             </div>
           </div>
         {{ /if }}

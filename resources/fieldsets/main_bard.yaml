@@ -43,12 +43,6 @@ fields:
               fields:
                 -
                   import: button
-            subtitle:
-              display: Subtitle
-              icon: align-object-bottom
-              fields:
-                -
-                  import: bard_subtitle
             address_table:
               display: 'Address Table'
               icon: home-house
@@ -73,3 +67,15 @@ fields:
               fields:
                 -
                   import: project_bard
+            image:
+              display: Image
+              icon: media-image-camera
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
