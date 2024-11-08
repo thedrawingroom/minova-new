@@ -70,7 +70,7 @@
               {{ description }}
             {{ /if }}
           </div>
-          {{ if button }}
+          {{ if add_button && button }}
             {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
           {{ /if }}
         </div>

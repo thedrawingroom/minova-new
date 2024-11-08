@@ -1,6 +1,7 @@
 title: 'Project Bard Block'
 fields:
   -
+    handle: project_image
     field:
       type: assets
       display: 'Project Image'
@@ -8,25 +9,29 @@ fields:
         - required
       container: assets
       max_files: 1
-    handle: project_image
+      localizable: false
   -
+    handle: project_title
     field:
       type: text
       display: 'Project Title'
       validate:
         - required
-    handle: project_title
+      localizable: false
   -
+    handle: subtitle
     field:
       type: text
       display: Subtitle
-    handle: subtitle
+      localizable: false
   -
+    handle: location
     field:
       type: text
       display: Location
-    handle: location
+      localizable: false
   -
+    handle: description
     field:
       type: bard
       buttons:
@@ -45,30 +50,43 @@ fields:
         - underline
       display: Description
       remove_empty_nodes: false
-    handle: description
+      localizable: false
   -
+    handle: add_button
+    field:
+      type: toggle
+      display: 'Add Button'
+      localizable: false
+  -
+    handle: button
     field:
       type: group
+      display: Button
+      localizable: false
+      if:
+        add_button: 'equals true'
       fields:
         -
+          handle: button_text
           field:
             type: text
             display: 'Button Text'
-          handle: button_text
+            localizable: false
         -
+          handle: button_url
           field:
             type: link
             display: 'Button URL'
-          handle: button_url
-      display: Button
-    handle: button
+            localizable: false
   -
+    handle: flip
     field:
       type: toggle
       display: 'Flip Orientation'
-    handle: flip
+      localizable: false
   -
+    handle: full_width
     field:
       type: toggle
       display: 'Full Width'
-    handle: full_width
+      localizable: false
