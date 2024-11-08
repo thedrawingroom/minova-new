@@ -1,12 +1,12 @@
 <ul class="block-products-accordion">
-  {{ if is_product }}
-    {{ nav:products }}
+  {{ if is_product && navigations:products }}
+    {{ nav:navigations:products }}
       {{ partial:common/sidebarNavItem }}
-    {{ /nav:products }}
-  {{ elseif is_news }}
-    {{ nav:news }}
+    {{ /nav:navigations:products }}
+  {{ elseif is_news && navigations:news }}
+    {{ nav:navigations:news }}
       {{ partial:common/sidebarNavItem }}
-    {{ /nav:news }}
+    {{ /nav:navigations:news }}
   {{ else }}
     {{ sidebar_navigation }}
       {{ nav :handle="handle" }}

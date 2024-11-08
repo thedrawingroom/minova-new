@@ -1,10 +1,14 @@
 <footer id="site-footer" class="border-t-2 border-minova-gold">
   <div class="bg-slate-100 py-10 lg:py-14">
     <div class="container grid grid-cols-1 lg:grid-cols-2">
-      {{ partial:common/navigationFooter }}
+      <div>
+        {{ partial:common/navigationFooter }}
+      </div>
       <div class="flex justify-end">
         <div class="mx-auto lg:mr-0">
-          {{ partial:common/image class="w-full max-w-40 lg:max-w-56 h-auto" url="/assets/minova_logo_grey.svg" alt="Minova Logo" }}
+          {{ if site_content:alternate_logo }}
+            {{ partial:common/image class="w-full max-w-40 lg:max-w-56 h-auto" :url="site_content:alternate_logo" :alt="site_content:alternate_logo:alt" }}
+          {{ /if }}
         </div>
       </div>
     </div>
@@ -12,11 +16,17 @@
   <div class="bg-white py-10">
     <div class="container">
       <div class="mb-2 grid grid-cols-1 gap-3 lg:grid-cols-5 lg:items-center">
-        {{ partial:common/navigationSocial }}
-        {{ partial:common/navigationLegal }}
+        <div class="mb-4 lg:mb-0">
+          {{ partial:common/navigationSocial }}
+        </div>
+        <div class="lg:col-span-4 xl:col-span-3">
+          {{ partial:common/navigationLegal }}
+        </div>
         <div class="hidden lg:block"></div>
       </div>
-      <p class="mb-0 text-center text-xs text-gray-600 lg:text-sm">Copyright Minova 2024. All rights reserved.</p>
     </div>
+    {{ if site_content:copyright }}
+      <p class="mb-0 text-center text-xs text-gray-600 lg:text-sm">{{ site_content:copyright }}</p>
+    {{ /if }}
   </div>
 </footer>

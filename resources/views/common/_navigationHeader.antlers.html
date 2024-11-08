@@ -1,38 +1,40 @@
-<nav class="hidden text-xl uppercase lg:flex">
-  <ul class="-mx-2 flex list-none">
-    {{ nav:header }}
-      {{ if depth == 1 }}
-        <li class="group/parent relative px-4">
-          <a
-            href="{{ url }}"
-            class="relative mt-[6px] inline-block cursor-pointer py-1 font-flama-book text-lg tracking-wider transition-colors"
-          >
-            <span class="relative z-10 whitespace-nowrap">{{ title }}</span>
-            <span
-              class="absolute bottom-0 left-0 h-[3px] w-0 bg-minova-gold transition-all duration-300 ease-in-out group-hover/parent:w-full"
-            ></span>
-          </a>
-          {{ if children }}
-            <ul
-              class="absolute left-0 top-full z-40 mt-0 hidden min-w-[200px] list-none bg-white/90 px-4 pb-4 pt-10 shadow-lg transition-all group-hover/parent:block"
+{{ if navigations:header }}
+  <nav class="hidden text-xl uppercase lg:flex">
+    <ul class="-mx-2 flex list-none">
+      {{ nav:navigations:header }}
+        {{ if depth == 1 }}
+          <li class="group/parent relative px-4">
+            <a
+              href="{{ url }}"
+              class="relative mt-[6px] inline-block cursor-pointer py-1 font-flama-book text-lg tracking-wider transition-colors"
             >
-              {{ *recursive children* }}
-            </ul>
-          {{ /if }}
-        </li>
-      {{ elseif depth == 2 }}
-        <li class="px-2 py-2">
-          <a
-            href="{{ url }}"
-            class="group/child relative w-full pb-1 font-flama-book text-base tracking-wider transition-colors group-hover/child:text-minova-gold"
-          >
-            <span class="relative z-10 whitespace-nowrap">{{ title }}</span>
-            <span
-              class="absolute bottom-0 left-0 h-[3px] w-0 bg-minova-gold transition-all duration-300 ease-in-out group-hover/child:w-full"
-            ></span>
-          </a>
-        </li>
-      {{ /if }}
-    {{ /nav:header }}
-  </ul>
-</nav>
+              <span class="relative z-10 whitespace-nowrap">{{ title }}</span>
+              <span
+                class="absolute bottom-0 left-0 h-[3px] w-0 bg-minova-gold transition-all duration-300 ease-in-out group-hover/parent:w-full"
+              ></span>
+            </a>
+            {{ if children }}
+              <ul
+                class="absolute left-0 top-full z-40 mt-0 hidden min-w-[200px] list-none bg-white/90 px-4 pb-4 pt-10 shadow-lg transition-all group-hover/parent:block"
+              >
+                {{ *recursive children* }}
+              </ul>
+            {{ /if }}
+          </li>
+        {{ elseif depth == 2 }}
+          <li class="px-2 py-2">
+            <a
+              href="{{ url }}"
+              class="group/child relative w-full pb-1 font-flama-book text-base tracking-wider transition-colors group-hover/child:text-minova-gold"
+            >
+              <span class="relative z-10 whitespace-nowrap">{{ title }}</span>
+              <span
+                class="absolute bottom-0 left-0 h-[3px] w-0 bg-minova-gold transition-all duration-300 ease-in-out group-hover/child:w-full"
+              ></span>
+            </a>
+          </li>
+        {{ /if }}
+      {{ /nav:navigations:header }}
+    </ul>
+  </nav>
+{{ /if }}

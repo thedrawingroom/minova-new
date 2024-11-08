@@ -1,0 +1,55 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: header
+            field:
+              max_items: 1
+              type: navs
+              display: Header
+              localizable: false
+          -
+            handle: offcanvas
+            field:
+              max_items: 1
+              type: navs
+              display: Offcanvas
+              localizable: false
+          -
+            handle: footer
+            field:
+              max_items: 1
+              type: navs
+              display: Footer
+              localizable: false
+          -
+            handle: social
+            field:
+              max_items: 1
+              type: navs
+              display: Social
+              localizable: false
+          -
+            handle: legal
+            field:
+              max_items: 1
+              type: navs
+              display: Legal
+              localizable: false
+          -
+            handle: products
+            field:
+              max_items: 1
+              type: navs
+              display: Products
+              localizable: false
+          -
+            handle: news
+            field:
+              max_items: 1
+              type: navs
+              display: News
+              localizable: false
