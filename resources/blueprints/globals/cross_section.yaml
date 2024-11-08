@@ -1,0 +1,389 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: slope_wall_ground_engineering
+            field:
+              type: group
+              display: 'Slope & Wall Ground Engineering'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: tunnel_maintenance
+            field:
+              type: group
+              display: 'Tunnel Maintenance'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: sewer_repair
+            field:
+              type: group
+              display: 'Sewer Repair'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: micropile_foundations
+            field:
+              type: group
+              display: 'Micropile Foundations'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: road_maintenance
+            field:
+              type: group
+              display: 'Road Maintenance'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: surface_to_underground_delivery
+            field:
+              type: group
+              display: 'Surface to Underground Delivery'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: ground_consolidation_and_stabilisation
+            field:
+              type: group
+              display: 'Ground Consolidation and Stabilisation'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: surface_support
+            field:
+              type: group
+              display: 'Surface Support'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: water_control
+            field:
+              type: group
+              display: 'Water Control'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: standing_roof_support
+            field:
+              type: group
+              display: 'Standing Roof Support'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: seals_and_barriers
+            field:
+              type: group
+              display: 'Seals and Barriers'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: cavity_filling
+            field:
+              type: group
+              display: 'Cavity Filling'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: pre_driven_roadway_pillars
+            field:
+              type: group
+              display: 'Pre Driven Roadway Pillars'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: ground_control
+            field:
+              type: group
+              display: 'Ground Control'
+              localizable: false
+              hide_display: true
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: unipass_single_pass_bolting_technologies
+            field:
+              type: group
+              display: 'UniPass Single Pass Bolting Technologies'
+              localizable: false
+              hide_display: true
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: ventilation
+            field:
+              type: group
+              display: Ventilation
+              localizable: false
+              hide_display: true
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: ore_recovery_optimisation
+            field:
+              type: group
+              display: 'Ore Recovery Optimisation'
+              localizable: false
+              hide_display: true
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: ultimate_stemming
+            field:
+              type: group
+              display: 'Ultimate Stemming'
+              localizable: false
+              hide_display: true
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false

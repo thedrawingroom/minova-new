@@ -1,12 +1,29 @@
 title: '50/50 Block'
 fields:
   -
+    handle: left_column
+    field:
+      options:
+        -
+          key: image
+          value: 'Custom Image'
+        -
+          key: cross_section
+          value: 'Cross Section Graphic'
+      default: image
+      type: radio
+      display: 'Left Column'
+      localizable: false
+  -
     handle: image
     field:
       type: assets
       display: Image
       container: assets
       max_files: 1
+      localizable: false
+      if:
+        left_column: 'equals image'
   -
     handle: content
     field:
@@ -29,11 +46,13 @@ fields:
       display: Content
       smart_typography: true
       remove_empty_nodes: false
+      localizable: false
   -
     handle: page_links
     field:
       type: grid
       display: 'Page Links'
+      localizable: false
       fields:
         -
           field:

@@ -30,8 +30,12 @@
         {{ /if }}
       </div>
       <div class="lg:order-1">
-        {{ if image }}
-          {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
+        {{ if left_column == 'cross_section' }}
+          {{ partial:common/crossSection }}
+        {{ else }}
+          {{ if image }}
+            {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
+          {{ /if }}
         {{ /if }}
       </div>
     </div>

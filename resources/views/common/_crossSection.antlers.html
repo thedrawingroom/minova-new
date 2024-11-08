@@ -1,0 +1,13 @@
+{{# Main image element with hotspots #}}
+{{# @TODO: Need to add click function to hotspots to control which overlay card is shown #}}
+{{# @TODO: Needs separate mobile "select" view trigger #}}
+<div class="relative">
+  {{ partial:common/image class="h-auto w-full object-contain" url="/cross-section-image.jpg" alt="cross section image" }}
+  {{ partial:common/crossSectionHotspot }}
+</div>
+
+{{# Fixed elements that are triggered by hotspots #}}
+{{# See "Global" area for name of all these elements #}}
+{{ if cross_section:slope_wall_ground_engineering }}
+  {{ partial:common/crossSectionCard title="Slope & Wall Ground Engineering" :image="cross_section:slope_wall_ground_engineering:image" :description="cross_section:slope_wall_ground_engineering:description" }}
+{{ /if }}
