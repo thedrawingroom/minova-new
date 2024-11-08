@@ -117,9 +117,9 @@
   .slick-slide {
     @apply !float-none;
   }
+
   .slick-dots {
     @apply flex justify-center pt-6;
-    /* @apply absolute -bottom-12 left-1/2 z-10 m-0 flex -translate-x-1/2 list-none flex-wrap p-0; */
   }
 
   .slick-dots li {
@@ -147,4 +147,29 @@
   .product-slider .slick-dots .slick-active button {
     @apply bg-minova-gold opacity-100;
   }
+}
+
+.search-form {
+  position: absolute;
+  right: -100%;
+  transition:
+    right 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.search-form.active {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.normal-nav.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
 }

@@ -12,6 +12,7 @@ tabs:
               display: 'Page Title'
               validate:
                 - required
+              localizable: false
           -
             handle: featured_image
             field:
@@ -19,16 +20,19 @@ tabs:
               display: 'Featured Image'
               container: assets
               max_files: 1
+              localizable: false
           -
             handle: short_description
             field:
               type: textarea
               display: 'Short Description'
+              localizable: false
           -
             handle: replicator
             field:
               type: replicator
               display: Blocks
+              localizable: false
               sets:
                 new_set_group:
                   display: 'New Set Group'
@@ -114,6 +118,12 @@ tabs:
                       fields:
                         -
                           import: products_accordion
+                    search:
+                      display: Search
+                      icon: search-magnifying-glass
+                      fields:
+                        -
+                          import: search
   sidebar:
     display: Sidebar
     sections:
@@ -142,4 +152,5 @@ tabs:
               display: Locale
               taxonomies:
                 - locale
+              localizable: false
 title: Replicator

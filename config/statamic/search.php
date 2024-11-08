@@ -29,13 +29,23 @@ return [
             'driver' => 'local',
             'searchables' => 'all',
             'fields' => ['title'],
+            'sites' => ['americas', 'asia_pacific', 'emea_cis'],
         ],
 
-        // 'blog' => [
+        // 'pages' => [
         //     'driver' => 'local',
-        //     'searchables' => 'collection:blog',
+        //     'searchables' => 'collection:pages',
         // ],
 
+        // 'products' => [
+        //     'driver' => 'local',
+        //     'searchables' => 'collection:products',
+        // ],
+
+        // 'news' => [
+        //     'driver' => 'local',
+        //     'searchables' => 'collection:news',
+        // ],
     ],
 
     /*
