@@ -3,12 +3,12 @@
   class="{{ ['rounded-full transition-all' => style !== 'inline', 'px-4 py-1.5' => size == 'small' && style !== 'inline'
  , 'px-6 py-2' => size !== 'small' && style !== 'inline'
  , 'text-xl' => size !== 'small', 'text-base' => size == 'small', 'bg-minova-gold text-minova-blue border-4 border-minova-gold lg:hover:bg-transparent active:bg-minova-gold active:opacity-70' => !style || style == 'gold'
- , 'bg-minova-blue text-white border-4 border-minova-blue lg:hover:bg-transparent lg:hover:text-minova-blue active:bg-minova-blue active:opacity-70' => style == 'blue', 'bg-white text-minova-blue border-4 border-white hover:bg-transparent active:bg-white active:opacity-70' => style == 'white', 'text-white hover:text-gray-300' => style == 'inline'] | classes }} inline-block cursor-pointer whitespace-nowrap font-flama-book uppercase tracking-wider"
+ , 'bg-minova-blue text-white border-4 border-minova-blue lg:hover:bg-transparent lg:hover:text-minova-blue active:bg-minova-blue active:opacity-70' => style == 'blue', 'bg-white text-minova-blue border-4 border-white hover:bg-transparent active:bg-white active:opacity-70' => style == 'white', 'text-white hover:text-gray-300' => style == 'inline'] | classes }} group inline-block cursor-pointer whitespace-nowrap font-flama-book uppercase tracking-wider"
 >
   <span class="flex items-center justify-center">
     <span>{{ text ?? 'Read more' }}</span>
     <span class="ml-2">
-      {{ partial:common/chevron :chevron_style="chevron_style" :chevron_size="size == 'small' ? 'xs' : 'sm'" }}
+      {{ partial:common/chevron :chevron_style="chevron_style" :chevron_size="size == 'small' ? 'xs' : 'sm'" :class="style == 'blue' ? 'lg:group-hover:fill-minova-blue' : ''" }}
     </span>
   </span>
 </a>
