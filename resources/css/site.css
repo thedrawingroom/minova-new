@@ -90,6 +90,10 @@
     ol {
       @apply list-decimal;
     }
+
+    a {
+      @apply text-blue-600 underline;
+    }
   }
 
   /* Tables */
