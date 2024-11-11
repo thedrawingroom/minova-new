@@ -1,5 +1,5 @@
 {{ data }}
-  <div class="mb-10 2xl:mb-14">
+  <div class="mb-10">
     {{ if type == "text" }}
       <div class="bard-content">
         {{ text }}
@@ -17,7 +17,7 @@
         {{ if title }}
           <p class="font-bold">{{ title }}</p>
         {{ /if }}
-        <div class="grid grid-cols-3 gap-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-2">
           {{ images }}
             <div class="flex aspect-square items-center justify-center bg-slate-100">
               {{ partial:common/image class="w-auto h-auto max-w-[90%] max-h-[90%] object-contain" :url="url" :alt="alt" }}
