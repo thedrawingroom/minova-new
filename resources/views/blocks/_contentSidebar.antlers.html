@@ -53,7 +53,7 @@
           {{ /if }}
           {{ if downloads }}
             <div
-              class="{{ ['rounded-b-2xl border-t-2 border-white' => is_product, 'rounded-t-2xl' => !industry_sectors && !common_uses && !available_regions] | classes }} bg-slate-100 px-5 py-7"
+              class="{{ ['border-t-2 border-white' => is_product, 'rounded-t-2xl' => !industry_sectors && !common_uses && !available_regions] | classes }} rounded-b-2xl bg-slate-100 px-5 py-7"
             >
               {{ partial:common/downloads }}
             </div>
