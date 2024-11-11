@@ -29,6 +29,12 @@ tabs:
               display: 'Short Description'
               localizable: false
           -
+            handle: add_registered_symbol
+            field:
+              type: toggle
+              display: 'Add Registered Symbol'
+              localizable: false
+          -
             handle: banner
             field:
               type: group
