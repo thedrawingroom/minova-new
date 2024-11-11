@@ -10,21 +10,22 @@
           <option>EMEA & CIS</option>
           <option>ASIA PACIFIC</option>
         </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center rotate-90">
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex rotate-90 items-center">
           {{ partial:common/chevron chevron_style="gold" chevron_size="2xs" }}
         </div>
       </div>
     </div>
   </div>
   <div class="bg-white">
-    <div class="container flex justify-between py-4 lg:py-5">
+    <div class="container flex items-center justify-between py-4 lg:py-5">
       <div>
         <a href="/" class="cursor-pointer">
           {{ partial:common/image class="w-full max-w-40 lg:max-w-56 h-auto" url="/assets/minova_logo.svg" alt="Minova Logo" }}
         </a>
       </div>
-      <div>
+      <div class="relative flex justify-end">
         {{ partial:common/navigationHeader }}
+        {{ partial:common/searchHeader }}
         <button class="offcanvas-toggle inline-block lg:hidden"><i class="fa-regular fa-2x fa-bars"></i></button>
       </div>
     </div>

@@ -6,8 +6,6 @@ import collapse from '@alpinejs/collapse';
 import sliders from './includes/sliders';
 import letters from './includes/letters';
 import global from './includes/global';
-import search from './includes/search';
-import searchOffsite from './includes/searchOffsite';
 
 // Alpine
 window.Alpine = Alpine;
@@ -19,6 +17,4 @@ window.addEventListener('DOMContentLoaded', () => {
   sliders.init();
   letters.init();
   global.init();
-  search.init();
-  searchOffsite.init();
 });

@@ -149,27 +149,8 @@
   }
 }
 
-.search-form {
-  position: absolute;
-  right: -100%;
-  transition:
-    right 0.5s ease-in-out,
-    opacity 0.5s ease-in-out;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.search-form.active {
-  right: 0;
-  opacity: 1;
-  visibility: visible;
-}
-
-.normal-nav.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity 0.5s ease-in-out,
-    visibility 0.5s ease-in-out;
+#search-form {
+  &.active {
+    @apply translate-x-0 opacity-100;
+  }
 }
