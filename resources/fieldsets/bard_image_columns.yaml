@@ -1,8 +1,15 @@
 title: 'Bard Image Columns'
 fields:
   -
+    handle: title
+    field:
+      type: text
+      display: Title
+      localizable: false
+  -
+    handle: images
     field:
       type: assets
       display: Images
       container: assets
-    handle: images
+      localizable: false

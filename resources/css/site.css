@@ -14,6 +14,7 @@
 }
 
 @layer base {
+  /* Global */
   :root {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -37,6 +38,7 @@
     }
   }
 
+  /* Text */
   h1 {
     @apply text-5xl md:text-6xl;
   }
@@ -74,6 +76,23 @@
     @apply mb-4 font-inter text-lg leading-relaxed;
   }
 
+  /* Bard editor */
+  .bard-content {
+    ul,
+    ol {
+      @apply pl-5;
+    }
+
+    ul {
+      @apply list-disc;
+    }
+
+    ol {
+      @apply list-decimal;
+    }
+  }
+
+  /* Tables */
   table {
     @apply mb-8 w-full;
 
@@ -110,6 +129,7 @@
 }
 
 @layer components {
+  /* Slick carousel */
   .slick-track {
     @apply !flex;
   }
@@ -119,7 +139,6 @@
   }
   .slick-dots {
     @apply flex justify-center pt-6;
-    /* @apply absolute -bottom-12 left-1/2 z-10 m-0 flex -translate-x-1/2 list-none flex-wrap p-0; */
   }
 
   .slick-dots li {

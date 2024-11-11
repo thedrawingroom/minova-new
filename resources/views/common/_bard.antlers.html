@@ -1,7 +1,9 @@
 {{ data }}
   <div class="mb-10 2xl:mb-14">
     {{ if type == "text" }}
-      {{ text }}
+      <div class="bard-content">
+        {{ text }}
+      </div>
     {{ elseif type == "image" }}
       {{ if image }}
         {{ partial:common/image class="w-full h-auto rounded-3xl" :url="image" :alt="image:alt" }}
@@ -12,6 +14,9 @@
       {{ /if }}
     {{ elseif type == "image_columns" }}
       {{ if images }}
+        {{ if title }}
+          <p class="font-bold">{{ title }}</p>
+        {{ /if }}
         <div class="grid grid-cols-3 gap-2">
           {{ images }}
             <div class="flex aspect-square items-center justify-center bg-slate-100">
@@ -22,6 +27,9 @@
       {{ /if }}
     {{ elseif type == "numbered_list" }}
       {{ if numbered_list }}
+        {{ if title }}
+          <p class="font-bold">{{ title }}</p>
+        {{ /if }}
         <ol class="flex flex-col gap-5 md:flex-row lg:flex-wrap">
           {{ numbered_list }}
             <li class="flex">
