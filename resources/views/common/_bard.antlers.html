@@ -8,7 +8,7 @@
       {{ /if }}
     {{ elseif type == "button" }}
       {{ if button }}
-        {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+        {{ partial:common/button :link="button:link" :text="button:label" style="gold" }}
       {{ /if }}
     {{ elseif type == "image_columns" }}
       {{ if images }}
@@ -71,7 +71,7 @@
             {{ /if }}
           </div>
           {{ if add_button && button }}
-            {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+            {{ partial:common/button :link="button:link" :text="button:label" style="gold" }}
           {{ /if }}
         </div>
       </div>

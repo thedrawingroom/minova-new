@@ -10,9 +10,9 @@
         {{ if page_links }}
           <ul class="{{ ['mb-4' => button] | classes }}">
             {{ page_links }}
-              {{ if title && url }}
+              {{ if title && link }}
                 <li>
-                  <a href="{{ url }}" class="mb-5 flex items-center border-b-4 border-minova-gold pb-2">
+                  <a href="{{ link }}" class="mb-5 flex items-center border-b-4 border-minova-gold pb-2">
                     <h5 class="mb-0">{{ title }}</h5>
                     <div class="ml-2">
                       {{ partial:common/chevron chevron_size="xs" }}
@@ -25,7 +25,7 @@
         {{ /if }}
         {{ if button:label }}
           <div>
-            {{ partial:common/button :url="button:link" :text="button:label" style="gold" }}
+            {{ partial:common/button :link="button:link" :text="button:label" style="gold" }}
           </div>
         {{ /if }}
       </div>
