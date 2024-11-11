@@ -7,8 +7,7 @@
         <div class="text-white">
           <div class="{{ ['mb-4' => description] | classes }}">
             <h1 class="title-split mb-0">
-              {{ title }}
-              {{ if add_registered_symbol }}&reg;{{ /if }}
+              {{ title | sanitize }}
             </h1>
           </div>
           {{ if description }}

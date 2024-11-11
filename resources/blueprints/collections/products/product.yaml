@@ -29,12 +29,6 @@ tabs:
               display: 'Short Description'
               localizable: false
           -
-            handle: add_registered_symbol
-            field:
-              type: toggle
-              display: 'Add Registered Symbol'
-              localizable: false
-          -
             handle: banner
             field:
               type: group
@@ -127,6 +121,33 @@ tabs:
                 - common_use
               type: terms
               display: 'Common Uses'
+              mode: select
+              localizable: false
+          -
+            handle: locale
+            field:
+              type: terms
+              taxonomies:
+                - locale
+              display: Locale
+              mode: select
+              localizable: false
+          -
+            handle: region
+            field:
+              type: terms
+              taxonomies:
+                - region
+              display: Region
+              mode: select
+              localizable: false
+          -
+            handle: common_use
+            field:
+              type: terms
+              taxonomies:
+                - common_use
+              display: 'Common Use'
               mode: select
               localizable: false
 title: Product

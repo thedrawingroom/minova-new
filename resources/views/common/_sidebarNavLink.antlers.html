@@ -3,8 +3,7 @@
   class="{{ ['border-minova-gold' => is_current || is_parent, 'border-slate-200' => !is_current && !is_parent, 'flex items-center justify-between w-full' => !children] | classes }} mb-0 border-l-3 pl-3 text-base font-bold"
 >
   <span>
-    {{ title }}
-    {{ if add_registered_symbol }}&reg;{{ /if }}
+    {{ title | sanitize }}
   </span>
   {{ if !children }}
     {{ partial:common/chevron chevron_style="grey" chevron_size="xs" }}
