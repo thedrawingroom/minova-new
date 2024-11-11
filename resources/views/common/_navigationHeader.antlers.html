@@ -1,4 +1,4 @@
-<nav class="text-xl uppercase lg:flex items-center" style="height: 60px;">
+<nav class="text-xl hidden uppercase lg:flex items-center justify-between" style="height: 60px;">
   <ul class="-mx-2 flex list-none items-center w-full">
     {{ nav:header }}
       {{ if depth == 1 }}
@@ -37,8 +37,8 @@
     </li>
   </ul>
 
-  <div class="search-form" id="searchForm">
-    <form action="{{ site:url }}/search" class="flex w-full items-center px-4 py-2">
+  <div class="search-form" id="searchForm" style="max-width: 60%; margin-left: auto;">
+    <form action="{{ site:url }}/search" class="flex w-full px-4">
       <input type="search" name="q" placeholder="Search"
         class="px-2 py-1 w-full border-b border-minova-gold focus:outline-none text-md h-8">
       <button type="submit"
@@ -55,6 +55,5 @@
         <i class="fa-solid fa-xmark"></i>
       </button>
     </form>
-
   </div>
 </nav>
