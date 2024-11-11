@@ -1,89 +1,84 @@
-<div class="fixed bottom-0 right-0 flex flex-col drop-shadow-lg max-w-[50%]">
-    <div class="bg-minova-gold p-[1.5rem] rounded-tl-[25px] max-w-40 ml-auto">
-        <div class="uppercase font-flama-book text-2xl font-bold ">Contact</div>
-    </div>
-    <div class="flex flex-row px-12 py-8 bg-white">
-        <div class="">
-            <div
-                class="font-bold font-flama-book uppercase text-md underline decoration-minova-gold decoration-2 underline-offset-4 text-nowrap">
-                Contact Us
-            </div>
-            <div class="pt-12">
-                <div>
-                    USA<br>
-                    150 Summer Court<br>
-                    40324<br>
-                    Georgetown, KY
-                </div>
-                <div>View all Locations ></div>
-            </div>
+<div id="contact-container"
+  class="fixed bottom-0 right-0 flex max-w-[50%] translate-y-full transform flex-col drop-shadow-lg transition-transform duration-300 ease-in-out">
+  <div class="-mt-20 ml-auto max-w-40 cursor-pointer rounded-tl-[25px] bg-minova-gold p-[1.5rem]" id="contact-toggle">
+    <div class="font-flama-book text-2xl font-bold uppercase">Contact</div>
+  </div>
+  <div class="flex flex-row bg-white px-12 py-8">
+    <div class="">
+      <div
+        class="text-md text-nowrap font-flama-book font-bold uppercase underline decoration-minova-gold decoration-2 underline-offset-4">
+        Contact Us
+      </div>
+      <div class="pt-8 text-sm text-nowrap">
+        <div class="mb-12">
+          {{ site_content:address | nl2br }}
         </div>
-        <div class="">
-            <form class="grid grid-cols-3 gap-4 pl-10 text-md uppercase font-inter">
-                <div class="col-span-3">
-                    <div class="font-semibold">How can we help you?</div>
-                </div>
-                <div class="col-span-3">
-                    <textarea rows="2" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2"></textarea>
-                </div>
-
-                <div>
-                    <label for="" class="font-semibold">First name *</label>
-                </div>
-                <div>
-                    <label for="" class="font-semibold">Last Name *</label>
-                </div>
-                <div>
-                    <label for="" class="font-semibold">Company *</label>
-                </div>
-
-                <div>
-                    <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2">
-                </div>
-                <div>
-                    <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2">
-                </div>
-                <div>
-                    <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2">
-                </div>
-
-                <div>
-                    <label for="" class="font-semibold">Email *</label>
-                </div>
-                <div>
-                    <label for="" class="font-semibold">Phone ( + country code) *</label>
-                </div>
-                <div></div>
-
-                <div>
-                    <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2">
-                </div>
-                <div>
-                    <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2">
-                </div>
-                <div class="flex justify-center align-middle">
-                    <button type="submit"
-                        class="rounded-full border-2 border-minova-gold bg-minova-gold px-6 py-auto font-flama-book text-lg font-bold uppercase tracking-wider text-minova-blue transition-all hover:bg-transparent hover:text-minova-blue active:bg-minova-gold active:opacity-70">
-                        <span class="flex items-center justify-center">
-                            <span>SEND MESSAGE</span>
-                            <span class="ml-2">
-                                {{ partial:common/chevron :chevron_style="chevron_style" :chevron_size="'sm'" }}
-                            </span>
-                        </span>
-                    </button>
-                </div>
-
-                <div class="col-span-3 flex flex-row">
-                    <div class="">
-                        <input type="checkbox">
-                    </div>
-                    <div class="text-xs text-gray-400 pl-4">
-                        I agree that my personal data can be used by Minova in marketing purpose, such as newsletters
-                        and other relevant information. With my consent, I also confirm that I am over 16 year old. More
-                        information about how we handle personal data can be found in our privacy policy.
-                    </div>
-                </div>
-            </form>
-        </div>
+        <a href="{{ site }}/contacts">View all Locations ></a>
+      </div>
     </div>
+
+
+    <div class="mb-20">
+      <form class="grid grid-cols-3 gap-4 pl-10 font-inter uppercase">
+        <div class="col-span-3">
+          <div class="font-semibold text-sm">How can we help you?</div>
+          <textarea rows="2" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2"></textarea>
+        </div>
+
+        <div>
+          <label for="" class="font-semibold text-sm">First name *</label>
+          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+        </div>
+        <div>
+          <label for="" class="font-semibold text-sm">Last Name *</label>
+          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+        </div>
+        <div>
+          <label for="" class="font-semibold text-sm">Company *</label>
+          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+        </div>
+
+        <div>
+          <label for="" class="font-semibold text-sm">Email *</label>
+          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+        </div>
+        <div>
+          <label for="" class="font-semibold text-sm">Phone ( + country code) *</label>
+          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+        </div>
+
+        <div class="mt-auto mx-auto">
+          <button type="submit"
+            class="rounded-full border-2 border-minova-gold bg-minova-gold px-6 py-2 font-flama-book text-md font-bold uppercase tracking-wider text-minova-blue transition-all hover:bg-transparent hover:text-minova-blue active:bg-minova-gold active:opacity-70">
+            <span class="flex items-center justify-center">
+              <span>SEND MESSAGE</span>
+              <span class="ml-2">
+                {{ partial:common/chevron :chevron_style="chevron_style" :chevron_size="'sm'" }}
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <div class="col-span-3 flex flex-row">
+          <div class="">
+            <input type="checkbox" />
+          </div>
+          <div class="pl-4 text-xs text-gray-400">
+            I agree that my personal data can be used by Minova in marketing purpose, such as newsletters and other
+            relevant information. With my consent, I also confirm that I am over 16 year old. More information about
+            how
+            we handle personal data can be found in our privacy policy.
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
 </div>
+
+<script>
+  document.getElementById('contact-toggle').addEventListener('click', function() {
+    const contactContainer = document.getElementById('contact-container');
+    contactContainer.classList.toggle('translate-y-full');
+  });
+</script>
