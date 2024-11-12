@@ -2,18 +2,24 @@ tabs:
   main:
     display: Main
     sections:
-      -
-        fields:
-          -
-            handle: news_page
+      - fields:
+          - handle: news_page
             field:
               max_items: 1
               type: entries
               display: 'News Page'
               localizable: false
-          -
-            handle: contact_page
+          - handle: contact_page
             field:
+              max_items: 1
               type: entries
               display: 'Contact Page'
+              localizable: false
+          - handle: privacy_page
+            field:
+              max_items: 1
+              collections:
+                - pages
+              type: entries
+              display: 'Privacy Page'
               localizable: false

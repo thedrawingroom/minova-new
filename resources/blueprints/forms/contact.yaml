@@ -1,0 +1,42 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Message
+              localizable: false
+          -
+            handle: first_name
+            field:
+              type: text
+              display: 'First Name'
+              localizable: false
+          -
+            handle: last_name
+            field:
+              type: text
+              display: 'Last Name'
+              localizable: false
+          -
+            handle: company
+            field:
+              type: text
+              display: Company
+              localizable: false
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              localizable: false
+          -
+            handle: phone
+            field:
+              type: text
+              display: Phone
+              localizable: false

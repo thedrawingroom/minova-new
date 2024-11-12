@@ -1,0 +1,13 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: contact_form
+            field:
+              max_items: 1
+              type: form
+              display: 'Contact Form'
+              localizable: false
