@@ -1,0 +1,13 @@
+<label for="{{ id }}" class="text-sm font-semibold">
+  {{ label }}
+  {{ if required }}
+    <span class="text-minova-gold">*</span>
+  {{ /if }}
+</label>
+<input
+  type="{{ type ?? 'text' }}"
+  name="{{ name }}"
+  id="{{ id }}"
+  class="w-full rounded-md border border-slate-300 bg-slate-200 p-2 focus:border-minova-gold focus:outline-none"
+  required="{{ required ? 'true' : 'false' }}"
+/>

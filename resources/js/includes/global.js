@@ -35,23 +35,28 @@ export default {
         window.location.href = redirectUrl;
       });
     };
+
     initRegionSelector();
 
+    // Contact form
     const contactToggle = document.getElementById('contact-toggle');
     const contactContainer = document.getElementById('contact-container');
+
     if (contactToggle && contactContainer) {
       contactToggle.addEventListener('click', () => {
         contactContainer.classList.toggle('translate-y-full');
       });
     }
 
-    const termsCheckbox = document.getElementById('terms');
+    const termsCheckbox = document.getElementById('contact-terms');
     const submitButton = document.getElementById('submit-button');
+
     const toggleSubmitButton = () => {
       if (submitButton) {
         submitButton.disabled = !termsCheckbox.checked;
       }
     };
+
     if (termsCheckbox) {
       termsCheckbox.addEventListener('click', toggleSubmitButton);
     }
