@@ -44,5 +44,35 @@ export default {
         tooltip.classList.add('hidden');
       });
     });
+
+    const cardButtons = document.querySelectorAll('[data-card-id]');
+    const closeButtons = document.querySelectorAll('.close-card-button');
+
+    cardButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const cardId = button.getAttribute('data-card-id');
+        const card = document.getElementById(cardId);
+
+        if (card) {
+          const isCardVisible = !card.classList.contains('translate-x-full');
+
+          document.querySelectorAll('.cross-section-card').forEach(c => {
+            c.classList.add('translate-x-full', 'hidden-card', 'no-shadow');
+          });
+
+          if (!isCardVisible) {
+            card.classList.remove('translate-x-full', 'hidden-card', 'no-shadow');
+          }
+        }
+      });
+    });
+
+    closeButtons.forEach(closeButton => {
+      closeButton.addEventListener('click', e => {
+        e.stopPropagation();
+        const card = closeButton.closest('.cross-section-card');
+        card.classList.add('translate-x-full', 'hidden-card', 'no-shadow');
+      });
+    });
   },
 };
