@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="bg-white">
-    <div class="container flex justify-between py-4 lg:py-5">
+    <div class="container flex items-center justify-between py-4 lg:py-5">
       <div>
         <a href="/" class="cursor-pointer">
           {{ if site_content:main_logo }}
@@ -25,10 +25,9 @@
           {{ /if }}
         </a>
       </div>
-      <div>
-        <div>
-          {{ partial:common/navigationHeader }}
-        </div>
+      <div class="relative flex justify-end">
+        {{ partial:common/navigationHeader }}
+        {{ partial:common/searchHeader }}
         <button class="offcanvas-toggle inline-block lg:hidden"><i class="fa-regular fa-2x fa-bars"></i></button>
       </div>
     </div>

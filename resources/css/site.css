@@ -141,6 +141,7 @@
   .slick-slide {
     @apply !float-none;
   }
+
   .slick-dots {
     @apply flex justify-center pt-6;
   }
@@ -169,5 +170,11 @@
 
   .product-slider .slick-dots .slick-active button {
     @apply bg-minova-gold opacity-100;
+  }
+}
+
+#search-form {
+  &.active {
+    @apply translate-x-0 opacity-100;
   }
 }

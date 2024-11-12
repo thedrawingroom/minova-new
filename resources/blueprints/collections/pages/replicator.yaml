@@ -2,10 +2,8 @@ tabs:
   main:
     display: Main
     sections:
-      -
-        fields:
-          -
-            handle: title
+      - fields:
+          - handle: title
             field:
               type: text
               required: true
@@ -13,22 +11,19 @@ tabs:
               validate:
                 - required
               localizable: false
-          -
-            handle: featured_image
+          - handle: featured_image
             field:
               type: assets
               display: 'Featured Image'
               container: assets
               max_files: 1
               localizable: false
-          -
-            handle: short_description
+          - handle: short_description
             field:
               type: textarea
               display: 'Short Description'
               localizable: false
-          -
-            handle: replicator
+          - handle: replicator
             field:
               type: replicator
               display: Blocks
@@ -41,106 +36,95 @@ tabs:
                       display: Content
                       icon: content-book-open
                       fields:
-                        -
-                          import: main_bard
+                        - import: main_bard
                     cta_strip:
                       display: 'CTA Strip'
                       icon: align-object-center
                       fields:
-                        -
-                          import: cta_strip
+                        - import: cta_strip
                     50_50_block:
                       display: '50 50 Block'
                       icon: layout-split-verical
                       fields:
-                        -
-                          import: fifty_fifty_block
+                        - import: fifty_fifty_block
                     hero_banner:
                       display: 'Hero Banner'
                       icon: align-object-top
                       fields:
-                        -
-                          import: hero_banner
+                        - import: hero_banner
                     icon_column:
                       display: 'Icon Column'
                       icon: dashboard-layout
                       fields:
-                        -
-                          import: icon_columns
+                        - import: icon_columns
                     latest_news:
                       display: 'Latest News'
                       instructions: 'This block automatically pulls the latest three news articles'
                       icon: globe-world-wide-web
-                      fields: {  }
+                      fields: {}
                     page_columns:
                       display: 'Page Columns'
                       icon: layout-three-columns
                       fields:
-                        -
-                          import: page_columns
+                        - import: page_columns
                     product_grid:
                       display: 'Product Grid'
                       instructions: 'This block automatically pulls your top level products'
                       icon: layout-grid-dots
-                      fields: {  }
+                      fields: {}
                     team_columns:
                       display: 'Team Columns'
                       icon: user-avatar
                       fields:
-                        -
-                          import: team_columns
+                        - import: team_columns
                     video_banner:
                       display: 'Video Banner'
                       icon: media-webcam-video
                       fields:
-                        -
-                          import: video_banner
+                        - import: video_banner
                     product_slider:
                       display: 'Product Slider'
                       icon: arrows-fit-to-width
                       fields:
-                        -
-                          import: product_slider
+                        - import: product_slider
                     project_slider:
                       display: 'Project Slider'
                       icon: arrows-fit-to-width
                       fields:
-                        -
-                          import: project_slider
+                        - import: project_slider
                     content_sidebar:
                       display: 'Content Sidebar'
                       fields:
-                        -
-                          import: content_sidebar
+                        - import: content_sidebar
                     products_accordion:
                       display: 'Products Accordion'
                       icon: dashboard-layout
                       fields:
-                        -
-                          import: products_accordion
+                        - import: products_accordion
                     news_listing:
                       display: 'News Listing'
                       icon: media-news-paper
                       fields:
-                        -
-                          handle: sidebar_navigation
+                        - handle: sidebar_navigation
                           field:
                             type: navs
                             display: 'Sidebar Navigation'
                             localizable: false
+                    search:
+                      display: Search
+                      icon: search-magnifying-glass
+                      fields:
+                        - import: search
   sidebar:
     display: Sidebar
     sections:
-      -
-        fields:
-          -
-            handle: slug
+      - fields:
+          - handle: slug
             field:
               type: slug
               localizable: true
               validate: 'max:200'
-          -
-            handle: parent
+          - handle: parent
             field:
               type: entries
               collections:
@@ -148,8 +132,7 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
-          -
-            handle: locale
+          - handle: locale
             field:
               mode: select
               type: terms

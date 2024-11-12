@@ -13,5 +13,9 @@ export default {
     $('.offcanvas-toggle').on('click', () => {
       $('body').toggleClass('offcanvas-open');
     });
+
+    $('.toggle-search').on('click', () => {
+      $('#search-form').toggleClass('active');
+    });
   },
 };
