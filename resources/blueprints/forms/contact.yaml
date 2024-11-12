@@ -5,10 +5,10 @@ tabs:
       -
         fields:
           -
-            handle: description
+            handle: message
             field:
               type: textarea
-              display: Description
+              display: Message
               localizable: false
           -
             handle: first_name
@@ -39,10 +39,4 @@ tabs:
             field:
               type: text
               display: Phone
-              localizable: false
-          -
-            handle: terms
-            field:
-              type: checkboxes
-              display: terms
               localizable: false

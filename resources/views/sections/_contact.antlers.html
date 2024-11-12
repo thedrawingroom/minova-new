@@ -19,37 +19,39 @@
     </div>
 
     <div class="mb-20">
-      <form class="grid grid-cols-1 lg:grid-cols-3 gap-4 font-inter uppercase">
+      {{ form:create handle="contact" class="grid grid-cols-1 lg:grid-cols-3 gap-4 font-inter uppercase" }}
+
         <div class="col-span-full">
           <div class="font-semibold text-sm">How can we help you?</div>
-          <textarea rows="2" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2"></textarea>
+          <textarea name="message" rows="2" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2"></textarea>
         </div>
 
         <div class="mt-auto">
           <label for="" class="font-semibold text-sm">First name *</label>
-          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+          <input type="text" name="first_name" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
         </div>
         <div class="mt-auto">
           <label for="" class="font-semibold text-sm">Last Name *</label>
-          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+          <input type="text" name="last_name" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
         </div>
         <div class="mt-auto">
           <label for="" class="font-semibold text-sm">Company *</label>
-          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+          <input type="text" name="company" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
         </div>
 
         <div class="mt-auto">
           <label for="" class="font-semibold text-sm">Email *</label>
-          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+          <input type="email" name="email" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
         </div>
         <div class="mt-auto">
           <label for="" class="font-semibold text-sm">Phone ( + country code) *</label>
-          <input type="text" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
+          <input type="text" name="phone" class="w-full border-[1.5px] border-gray-300 bg-gray-200 p-2" />
         </div>
 
         <div class="mt-auto mx-auto">
-          <button type="submit"
-            class="rounded-full text-nowrap border-2 border-minova-gold bg-minova-gold px-6 py-2 font-flama-book text-sm font-bold uppercase tracking-wider text-minova-blue transition-all hover:bg-transparent hover:text-minova-blue active:bg-minova-gold active:opacity-70">
+          <button type="submit" id="submit-button"
+            class="rounded-full text-nowrap border-2 border-minova-gold bg-minova-gold px-6 py-2 font-flama-book text-sm font-bold uppercase tracking-wider text-minova-blue transition-all hover:bg-transparent hover:text-minova-blue active:bg-minova-gold active:opacity-70"
+            disabled>
             <span class="flex items-center justify-center">
               <span>SEND MESSAGE</span>
               <span class="ml-2">
@@ -61,7 +63,7 @@
 
         <div class="col-span-full flex flex-row mt-4 xl:mt-0">
           <div>
-            <input type="checkbox" />
+            <input type="checkbox" name="terms" id="terms" value="1" onclick="toggleSubmitButton()" />
           </div>
           <div class="pl-4 text-xs text-gray-400">
             I agree that my personal data can be used by Minova in marketing purposes, such as newsletters and other
@@ -69,15 +71,8 @@
             how we handle personal data can be found in our privacy policy.
           </div>
         </div>
-      </form>
+      {{ /form:create }}
     </div>
 
   </div>
 </div>
-
-<script>
-  document.getElementById('contact-toggle').addEventListener('click', function() {
-    const contactContainer = document.getElementById('contact-container');
-    contactContainer.classList.toggle('translate-y-full');
-  });
-</script>
