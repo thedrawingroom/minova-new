@@ -8,7 +8,9 @@
   >
     <div class="font-flama-book text-xl font-bold uppercase lg:text-2xl">Contact</div>
   </div>
-  <div class="grid max-h-[65vh] md:max-h-[500px] lg:max-h-[600px] grid-cols-12 gap-6 overflow-y-auto p-6 lg:gap-10 lg:p-10">
+  <div
+    class="grid max-h-[65vh] grid-cols-12 gap-6 overflow-y-auto p-6 md:max-h-[500px] lg:max-h-[600px] lg:gap-10 lg:p-10"
+  >
     <div class="col-span-12 lg:col-span-3">
       <h6>Contact Us</h6>
       <p class="mb-8 text-sm">{{ site_content:address | nl2br }}</p>
@@ -18,55 +20,59 @@
     </div>
 
     <div class="col-span-12 lg:col-span-9">
-      {{ form:create handle="contact" class="grid grid-cols-1 lg:grid-cols-3 gap-4" }}
-        <div class="col-span-full">
-          {{ partial:common/formTextArea label="How can we help you?" required="true" id="contact_message" name="message" }}
-        </div>
-        <div class="mt-auto">
-          {{ partial:common/formInput label="First name" required="true" id="contact-first_name" name="first_name" }}
-        </div>
-        <div class="mt-auto">
-          {{ partial:common/formInput label="Last Name" required="true" id="contact-last_name" name="last_name" }}
-        </div>
-        <div class="mt-auto">
-          {{ partial:common/formInput label="Company" required="true" id="contact-company" name="company" }}
-        </div>
-        <div class="mt-auto">
-          {{ partial:common/formInput type="email" label="Email" required="true" id="contact-email" name="email" }}
-        </div>
-        <div class="mt-auto">
-          {{ partial:common/formInput label="Phone ( + country code)" required="true" id="contact-phone" name="phone" }}
-        </div>
+      {{ if form_handles:contact_form }}
+        {{ form:create in="{form_handles:contact_form:handle}" class="grid grid-cols-1 lg:grid-cols-3 gap-4" }}
+          <div class="col-span-full">
+            {{ partial:common/formTextArea label="How can we help you?" required="true" id="contact_message" name="message" }}
+          </div>
+          <div class="mt-auto">
+            {{ partial:common/formInput label="First name" required="true" id="contact-first_name" name="first_name" }}
+          </div>
+          <div class="mt-auto">
+            {{ partial:common/formInput label="Last Name" required="true" id="contact-last_name" name="last_name" }}
+          </div>
+          <div class="mt-auto">
+            {{ partial:common/formInput label="Company" required="true" id="contact-company" name="company" }}
+          </div>
+          <div class="mt-auto">
+            {{ partial:common/formInput type="email" label="Email" required="true" id="contact-email" name="email" }}
+          </div>
+          <div class="mt-auto">
+            {{ partial:common/formInput label="Phone ( + country code)" required="true" id="contact-phone" name="phone" }}
+          </div>
 
-        <div class="mt-auto">
-          <button
-            type="submit"
-            id="submit-button"
-            class="w-full text-nowrap rounded-full border-2 border-minova-gold bg-minova-gold px-6 py-2 font-flama-book text-sm font-bold uppercase tracking-wider text-minova-blue transition-all enabled:hover:bg-transparent enabled:hover:text-minova-blue enabled:active:bg-minova-gold enabled:active:opacity-70 disabled:opacity-70 disabled:cursor-not-allowed"
-            disabled
-          >
-            <span class="flex items-center justify-center">
-              <span class="uppercase">Send message</span>
-              <span class="ml-2">
-                {{ partial:common/chevron :chevron_style="chevron_style" chevron_size="xs" }}
+          <div class="mt-auto">
+            <button
+              type="submit"
+              id="submit-button"
+              class="w-full text-nowrap rounded-full border-2 border-minova-gold bg-minova-gold px-6 py-2 font-flama-book text-sm font-bold uppercase tracking-wider text-minova-blue transition-all enabled:hover:bg-transparent enabled:hover:text-minova-blue enabled:active:bg-minova-gold enabled:active:opacity-70 disabled:cursor-not-allowed disabled:opacity-70"
+              disabled
+            >
+              <span class="flex items-center justify-center">
+                <span class="uppercase">Send message</span>
+                <span class="ml-2">
+                  {{ partial:common/chevron :chevron_style="chevron_style" chevron_size="xs" }}
+                </span>
               </span>
-            </span>
-          </button>
-        </div>
+            </button>
+          </div>
 
-        <div class="col-span-full mt-4 flex flex-row xl:mt-0">
-          <div>
-            <input type="checkbox" name="terms" id="contact-terms" value="1" />
+          <div class="col-span-full mt-4 flex flex-row xl:mt-0">
+            <div>
+              <input type="checkbox" name="terms" id="contact-terms" value="1" />
+            </div>
+            <div class="pl-4 text-xs text-gray-400">
+              I agree that my personal data can be used by Minova in marketing purposes, such as newsletters and other
+              relevant information. With my consent, I also confirm that I am over 16 years old. More information about
+              how we handle personal data can be found in our
+              {{ if page_entries:privacy_page }}
+                <a class="text-blue-600 underline" href="{{ page_entries:privacy_page:url }}">privacy policy</a>
+              {{ /if }}
+              .
+            </div>
           </div>
-          <div class="pl-4 text-xs text-gray-400">
-            I agree that my personal data can be used by Minova in marketing purposes, such as newsletters and other
-            relevant information. With my consent, I also confirm that I am over 16 years old. More information about
-            how we handle personal data can be found in our {{ if page_entries:privacy_page }}<a class="underline text-blue-600" href="{{ page_entries:privacy_page:url }}">privacy policy</a>{{ /if }}.
-          </div>
-        </div>
-      {{ /form:create }}
+        {{ /form:create }}
+      {{ /if }}
     </div>
   </div>
 </div>
-
-
