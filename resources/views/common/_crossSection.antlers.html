@@ -1,13 +1,40 @@
-{{# Main image element with hotspots #}}
-{{# @TODO: Need to add click function to hotspots to control which overlay card is shown #}}
-{{# @TODO: Needs separate mobile "select" view trigger #}}
 <div class="relative">
   {{ partial:common/image class="h-auto w-full object-contain" url="/cross-section-image.jpg" alt="cross section image" }}
-  {{ partial:common/crossSectionHotspot }}
+  {{ partial:common/crossSectionHotspot position_class="left-[26%] top-[17%]" tooltip="Sewer Repair" card_id="sewer_repair" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[52%] top-[10%]" tooltip="Slope & Wall Ground Engineering" card_id="slope_wall_ground_engineering" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[40%] top-[15%]" tooltip="Micropile Foundations" card_id="micropile_foundations" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[50%] top-[20%]" tooltip="Surface to Underground Delivery" card_id="surface_to_underground_delivery" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[67%] top-[15%]" tooltip="Road Maintenance" card_id="road_maintenance" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[74%] top-[9%]" tooltip="Tunnel Maintenance" card_id="tunnel_maintenance" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[20%] top-[24%]" tooltip="Ground Consolidation and Stabilisation" card_id="ground_consolidation_and_stabilisation" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[83%] top-[26%]" tooltip="Surface Support" card_id="surface_support" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[8%] top-[39%]" tooltip="Water Control" card_id="water_control" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[10%] top-[46%]" tooltip="Standing Roof Support" card_id="standing_roof_support" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[20%] top-[50%]" tooltip="Seals and Barriers" card_id="seals_and_barriers" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[75%] top-[45%]" tooltip="Cavity Filling" card_id="cavity_filling" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[87%] top-[47%]" tooltip="Pre-driven Roadway Pillars" card_id="pre_driven_roadway_pillars" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[49%] top-[66%]" tooltip="Ground Control" card_id="ground_control" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[58%] top-[70%]" tooltip="UniPass single pass bolting technologies" card_id="unipass_single_pass_bolting_technologies" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[5%] top-[75%]" tooltip="Ultimate Stemming" card_id="ultimate_stemming" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[72%] top-[78%]" tooltip="Ore recovery optimisation" card_id="ore_recovery_optimisation" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[89%] top-[70%]" tooltip="Ventilation" card_id="ventilation" }}
 </div>
 
-{{# Fixed elements that are triggered by hotspots #}}
-{{# See "Global" area for name of all these elements #}}
-{{ if cross_section:slope_wall_ground_engineering }}
-  {{ partial:common/crossSectionCard title="Slope & Wall Ground Engineering" :image="cross_section:slope_wall_ground_engineering:image" :description="cross_section:slope_wall_ground_engineering:description" }}
-{{ /if }}
+{{ partial:common/crossSectionCard card_id="sewer_repair" title="Sewer Repair" :image="cross_section:sewer_repair:image" :description="cross_section:sewer_repair:description" }}
+{{ partial:common/crossSectionCard card_id="slope_wall_ground_engineering" title="Slope & Wall Ground Engineering" :image="cross_section:slope_wall_ground_engineering:image" :description="cross_section:slope_wall_ground_engineering:description" }}
+{{ partial:common/crossSectionCard card_id="micropile_foundations" title="Micropile Foundations" :image="cross_section:micropile_foundations:image" :description="cross_section:micropile_foundations:description" }}
+{{ partial:common/crossSectionCard card_id="surface_to_underground_delivery" title="Surface to Underground Delivery" :image="cross_section:surface_to_underground_delivery:image" :description="cross_section:surface_to_underground_delivery:description" }}
+{{ partial:common/crossSectionCard card_id="road_maintenance" title="Road Maintenance" :image="cross_section:road_maintenance:image" :description="cross_section:road_maintenance:description" }}
+{{ partial:common/crossSectionCard card_id="tunnel_maintenance" title="Tunnel Maintenance" :image="cross_section:tunnel_maintenance:image" :description="cross_section:tunnel_maintenance:description" }}
+{{ partial:common/crossSectionCard card_id="ground_consolidation_and_stabilisation" title="Ground Consolidation and Stabilisation" :image="cross_section:ground_consolidation_and_stabilisation:image" :description="cross_section:ground_consolidation_and_stabilisation:description" }}
+{{ partial:common/crossSectionCard card_id="surface_support" title="Surface Support" :image="cross_section:surface_support:image" :description="cross_section:surface_support:description" }}
+{{ partial:common/crossSectionCard card_id="water_control" title="Water Control" :image="cross_section:water_control:image" :description="cross_section:water_control:description" }}
+{{ partial:common/crossSectionCard card_id="standing_roof_support" title="Standing Roof Support" :image="cross_section:standing_roof_support:image" :description="cross_section:standing_roof_support:description" }}
+{{ partial:common/crossSectionCard card_id="seals_and_barriers" title="Seals and Barriers" :image="cross_section:seals_and_barriers:image" :description="cross_section:seals_and_barriers:description" }}
+{{ partial:common/crossSectionCard card_id="cavity_filling" title="Cavity Filling" :image="cross_section:cavity_filling:image" :description="cross_section:cavity_filling:description" }}
+{{ partial:common/crossSectionCard card_id="pre_driven_roadway_pillars" title="Pre-driven Roadway Pillars" :image="cross_section:pre_driven_roadway_pillars:image" :description="cross_section:pre_driven_roadway_pillars:description" }}
+{{ partial:common/crossSectionCard card_id="ground_control" title="Ground Control" :image="cross_section:ground_control:image" :description="cross_section:ground_control:description" }}
+{{ partial:common/crossSectionCard card_id="unipass_single_pass_bolting_technologies" title="UniPass Single Pass Bolting Technologies" :image="cross_section:unipass_single_pass_bolting_technologies:image" :description="cross_section:unipass_single_pass_bolting_technologies:description" }}
+{{ partial:common/crossSectionCard card_id="ultimate_stemming" title="Ultimate Stemming" :image="cross_section:ultimate_stemming:image" :description="cross_section:ultimate_stemming:description" }}
+{{ partial:common/crossSectionCard card_id="ore_recovery_optimisation" title="Ore Recovery Optimisation" :image="cross_section:ore_recovery_optimisation:image" :description="cross_section:ore_recovery_optimisation:description" }}
+{{ partial:common/crossSectionCard card_id="ventilation" title="Ventilation" :image="cross_section:ventilation:image" :description="cross_section:ventilation:description" }}

@@ -1,10 +1,8 @@
-<div
-  class="fixed right-0 top-0 z-40 h-screen w-10/12 translate-x-full bg-white shadow-xl transition-transform md:w-[40rem]"
->
+<div id="{{ card_id }}"
+  class="cross-section-card fixed right-0 top-0 z-40 h-screen w-10/12 translate-x-full bg-white transition-transform md:w-[40rem] hidden-card">
   <div class="relative min-h-36">
     <button
-      class="toggle-cross-overlay absolute right-4 top-4 z-[1] flex size-10 items-center justify-center rounded-full bg-white"
-    >
+      class="close-card-button absolute right-4 top-4 z-[1] flex size-10 items-center justify-center rounded-full bg-white">
       <i class="fa-regular fa-xmark fa-lg text-minova-blue"></i>
     </button>
     {{ if image }}

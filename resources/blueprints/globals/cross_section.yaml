@@ -5,6 +5,27 @@ tabs:
       -
         fields:
           -
+            handle: sewer_repair
+            field:
+              type: group
+              display: 'Sewer Repair'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
             handle: slope_wall_ground_engineering
             field:
               type: group
@@ -30,27 +51,6 @@ tabs:
             field:
               type: group
               display: 'Tunnel Maintenance'
-              localizable: false
-              fields:
-                -
-                  handle: image
-                  field:
-                    max_files: 1
-                    container: assets
-                    type: assets
-                    display: Image
-                    localizable: false
-                -
-                  handle: description
-                  field:
-                    type: textarea
-                    display: Description
-                    localizable: false
-          -
-            handle: sewer_repair
-            field:
-              type: group
-              display: 'Sewer Repair'
               localizable: false
               fields:
                 -
