@@ -3,11 +3,26 @@
 {{# @TODO: Needs separate mobile "select" view trigger #}}
 <div class="relative">
   {{ partial:common/image class="h-auto w-full object-contain" url="/cross-section-image.jpg" alt="cross section image" }}
-  {{ partial:common/crossSectionHotspot }}
+  {{ partial:common/crossSectionHotspot position_class="left-[26%] top-[17%]" tooltip="Sewer Repair" card_id="sewer_repair" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[40%] top-[15%]" tooltip="Micropile Foundations" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[52%] top-[10%]" tooltip="Slope & Wall Ground Engineering" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[50%] top-[20%]" tooltip="Surface to Underground Delivery" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[67%] top-[15%]" tooltip="Road Maintenance" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[74%] top-[9%]" tooltip="Tunnel Maintenance" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[20%] top-[24%]" tooltip="Ground Consolidation and Stabalisation" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[83%] top-[26%]" tooltip="Surface Support" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[8%] top-[39%]" tooltip="Water Control" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[10%] top-[46%]" tooltip="Standing Roof Support" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[20%] top-[50%]" tooltip="Seals and Barriers" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[75%] top-[45%]" tooltip="Cavity Filling" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[87%] top-[47%]" tooltip="Pre-driven Roadway Pillars" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[49%] top-[66%]" tooltip="Ground Control" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[58%] top-[70%]" tooltip="UniPass single pass bolting technologies" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[5%] top-[75%]" tooltip="Ultimate Stemming" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[72%] top-[78%]" tooltip="Ore recovery optimisation" }}
+  {{ partial:common/crossSectionHotspot position_class="left-[89%] top-[70%]" tooltip="Ventilation" }}
 </div>
 
 {{# Fixed elements that are triggered by hotspots #}}
 {{# See "Global" area for name of all these elements #}}
-{{ if cross_section:slope_wall_ground_engineering }}
-  {{ partial:common/crossSectionCard title="Slope & Wall Ground Engineering" :image="cross_section:slope_wall_ground_engineering:image" :description="cross_section:slope_wall_ground_engineering:description" }}
-{{ /if }}
+{{ partial:common/crossSectionCard card_id="sewer_repair" title="Sewer Repair" :image="cross_section:sewer_repair:image" :description="cross_section:sewer_repair:description" }}

@@ -6,6 +6,7 @@ import collapse from '@alpinejs/collapse';
 import sliders from './includes/sliders';
 import letters from './includes/letters';
 import global from './includes/global';
+import crossSection from './includes/crossSection';
 
 // Alpine
 window.Alpine = Alpine;
@@ -16,5 +17,6 @@ Alpine.start();
 window.addEventListener('DOMContentLoaded', () => {
   sliders.init();
   letters.init();
+  crossSection.init();
   global.init();
 });

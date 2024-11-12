@@ -170,4 +170,28 @@
   .product-slider .slick-dots .slick-active button {
     @apply bg-minova-gold opacity-100;
   }
+
+  @keyframes growFromBottomLeft {
+    0% {
+      transform: scale(0) translateY(20%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .tooltip {
+    transition:
+      transform 0.2s ease-out,
+      opacity 0.2s ease-out;
+    transform-origin: bottom left;
+    transform: scale(0);
+    opacity: 0;
+    &.show {
+      animation: growFromBottomLeft 0.3s forwards;
+    }
+  }
 }
