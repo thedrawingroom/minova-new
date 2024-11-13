@@ -5,11 +5,11 @@ fields:
     field:
       type: text
       display: Title
-      localizable: false
+      localizable: true
   -
     handle: images
     field:
       type: assets
       display: Images
       container: assets
-      localizable: false
+      localizable: true

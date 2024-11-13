@@ -24,7 +24,7 @@ fields:
         - horizontalrule
       display: Content
       remove_empty_nodes: false
-      localizable: false
+      localizable: true
       container: assets
       sets:
         bard_blocks:

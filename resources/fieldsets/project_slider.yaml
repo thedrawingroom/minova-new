@@ -1,9 +1,13 @@
 title: 'Project Slider'
 fields:
   -
+    handle: projects
     field:
       mode: stacked
       type: grid
+      add_row: 'Add Project'
+      display: Projects
+      localizable: true
       fields:
         -
           field:
@@ -29,6 +33,3 @@ fields:
           handle: description
         -
           import: button
-      add_row: 'Add Project'
-      display: Projects
-    handle: projects

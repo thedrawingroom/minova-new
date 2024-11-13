@@ -1,13 +1,17 @@
 title: 'Icon Columns'
 fields:
   -
+    handle: title
     field:
       type: text
       display: Title
-    handle: title
+      localizable: true
   -
+    handle: cards
     field:
       type: grid
+      display: Cards
+      localizable: true
       fields:
         -
           field:
@@ -26,5 +30,3 @@ fields:
             type: textarea
             display: Description
           handle: description
-      display: Cards
-    handle: cards

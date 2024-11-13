@@ -1,32 +1,37 @@
 title: 'Hero Banner'
 fields:
   -
+    handle: title
     field:
       type: text
       display: Title
       validate:
         - required
-    handle: title
+      localizable: true
   -
+    handle: description
     field:
       type: text
       display: Description
-    handle: description
+      localizable: true
   -
+    handle: image
     field:
       type: assets
       display: Image
       container: assets
       max_files: 1
-    handle: image
+      localizable: true
   -
+    handle: large_banner
     field:
       type: toggle
       display: 'Large Banner'
-    handle: large_banner
+      localizable: true
   -
+    handle: include_breadcrumbs
     field:
       type: toggle
       default: true
       display: 'Include Breadcrumbs'
-    handle: include_breadcrumbs
+      localizable: true

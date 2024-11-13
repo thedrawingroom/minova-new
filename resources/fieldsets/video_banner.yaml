@@ -1,6 +1,7 @@
 title: 'Video Banner'
 fields:
   -
+    handle: video
     field:
       type: assets
       display: Video
@@ -8,4 +9,4 @@ fields:
         - 'mimes:mp4'
       container: assets
       max_files: 1
-    handle: video
+      localizable: true

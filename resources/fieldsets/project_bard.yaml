@@ -9,7 +9,7 @@ fields:
         - required
       container: assets
       max_files: 1
-      localizable: false
+      localizable: true
   -
     handle: project_title
     field:
@@ -17,19 +17,19 @@ fields:
       display: 'Project Title'
       validate:
         - required
-      localizable: false
+      localizable: true
   -
     handle: subtitle
     field:
       type: text
       display: Subtitle
-      localizable: false
+      localizable: true
   -
     handle: location
     field:
       type: text
       display: Location
-      localizable: false
+      localizable: true
   -
     handle: description
     field:
@@ -50,19 +50,19 @@ fields:
         - underline
       display: Description
       remove_empty_nodes: false
-      localizable: false
+      localizable: true
   -
     handle: add_button
     field:
       type: toggle
       display: 'Add Button'
-      localizable: false
+      localizable: true
   -
     handle: button
     field:
       type: group
       display: Button
-      localizable: false
+      localizable: true
       if:
         add_button: 'equals true'
       fields:
@@ -83,10 +83,10 @@ fields:
     field:
       type: toggle
       display: 'Flip Orientation'
-      localizable: false
+      localizable: true
   -
     handle: full_width
     field:
       type: toggle
       display: 'Full Width'
-      localizable: false
+      localizable: true

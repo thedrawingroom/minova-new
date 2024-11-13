@@ -1,14 +1,16 @@
 title: 'Product Slider'
 fields:
   -
+    handle: title
     field:
       type: text
       display: Title
-    handle: title
+      localizable: true
   -
+    handle: products
     field:
       type: entries
       display: Products
       collections:
         - products
-    handle: products
+      localizable: true

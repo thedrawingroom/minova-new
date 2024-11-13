@@ -1,14 +1,19 @@
 title: 'Products Accordion'
 fields:
   -
+    handle: title
     field:
       type: text
       display: Title
-    handle: title
+      localizable: true
   -
+    handle: sections
     field:
       mode: stacked
       type: grid
+      add_row: 'Add Section'
+      display: Sections
+      localizable: true
       fields:
         -
           field:
@@ -40,6 +45,3 @@ fields:
             add_row: 'Add Inner Section'
             display: 'Inner Sections'
           handle: inner_sections
-      add_row: 'Add Section'
-      display: Sections
-    handle: sections
