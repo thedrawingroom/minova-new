@@ -1,9 +1,13 @@
 title: 'Team Columns'
 fields:
   -
+    handle: team_members
     field:
       mode: stacked
       type: grid
+      add_row: 'Add Team Member'
+      display: 'Team Members'
+      localizable: true
       fields:
         -
           field:
@@ -32,6 +36,3 @@ fields:
             type: textarea
             display: Quote
           handle: quote
-      add_row: 'Add Team Member'
-      display: 'Team Members'
-    handle: team_members

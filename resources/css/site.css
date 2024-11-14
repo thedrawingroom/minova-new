@@ -80,7 +80,7 @@
   .bard-content {
     ul,
     ol {
-      @apply pl-5;
+      @apply pl-5 mb-8;
     }
 
     ul {

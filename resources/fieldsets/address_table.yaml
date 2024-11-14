@@ -1,9 +1,12 @@
 title: 'Address Table'
 fields:
   -
+    handle: addresses
     field:
       mode: stacked
       type: grid
+      display: Addresses
+      localizable: true
       fields:
         -
           field:
@@ -41,5 +44,3 @@ fields:
                 handle: contact_type
             display: 'Contact List'
           handle: contact_list
-      display: Addresses
-    handle: addresses

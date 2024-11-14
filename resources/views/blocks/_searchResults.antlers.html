@@ -1,17 +1,10 @@
-<div class="container max-w-5xl py-8 lg:py-12 2xl:py-14">
+<div class="container max-w-5xl mt8- py-8 lg:py-12 2xl:py-14">
   <div class="mb-10">
     <form action="{{ site:url }}/search" method="GET" class="flex items-center justify-center">
-      <input
-        type="search"
-        name="q"
-        placeholder="Search"
-        value="{{ get:q }}"
-        class="w-1/2 border-b border-minova-gold py-2 text-2xl focus:outline-none"
-      />
-      <button
-        type="submit"
-        class="ml-6 rounded-full border-3 border-minova-gold bg-minova-gold px-6 py-2 font-flama-book text-lg font-bold uppercase tracking-wider text-minova-blue transition-all hover:bg-transparent hover:text-minova-blue active:bg-minova-gold active:opacity-70"
-      >
+      <input type="search" name="q" placeholder="Search" value="{{ get:q }}"
+        class="w-1/2 border-b border-minova-gold py-2 text-2xl focus:outline-none" />
+      <button type="submit"
+        class="ml-6 rounded-full border-3 border-minova-gold bg-minova-gold px-6 py-2 font-flama-book text-lg font-bold uppercase tracking-wider text-minova-blue transition-all hover:bg-transparent hover:text-minova-blue active:bg-minova-gold active:opacity-70">
         <span class="flex items-center justify-center">
           <span>SEARCH</span>
           <span class="ml-2">
@@ -20,21 +13,6 @@
         </span>
       </button>
     </form>
-  </div>
-  <div class="mb-10 lg:mb-14">
-    {{ if !no_results }}
-      <h2 class="mb-6 text-center text-2xl font-semibold">
-        {{ total_results }}
-        search
-        {{ if total_results == 1 }}result
-        {{ else }}
-          results
-        {{ /if }}
-        found for "
-        <span class="text-minova-gold">{{ get:q | upper }}</span>
-        "
-      </h2>
-    {{ /if }}
   </div>
   {{ search:results index="default" }}
     {{ if no_results }}

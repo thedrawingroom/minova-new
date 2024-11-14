@@ -1,9 +1,10 @@
 title: 'CTA Strip'
 fields:
   -
+    handle: title
     field:
       type: text
       display: Title
-    handle: title
+      localizable: true
   -
     import: button

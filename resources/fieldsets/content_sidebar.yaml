@@ -5,7 +5,7 @@ fields:
     field:
       type: navs
       display: 'Sidebar Navigation'
-      localizable: false
+      localizable: true
       max_items: 1
   -
     import: main_bard
@@ -14,7 +14,7 @@ fields:
     field:
       type: grid
       display: Downloads
-      localizable: false
+      localizable: true
       fields:
         -
           field:

@@ -13,7 +13,7 @@ fields:
       default: image
       type: radio
       display: 'Left Column'
-      localizable: false
+      localizable: true
   -
     handle: image
     field:
@@ -21,7 +21,7 @@ fields:
       display: Image
       container: assets
       max_files: 1
-      localizable: false
+      localizable: true
       if:
         left_column: 'equals image'
   -
@@ -46,13 +46,13 @@ fields:
       display: Content
       smart_typography: true
       remove_empty_nodes: false
-      localizable: false
+      localizable: true
   -
     handle: page_links
     field:
       type: grid
       display: 'Page Links'
-      localizable: false
+      localizable: true
       fields:
         -
           field:

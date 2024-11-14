@@ -1,6 +1,7 @@
 title: Video
 fields:
   -
+    handle: video_type
     field:
       type: radio
       inline: true
@@ -13,8 +14,9 @@ fields:
         -
           key: file
           value: File
-    handle: video_type
+      localizable: true
   -
+    handle: video_file
     field:
       if:
         video_type: 'equals file'
@@ -22,11 +24,12 @@ fields:
       display: 'Video File'
       container: assets
       max_files: 1
-    handle: video_file
+      localizable: true
   -
+    handle: video_link
     field:
       if:
         video_type: 'equals link'
       type: video
       display: 'Video Link'
-    handle: video_link
+      localizable: true

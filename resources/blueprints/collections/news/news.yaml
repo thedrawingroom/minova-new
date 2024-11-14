@@ -11,7 +11,7 @@ tabs:
               required: true
               validate:
                 - required
-              localizable: false
+              localizable: true
           -
             handle: image
             field:
@@ -19,20 +19,20 @@ tabs:
               display: Image
               container: assets
               max_files: 1
-              localizable: false
+              localizable: true
           -
             handle: short_description
             field:
               type: textarea
               display: 'Short Description'
               character_limit: 150
-              localizable: false
+              localizable: true
           -
             handle: banner
             field:
               type: group
               display: Banner
-              localizable: false
+              localizable: true
               fields:
                 -
                   import: hero_banner
@@ -43,7 +43,7 @@ tabs:
             field:
               type: grid
               display: Downloads
-              localizable: false
+              localizable: true
               fields:
                 -
                   handle: title

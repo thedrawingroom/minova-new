@@ -5,14 +5,14 @@ fields:
     field:
       type: text
       display: Title
-      localizable: false
+      localizable: true
   -
     handle: numbered_list
     field:
       type: grid
       add_row: 'Add List Item'
       display: 'Numbered List'
-      localizable: false
+      localizable: true
       fields:
         -
           field:

@@ -12,7 +12,7 @@ tabs:
               display: Title
               validate:
                 - required
-              localizable: false
+              localizable: true
           -
             handle: image
             field:
@@ -20,20 +20,20 @@ tabs:
               display: Image
               container: assets
               max_files: 1
-              localizable: false
+              localizable: true
           -
             handle: short_description
             field:
               character_limit: 150
               type: textarea
               display: 'Short Description'
-              localizable: false
+              localizable: true
           -
             handle: banner
             field:
               type: group
               display: Banner
-              localizable: false
+              localizable: true
               fields:
                 -
                   field:
@@ -56,13 +56,13 @@ tabs:
               display: 'Related Products'
               collections:
                 - products
-              localizable: false
+              localizable: true
           -
             handle: downloads
             field:
               type: grid
               display: Downloads
-              localizable: false
+              localizable: true
               fields:
                 -
                   handle: title
@@ -121,33 +121,6 @@ tabs:
                 - common_use
               type: terms
               display: 'Common Uses'
-              mode: select
-              localizable: false
-          -
-            handle: locale
-            field:
-              type: terms
-              taxonomies:
-                - locale
-              display: Locale
-              mode: select
-              localizable: false
-          -
-            handle: region
-            field:
-              type: terms
-              taxonomies:
-                - region
-              display: Region
-              mode: select
-              localizable: false
-          -
-            handle: common_use
-            field:
-              type: terms
-              taxonomies:
-                - common_use
-              display: 'Common Use'
               mode: select
               localizable: false
 title: Product
