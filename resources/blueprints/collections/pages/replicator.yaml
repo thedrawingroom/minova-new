@@ -154,13 +154,4 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
-          -
-            handle: locale
-            field:
-              mode: select
-              type: terms
-              display: Locale
-              taxonomies:
-                - locale
-              localizable: false
 title: Replicator
