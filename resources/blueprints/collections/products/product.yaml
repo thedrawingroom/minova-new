@@ -123,31 +123,4 @@ tabs:
               display: 'Common Uses'
               mode: select
               localizable: false
-          -
-            handle: locale
-            field:
-              type: terms
-              taxonomies:
-                - locale
-              display: Locale
-              mode: select
-              localizable: false
-          -
-            handle: region
-            field:
-              type: terms
-              taxonomies:
-                - region
-              display: Region
-              mode: select
-              localizable: false
-          -
-            handle: common_use
-            field:
-              type: terms
-              taxonomies:
-                - common_use
-              display: 'Common Use'
-              mode: select
-              localizable: false
 title: Product
