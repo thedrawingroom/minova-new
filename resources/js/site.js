@@ -8,6 +8,8 @@ import letters from './includes/letters';
 import global from './includes/global';
 import crossSection from './includes/crossSection';
 
+import { computePosition } from 'https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.12/+esm';
+
 // Alpine
 window.Alpine = Alpine;
 Alpine.plugin(collapse);
@@ -19,4 +21,19 @@ window.addEventListener('DOMContentLoaded', () => {
   letters.init();
   crossSection.init();
   global.init();
+
+  const button = document.querySelector('#parent-4');
+  const tooltip = document.querySelector('#child-4');
+
+  console.log(button);
+  console.log(tooltip);
+
+  computePosition(button, tooltip, {
+    placement: 'bottom-start',
+  }).then(({ x, y }) => {
+    Object.assign(tooltip.style, {
+      left: `${x}px`,
+      top: `${y}px`,
+    });
+  });
 });
