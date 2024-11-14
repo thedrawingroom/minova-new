@@ -5,23 +5,33 @@ tabs:
       -
         fields:
           -
+            handle: title
             field:
               type: text
               required: true
               validate:
                 - required
-            handle: title
+              localizable: false
+          -
+            handle: icon
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Icon
+              localizable: false
   sidebar:
     display: Sidebar
     sections:
       -
         fields:
           -
+            handle: slug
             field:
               type: slug
               required: true
               validate:
                 - required
                 - 'max:200'
-            handle: slug
+              localizable: false
 title: Industry
