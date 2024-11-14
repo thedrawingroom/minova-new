@@ -1,4 +1,7 @@
-<li x-data="{ isExpanded: {{ is_parent || is_current ? 'true' : 'false' }} }" class="{{ ['mb-4' => !last] | classes }}">
+<li
+  x-data="{ isExpanded: {{ is_parent || is_current ? 'true' : 'false' }} }"
+  class="{{ ['mb-4' => !last] | classes }}"
+>
   <div class="flex items-center justify-between">
     {{ partial:common/sidebarNavLink }}
     <div>
@@ -29,9 +32,144 @@
     >
       <ul class="pb-2 pl-3 pt-5">
         {{ children }}
-          <li class="{{ ['mb-4' => !last] | classes }}">
-            {{ partial:common/sidebarNavLink }}
-          </li>
+          {{ if children }}
+            <li
+              x-data="{ isExpanded: {{ is_parent || is_current ? 'true' : 'false' }} }"
+              class="{{ ['mb-4' => !last] | classes }}"
+            >
+              <div class="flex items-center justify-between">
+                {{ partial:common/sidebarNavLink }}
+                <div>
+                  {{ if children }}
+                    <button
+                      type="button"
+                      @click="isExpanded = ! isExpanded"
+                      :aria-expanded="isExpanded ? 'true' : 'false'"
+                      aria-controls="accordionItem{{ id }}"
+                      class="focus:outline-none"
+                    >
+                      <div :class="isExpanded ? 'rotate-270' : 'rotate-90'">
+                        {{ partial:common/chevron chevron_style="grey" chevron_size="xs" }}
+                      </div>
+                    </button>
+                  {{ /if }}
+                </div>
+              </div>
+              {{ if children }}
+                <div
+                  x-show="isExpanded"
+                  x-cloak
+                  id="accordionItem{{ id }}"
+                  role="region"
+                  class="w-full"
+                  aria-labelledby="controlsAccordionItem{{ id }}"
+                  x-collapse
+                >
+                  <ul class="pb-2 pl-3 pt-5">
+                    {{ children }}
+                      {{ if children }}
+                        <li
+                          x-data="{ isExpanded: {{ is_parent || is_current ? 'true' : 'false' }} }"
+                          class="{{ ['mb-4' => !last] | classes }}"
+                        >
+                          <div class="flex items-center justify-between">
+                            {{ partial:common/sidebarNavLink }}
+                            <div>
+                              {{ if children }}
+                                <button
+                                  type="button"
+                                  @click="isExpanded = ! isExpanded"
+                                  :aria-expanded="isExpanded ? 'true' : 'false'"
+                                  aria-controls="accordionItem{{ id }}"
+                                  class="focus:outline-none"
+                                >
+                                  <div :class="isExpanded ? 'rotate-270' : 'rotate-90'">
+                                    {{ partial:common/chevron chevron_style="grey" chevron_size="xs" }}
+                                  </div>
+                                </button>
+                              {{ /if }}
+                            </div>
+                          </div>
+                          {{ if children }}
+                            <div
+                              x-show="isExpanded"
+                              x-cloak
+                              id="accordionItem{{ id }}"
+                              role="region"
+                              class="w-full"
+                              aria-labelledby="controlsAccordionItem{{ id }}"
+                              x-collapse
+                            >
+                              <ul class="pb-2 pl-3 pt-5">
+                                {{ children }}
+                                  {{ if children }}
+                                    <li
+                                      x-data="{ isExpanded: {{ is_parent || is_current ? 'true' : 'false' }} }"
+                                      class="{{ ['mb-4' => !last] | classes }}"
+                                    >
+                                      <div class="flex items-center justify-between">
+                                        {{ partial:common/sidebarNavLink }}
+                                        <div>
+                                          {{ if children }}
+                                            <button
+                                              type="button"
+                                              @click="isExpanded = ! isExpanded"
+                                              :aria-expanded="isExpanded ? 'true' : 'false'"
+                                              aria-controls="accordionItem{{ id }}"
+                                              class="focus:outline-none"
+                                            >
+                                              <div :class="isExpanded ? 'rotate-270' : 'rotate-90'">
+                                                {{ partial:common/chevron chevron_style="grey" chevron_size="xs" }}
+                                              </div>
+                                            </button>
+                                          {{ /if }}
+                                        </div>
+                                      </div>
+                                      {{ if children }}
+                                        <div
+                                          x-show="isExpanded"
+                                          x-cloak
+                                          id="accordionItem{{ id }}"
+                                          role="region"
+                                          class="w-full"
+                                          aria-labelledby="controlsAccordionItem{{ id }}"
+                                          x-collapse
+                                        >
+                                          <ul class="pb-2 pl-3 pt-5">
+                                            {{ children }}
+                                              <li class="{{ ['mb-4' => !last] | classes }}">
+                                                {{ partial:common/sidebarNavLink }}
+                                              </li>
+                                            {{ /children }}
+                                          </ul>
+                                        </div>
+                                      {{ /if }}
+                                    </li>
+                                  {{ else }}
+                                    <li class="{{ ['mb-4' => !last] | classes }}">
+                                      {{ partial:common/sidebarNavLink }}
+                                    </li>
+                                  {{ /if }}
+                                {{ /children }}
+                              </ul>
+                            </div>
+                          {{ /if }}
+                        </li>
+                      {{ else }}
+                        <li class="{{ ['mb-4' => !last] | classes }}">
+                          {{ partial:common/sidebarNavLink }}
+                        </li>
+                      {{ /if }}
+                    {{ /children }}
+                  </ul>
+                </div>
+              {{ /if }}
+            </li>
+          {{ else }}
+            <li class="{{ ['mb-4' => !last] | classes }}">
+              {{ partial:common/sidebarNavLink }}
+            </li>
+          {{ /if }}
         {{ /children }}
       </ul>
     </div>
