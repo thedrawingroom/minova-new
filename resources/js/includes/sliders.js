@@ -5,9 +5,12 @@ export default {
     this.sliderProjectEl = $('.project-slider');
     this.sliderProductEl = $('.product-slider');
 
-    $('.accordion-control').on('click', () => {
+    $('.accordion-control').on('click', function () {
       setTimeout(() => {
         $(window).trigger('resize');
+        $('.product-slider').each(function () {
+          $(this).slick('setPosition');
+        });
       }, 100);
     });
 
