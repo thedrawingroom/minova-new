@@ -9,31 +9,38 @@ fields:
       localizable: true
       fields:
         -
+          handle: title
           field:
             type: text
             display: Title
-          handle: title
+            localizable: false
         -
+          handle: address_field
           field:
             type: textarea
             display: 'Address Field'
-          handle: address_field
+            localizable: false
         -
+          handle: contact_list
           field:
             type: grid
+            display: 'Contact List'
+            localizable: false
             fields:
               -
+                handle: contact
                 field:
                   type: text
-                  display: 'Contact Detials'
-                handle: contact_detials
+                  display: 'Contact Details'
+                  localizable: false
               -
+                handle: type
                 field:
                   type: select
                   display: 'Contact Type'
                   options:
                     -
-                      key: tel
+                      key: phone
                       value: 'TEL:'
                     -
                       key: email
@@ -41,6 +48,4 @@ fields:
                     -
                       key: fax
                       value: 'FAX:'
-                handle: contact_type
-            display: 'Contact List'
-          handle: contact_list
+                  localizable: false
