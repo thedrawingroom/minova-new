@@ -20,7 +20,7 @@
   <div class="bg-white">
     <div class="container flex items-center justify-between py-4 lg:py-5">
       <div>
-        <a href="/" class="cursor-pointer">
+        <a href="{{ site_content:home }}" class="cursor-pointer">
           {{ if site_content:main_logo }}
             {{ partial:common/image class="w-full max-w-40 lg:max-w-56 h-auto" :url="site_content:main_logo" :alt="site_content:main_logo:alt" }}
           {{ /if }}

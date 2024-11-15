@@ -283,7 +283,6 @@ tabs:
               type: group
               display: 'Ground Control'
               localizable: false
-              hide_display: true
               fields:
                 -
                   handle: image
@@ -305,51 +304,6 @@ tabs:
               type: group
               display: 'UniPass Single Pass Bolting Technologies'
               localizable: false
-              hide_display: true
-              fields:
-                -
-                  handle: image
-                  field:
-                    max_files: 1
-                    container: assets
-                    type: assets
-                    display: Image
-                    localizable: false
-                -
-                  handle: description
-                  field:
-                    type: textarea
-                    display: Description
-                    localizable: false
-          -
-            handle: ventilation
-            field:
-              type: group
-              display: Ventilation
-              localizable: false
-              hide_display: true
-              fields:
-                -
-                  handle: image
-                  field:
-                    max_files: 1
-                    container: assets
-                    type: assets
-                    display: Image
-                    localizable: false
-                -
-                  handle: description
-                  field:
-                    type: textarea
-                    display: Description
-                    localizable: false
-          -
-            handle: ore_recovery_optimisation
-            field:
-              type: group
-              display: 'Ore Recovery Optimisation'
-              localizable: false
-              hide_display: true
               fields:
                 -
                   handle: image
@@ -371,7 +325,48 @@ tabs:
               type: group
               display: 'Ultimate Stemming'
               localizable: false
-              hide_display: true
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: ore_recovery_optimisation
+            field:
+              type: group
+              display: 'Ore recovery optimisation'
+              localizable: false
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+          -
+            handle: ventilation
+            field:
+              type: group
+              display: Ventilation
+              localizable: false
               fields:
                 -
                   handle: image

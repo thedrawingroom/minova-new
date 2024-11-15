@@ -27,6 +27,13 @@ tabs:
               display: Copyright
               localizable: false
           -
+            handle: home
+            field:
+              type: link
+              display: Home
+              localizable: false
+              listable: true
+          -
             handle: address
             field:
               type: textarea
