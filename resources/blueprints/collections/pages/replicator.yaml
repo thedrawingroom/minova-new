@@ -128,6 +128,14 @@ tabs:
                             type: navs
                             display: 'Sidebar Navigation'
                             localizable: false
+                        -
+                          handle: year
+                          field:
+                            type: integer
+                            display: Year
+                            localizable: false
+                            validate:
+                              - null
                     search:
                       display: Search
                       icon: search-magnifying-glass
