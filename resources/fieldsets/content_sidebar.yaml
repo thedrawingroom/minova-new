@@ -28,3 +28,16 @@ fields:
             container: assets
             max_files: 1
           handle: file
+  -
+    handle: solutions
+    field:
+      type: grid
+      display: Solutions
+      localizable: false
+      fields:
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+            localizable: false

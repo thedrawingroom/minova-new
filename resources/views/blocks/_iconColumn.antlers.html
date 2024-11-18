@@ -4,7 +4,8 @@
       {{ if title }}
         {{ partial:common/sectionTitle :text="title" }}
       {{ /if }}
-      <div class="grid grid-cols-2 gap-5 lg:grid-cols-4 2xl:gap-10">
+      <div
+        class="grid grid-cols-2 gap-5 2xl:gap-10 {{ ['lg:grid-cols-5' => cards | count == 5, 'lg:grid-cols-4' => cards | count != 5] | classes }} ">
         {{ cards }}
           <div class="relative overflow-hidden rounded-2xl bg-white px-4 py-6 text-center 2xl:px-5 2xl:py-10">
             {{ if icon }}
