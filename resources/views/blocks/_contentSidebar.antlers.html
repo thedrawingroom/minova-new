@@ -7,11 +7,9 @@
     {{ /if }}
     <div class="lg:col-span-9">
       <div
-        class="{{ ['lg:grid-cols-9' => downloads || industry_sectors || common_uses || available_regions] | classes }} grid gap-10"
-      >
+        class="{{ ['lg:grid-cols-9' => downloads || industry_sectors || solutions || common_uses || available_regions] | classes }} grid gap-10">
         <div
-          class="{{ ['lg:col-span-6' => downloads || industry_sectors || common_uses || available_regions] | classes }}"
-        >
+          class="{{ ['lg:col-span-6' => downloads || industry_sectors || solutions || common_uses || available_regions] | classes }}">
           {{ if bard_field }}
             {{ partial:common/bard :data="bard_field" }}
           {{ /if }}
@@ -27,10 +25,26 @@
               </ul>
             </div>
           {{ /if }}
+          {{ if solutions }}
+            <div class="rounded-t-2xl bg-minova-gold px-5 py-7">
+              <p class="mb-4 text-xl font-extrabold text-white">Reliable Solutions</p>
+              <ul>
+                {{ solutions }}
+                <li class="{{ ['mb-4' => !last] | classes }}">
+                  <span class="flex items-center">
+                    <i class="fa-regular fa-check text-white text-xl mr-3 align-middle"></i>
+                    <span class="text-lg font-bold text-white leading-none">
+                      {{ title }}
+                    </span>
+                  </span>
+                </li>
+                {{ /solutions }}
+              </ul>
+            </div>
+          {{ /if }}
           {{ if common_uses }}
             <div
-              class="{{ ['rounded-t-2xl' => !industry_sectors] | classes }} border-t-2 border-white bg-slate-100 px-5 py-7"
-            >
+              class="{{ ['rounded-t-2xl' => !industry_sectors] | classes }} border-t-2 border-white bg-slate-100 px-5 py-7">
               <p class="mb-5 text-xl font-extrabold">Common use</p>
               <ul>
                 {{ common_uses }}
@@ -41,8 +55,7 @@
           {{ /if }}
           {{ if available_regions }}
             <div
-              class="{{ ['rounded-t-2xl' => !industry_sectors && !common_uses] | classes }} border-t-2 border-white bg-slate-100 px-5 py-7"
-            >
+              class="{{ ['rounded-t-2xl' => !industry_sectors && !common_uses] | classes }} border-t-2 border-white bg-slate-100 px-5 py-7">
               <p class="mb-5 text-xl font-extrabold">Available Regions</p>
               <ul>
                 {{ available_regions }}
@@ -53,8 +66,7 @@
           {{ /if }}
           {{ if downloads }}
             <div
-              class="{{ ['border-t-2 border-white' => is_product, 'rounded-t-2xl' => !industry_sectors && !common_uses && !available_regions] | classes }} rounded-b-2xl bg-slate-100 px-5 py-7"
-            >
+              class="{{ ['border-t-2 border-white' => is_product, 'rounded-t-2xl' => !industry_sectors && !common_uses && !available_regions] | classes }} rounded-b-2xl bg-slate-100 px-5 py-7">
               {{ partial:common/downloads }}
             </div>
           {{ /if }}

@@ -135,7 +135,7 @@
 @layer components {
   /* Slick carousel */
   .slick-track {
-    @apply !flex;
+    @apply !flex !min-w-full;
   }
 
   .slick-slide {

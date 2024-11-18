@@ -1,13 +1,7 @@
 <li class="{{ ['mb-4' => !last] | classes }} flex items-center">
   <span class="mr-3 flex size-10 items-center justify-center">
-    {{ if url == '/{{ site }}/industries/coal-mining' }}
-      <img src="{{ icon }}" alt="soft rock icon" class="h-full w-full" />
-    {{ elseif url == '/{{ site }}/industries/hard-rock-mining' }}
-      <img src="{{ icon }}" alt="hard rock icon" class="h-full w-full" />
-    {{ elseif url == '/{{ site }}/industries/construction' }}
-      <img src="{{ icon }}" alt="construction icon" class="h-full w-full" />
-    {{ elseif url == '/{{ site }}/industries/energy' }}
-      <img src="{{ icon }}" alt="energy icon" class="h-full w-full" />
+    {{ if icon }}
+      {{ partial:common/image class="h-full w-full" :url="icon" :alt="icon:alt" }}
     {{ /if }}
   </span>
   <span class="pt-0.5 text-lg font-bold text-white">

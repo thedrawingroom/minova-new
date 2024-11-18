@@ -2,9 +2,9 @@
   class="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white transition-transform lg:hover:scale-105"
   href="{{ url }}"
 >
-  <div class="block aspect-square bg-slate-50">
+  <div class="flex aspect-square bg-white items-center justify-center">
     {{ if image }}
-      {{ partial:common/image class="h-auto w-full object-contain" :url="image" :alt="image:alt" }}
+      {{ partial:common/image class="max-h-full max-w-full object-contain" :url="image" :alt="image:alt" }}
     {{ /if }}
   </div>
   <div class="px-5 py-7 text-center">
