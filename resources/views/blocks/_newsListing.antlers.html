@@ -6,29 +6,54 @@
     <div class="lg:col-span-9">
       <div class="mb-10">
         <h2>
-          {{ collection:count in="news" }}
+          {{ if year }}
+            {{ collection:count in="news" since="December {{ year - 1 }}" until="January {{ year + 1 }}"}}
+          {{ else }}
+            {{ collection:count in="news" }}
+          {{ /if }}
           News items listed
         </h2>
         <p>This page brings you the latest news on Minova from around the world.</p>
       </div>
-      {{ collection:news }}
-        <div class="border-t-2 border-slate-200">
-          <a href="{{ url }}" class="grid gap-6 md:gap-12 py-7 md:grid-cols-12">
-            <div class="flex flex-col md:col-span-7">
-              <h6 class="text-sm">{{ date }}</h6>
-              <h4>{{ title }}</h4>
-              {{ if short_description }}
-                <p>{{ short_description }}</p>
-              {{ /if }}
-            </div>
-            {{ if image }}
-              <div class="relative aspect-4/3 md:aspect-square xl:aspect-4/3 overflow-hidden rounded-2xl md:col-span-5">
-                <img src="{{ image }}" class="absolute left-0 top-0 size-full object-cover" />
+      {{ if year }}
+        {{ collection:news since="December {{ year - 1 }}" until="January {{ year + 1 }}" }}
+          <div class="border-t-2 border-slate-200">
+            <a href="{{ url }}" class="grid gap-6 md:gap-12 py-7 md:grid-cols-12">
+              <div class="flex flex-col md:col-span-7">
+                <h6 class="text-sm">{{ date }}</h6>
+                <h4>{{ title }}</h4>
+                {{ if short_description }}
+                  <p>{{ short_description }}</p>
+                {{ /if }}
               </div>
-            {{ /if }}
-          </a>
-        </div>
-      {{ /collection:news }}
+              {{ if image }}
+                <div class="relative aspect-4/3 md:aspect-square xl:aspect-4/3 overflow-hidden rounded-2xl md:col-span-5">
+                  <img src="{{ image }}" class="absolute left-0 top-0 size-full object-cover" />
+                </div>
+              {{ /if }}
+            </a>
+          </div>
+        {{ /collection:news }}
+      {{ else }}
+        {{ collection:news }}
+          <div class="border-t-2 border-slate-200">
+            <a href="{{ url }}" class="grid gap-6 md:gap-12 py-7 md:grid-cols-12">
+              <div class="flex flex-col md:col-span-7">
+                <h6 class="text-sm">{{ date }}</h6>
+                <h4>{{ title }}</h4>
+                {{ if short_description }}
+                  <p>{{ short_description }}</p>
+                {{ /if }}
+              </div>
+              {{ if image }}
+                <div class="relative aspect-4/3 md:aspect-square xl:aspect-4/3 overflow-hidden rounded-2xl md:col-span-5">
+                  <img src="{{ image }}" class="absolute left-0 top-0 size-full object-cover" />
+                </div>
+              {{ /if }}
+            </a>
+          </div>
+        {{ /collection:news }}
+      {{ /if }}
     </div>
   </div>
 </div>
