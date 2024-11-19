@@ -78,7 +78,7 @@ tabs:
               default: now
               validate:
                 - required
-              localizable: false
+              localizable: true
           -
             handle: parent
             field:

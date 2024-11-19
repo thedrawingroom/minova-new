@@ -11,7 +11,7 @@ tabs:
               required: true
               validate:
                 - required
-              localizable: false
+              localizable: true
           -
             handle: icon
             field:
@@ -19,7 +19,7 @@ tabs:
               container: assets
               type: assets
               display: Icon
-              localizable: false
+              localizable: true
   sidebar:
     display: Sidebar
     sections:

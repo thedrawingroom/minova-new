@@ -33,7 +33,7 @@ fields:
     field:
       type: grid
       display: Solutions
-      localizable: false
+      localizable: true
       fields:
         -
           handle: title

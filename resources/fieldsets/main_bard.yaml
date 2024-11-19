@@ -78,4 +78,4 @@ fields:
                     container: assets
                     type: assets
                     display: Image
-                    localizable: false
+                    localizable: true
