@@ -1,4 +1,4 @@
-<div class="container max-w-5xl mt8- py-8 lg:py-12 2xl:py-14">
+<div class="container max-w-5xl mt-8 py-8 lg:py-12 2xl:py-14">
   <div class="mb-10">
     <form action="{{ site:url }}/search" method="GET" class="flex items-center justify-center">
       <input type="search" name="q" placeholder="Search" value="{{ get:q }}"
@@ -14,10 +14,13 @@
       </button>
     </form>
   </div>
-  {{ search:results index="default" }}
-    {{ if no_results }}
-      <h2 class="text-center text-2xl font-semibold">No results found for "{{ get:q }}".</h2>
-    {{ else }}
+  {{ search:results index="default" as="results" }}
+    <div class="mb-6 text-center">
+      <h4>
+        {{ total_results }} result{{ if total_results != 1 }}s{{ /if }} found for "{{ get:q }}".
+      </h4>
+    </div>
+    {{ results }}
       <div class="border-t border-slate-200 py-4">
         <a href="{{ url }}" class="flex items-center justify-between transition-colors hover:text-minova-gold">
           <div>
@@ -31,6 +34,6 @@
           </span>
         </a>
       </div>
-    {{ /if }}
+    {{ /results }}
   {{ /search:results }}
 </div>
