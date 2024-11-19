@@ -11,7 +11,7 @@ tabs:
               container: assets
               type: assets
               display: 'Main Logo'
-              localizable: false
+              localizable: true
           -
             handle: alternate_logo
             field:
@@ -19,23 +19,23 @@ tabs:
               container: assets
               type: assets
               display: 'Alternate Logo'
-              localizable: false
+              localizable: true
           -
             handle: copyright
             field:
               type: text
               display: Copyright
-              localizable: false
+              localizable: true
           -
             handle: home
             field:
               type: link
               display: Home
-              localizable: false
+              localizable: true
               listable: true
           -
             handle: address
             field:
               type: textarea
               display: Address
-              localizable: false
+              localizable: true
