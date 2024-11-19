@@ -7,6 +7,7 @@ import sliders from './includes/sliders';
 import letters from './includes/letters';
 import global from './includes/global';
 import crossSection from './includes/crossSection';
+import nav from './includes/nav';
 
 // Alpine
 window.Alpine = Alpine;
@@ -18,5 +19,6 @@ window.addEventListener('DOMContentLoaded', () => {
   sliders.init();
   letters.init();
   crossSection.init();
+  nav.init();
   global.init();
 });
