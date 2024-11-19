@@ -82,7 +82,15 @@ tabs:
                       display: 'Product Grid'
                       instructions: 'This block automatically pulls your top level products'
                       icon: layout-grid-dots
-                      fields: {  }
+                      fields:
+                        -
+                          handle: products_list
+                          field:
+                            type: entries
+                            display: 'Products List'
+                            localizable: true
+                            collections:
+                              - products
                     team_columns:
                       display: 'Team Columns'
                       icon: user-avatar
