@@ -104,7 +104,7 @@ tabs:
               type: terms
               display: 'Industry Sectors'
               mode: select
-              localizable: false
+              localizable: true
           -
             handle: available_regions
             field:
@@ -113,7 +113,7 @@ tabs:
               type: terms
               display: 'Available Regions'
               mode: select
-              localizable: false
+              localizable: true
           -
             handle: common_uses
             field:
@@ -122,5 +122,5 @@ tabs:
               type: terms
               display: 'Common Uses'
               mode: select
-              localizable: false
+              localizable: true
 title: Product

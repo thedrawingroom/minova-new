@@ -10,4 +10,4 @@ tabs:
               max_items: 1
               type: form
               display: 'Contact Form'
-              localizable: false
+              localizable: true

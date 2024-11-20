@@ -48,6 +48,7 @@ export default {
       },
       aspectRatio: {
         '4/3': '4 / 3',
+        'video-shallow' : '16 / 5',
       },
       rotate: {
         270: '270deg',

@@ -1,9 +1,16 @@
-{{ if video }}
-  <div class="block-video-banner">
-    <div class="relative h-[20vh] w-full overflow-hidden sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[60vh]">
-      <video class="absolute left-0 top-0 size-full object-cover" autoplay muted loop>
-        <source src="{{ video }}" type="video/mp4" />
-      </video>
-    </div>
-  </div>
-{{ /if }}
+<div class="block-video-banner">
+  {{ if video_type == 'link' }}
+    {{ if video_link }}
+      <iframe class="relative w-full overflow-hidden aspect-video-shallow" width="100%" height="auto"
+        src="{{ video_link | embed_url }}"></iframe>
+    {{ /if }}
+  {{ elseif video_type == 'file' }}
+    {{ if video_file }}
+      <div class="relative w-full overflow-hidden aspect-video-shallow">
+        <video class="absolute left-0 top-0 size-full object-cover" autoplay muted loop>
+          <source src="{{ video_file }}" type="video/mp4" />
+        </video>
+      </div>
+    {{ /if }}
+  {{ /if }}
+</div>

@@ -1,14 +1,14 @@
-<div class="block-products-grid bg-slate-100">
-  <div class="container py-8 lg:py-12 2xl:py-14">
-    {{ partial:common/sectionTitle text="Our Products" }}
-    <ul class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-      {{ collection:products }}
-        {{ if !parent }}
+{{ if products_list }}
+  <div class="block-products-grid bg-slate-100">
+    <div class="container py-8 lg:py-12 2xl:py-14">
+      {{ partial:common/sectionTitle text="Our Products" }}
+      <ul class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        {{ products_list }}
           <li>
             {{ partial:common/entryCard :slug="url" :image="image" :title="title" button_text="Explore products" }}
           </li>
-        {{ /if }}
-      {{ /collection:products }}
-    </ul>
+        {{ /products_list }}
+      </ul>
+    </div>
   </div>
-</div>
+{{ /if }}

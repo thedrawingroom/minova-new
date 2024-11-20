@@ -1,12 +1,33 @@
 title: 'Video Banner'
 fields:
   -
-    handle: video
+    handle: video_type
+    field:
+      options:
+        -
+          key: link
+          value: Link
+        -
+          key: file
+          value: File
+      inline: true
+      default: file
+      type: radio
+      display: 'Video Type'
+      localizable: false
+  -
+    handle: video_file
     field:
       type: assets
-      display: Video
+      display: 'Video File'
       validate:
         - 'mimes:mp4'
       container: assets
       max_files: 1
+      localizable: true
+  -
+    handle: video_link
+    field:
+      type: video
+      display: 'Video Link'
       localizable: true

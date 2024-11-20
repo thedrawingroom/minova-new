@@ -10,46 +10,46 @@ tabs:
               max_items: 1
               type: navs
               display: Header
-              localizable: false
+              localizable: true
           -
             handle: offcanvas
             field:
               max_items: 1
               type: navs
               display: Offcanvas
-              localizable: false
+              localizable: true
           -
             handle: footer
             field:
               max_items: 1
               type: navs
               display: Footer
-              localizable: false
+              localizable: true
           -
             handle: social
             field:
               max_items: 1
               type: navs
               display: Social
-              localizable: false
+              localizable: true
           -
             handle: legal
             field:
               max_items: 1
               type: navs
               display: Legal
-              localizable: false
+              localizable: true
           -
             handle: products
             field:
               max_items: 1
               type: navs
               display: Products
-              localizable: false
+              localizable: true
           -
             handle: news
             field:
               max_items: 1
               type: navs
               display: News
-              localizable: false
+              localizable: true
