@@ -1,14 +1,8 @@
 <div class="block-video-banner">
   {{ if video_type == 'link' }}
     {{ if video_link }}
-      <iframe 
-        class="relative w-full overflow-hidden aspect-video-shallow" 
-        width="100%" 
-        height="auto"
-        src="{{ video_link | embed_url }}?autoplay=1&muted=1&loop=1&background=1"
-        frameborder="0" 
-        allow="autoplay; fullscreen; picture-in-picture" 
-        allowfullscreen>
+      <iframe class="relative w-full overflow-hidden aspect-video-shallow" width="100%" height="auto"
+        src="{{ video_link | embed_url }}?autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay">
       </iframe>
     {{ /if }}
   {{ elseif video_type == 'file' }}
