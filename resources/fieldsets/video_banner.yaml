@@ -25,9 +25,13 @@ fields:
       container: assets
       max_files: 1
       localizable: true
+      if:
+        video_type: 'equals file'
   -
     handle: video_link
     field:
       type: video
       display: 'Video Link'
       localizable: true
+      if:
+        video_type: 'equals link'
