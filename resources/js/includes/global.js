@@ -65,7 +65,7 @@ export default {
     }
 
     const form = document.querySelector('form.contact-form');
-    const recaptchaSiteKey = '6Ld6oIkqAAAAAPAvaBQs6UM4P5XYfAnvj0GLFX_p';
+    const recaptchaSiteKey = document.querySelector('meta[name="recaptcha-site-key"]').getAttribute('content');
 
     if (form) {
       form.addEventListener('submit', async (e) => {
