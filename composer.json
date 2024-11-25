@@ -10,6 +10,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "anakadote/statamic-recaptcha": "^1.0",
         "besanek/laravel-alias-storage": "^4.1",
         "laravel/framework": "^11",
         "laravel/tinker": "^2.9",
