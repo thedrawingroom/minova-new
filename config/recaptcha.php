@@ -21,7 +21,7 @@ return [
         'site_key' => env('RECAPTCHA_V3_SITE_KEY'),
         'secret_key' => env('RECAPTCHA_V3_SECRET_KEY'),
         'threshold' => env('RECAPTCHA_V3_THRESHOLD', .5),
-        'error_message' => 'Sorry, but you look like a robot.',
+        'error_message' => 'Sorry, but reCAPTCHA has detected suspicious activity and identified you as a bot. If you believe this is an error, please contact us at: <a href="mailto:support@yourdomain.com" style="color: #007bff; text-decoration: underline;">support@yourdomain.com</a>',
         'terms' => 'This website has implemented reCAPTCHA v3 and your use of reCAPTCHA v3 is subject to the <a href="https://www.google.com/policies/privacy/" target="_blank">Google Privacy Policy</a> and <a href="https://www.google.com/policies/terms/" target="_blank">Terms of Use</a>.',
 
         // In addition to performing the captcha verification when a form is submitted,

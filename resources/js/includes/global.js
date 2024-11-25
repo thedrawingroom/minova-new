@@ -42,7 +42,6 @@ export default {
 
     initRegionSelector();
 
-    // Contact form
     const contactToggle = document.getElementById('contact-toggle');
     const contactContainer = document.getElementById('contact-container');
 
@@ -63,6 +62,39 @@ export default {
 
     if (termsCheckbox) {
       termsCheckbox.addEventListener('click', toggleSubmitButton);
+    }
+
+    const form = document.querySelector('form.contact-form');
+    const recaptchaSiteKey = '6Ld6oIkqAAAAAPAvaBQs6UM4P5XYfAnvj0GLFX_p';
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!window.grecaptcha) {
+          alert('reCAPTCHA failed to load. Please try again.');
+          return;
+        }
+
+        grecaptcha.ready(async () => {
+          try {
+            const token = await grecaptcha.execute(recaptchaSiteKey, { action: 'submit' });
+            const recaptchaInput = document.getElementById('g-recaptcha-response');
+
+            if (!recaptchaInput) {
+              console.error('reCAPTCHA input field is missing from the form.');
+              return;
+            }
+
+            recaptchaInput.value = token;
+
+            form.submit();
+          } catch (error) {
+            alert('Failed to verify reCAPTCHA. Please try again.');
+            console.error('reCAPTCHA error:', error);
+          }
+        });
+      });
     }
   },
 };
