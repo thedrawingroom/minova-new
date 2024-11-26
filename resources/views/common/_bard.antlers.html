@@ -34,8 +34,7 @@
           {{ numbered_list }}
             <li class="flex">
               <span
-                class="mr-3 flex size-10 items-center justify-center rounded-full bg-minova-gold font-bold text-minova-blue"
-              >
+                class="mr-3 flex size-10 items-center justify-center rounded-full bg-minova-gold font-bold text-minova-blue">
                 {{ index + 1 }}
               </span>
               <span class="pt-2 font-bold">{{ title }}</span>
@@ -89,6 +88,10 @@
       {{ if addresses }}
         {{ partial:blocks/addressTable :addresses="addresses" }}
       {{ /if }}
+    {{ elseif type == "h1_h2" }}
+      <h1 class="text-4xl md:text-5xl">{{ text }}</h1>
+    {{ elseif type == "h1_h3" }}
+      <h1 class="text-3xl md:text-4xl">{{ text }}</h1>
     {{ /if }}
   </div>
 {{ /data }}

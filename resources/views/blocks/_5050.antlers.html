@@ -5,6 +5,16 @@
         {{ if content }}
           <div class="{{ ['mb-4' => button || page_links] | classes }} text-wrap">
             {{ content }}
+              {{ if type == "text" }}
+                <div class="bard-content">
+                  {{ text }}
+                </div>
+              {{ elseif type == "h1_h2" }}
+                <h1 class="text-4xl md:text-5xl">{{ text }}</h1>
+              {{ elseif type == "h1_h3" }}
+                <h1 class="text-3xl md:text-4xl">{{ text }}</h1>
+              {{ /if }}
+            {{ /content }}
           </div>
         {{ /if }}
         {{ if page_links }}
