@@ -79,3 +79,23 @@ fields:
                     type: assets
                     display: Image
                     localizable: true
+            h1_h2:
+              display: 'H1 styled as H2'
+              icon: text-formatting-all-caps
+              fields:
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Text
+                    localizable: false
+            h1_h3:
+              display: 'H1 styled as H3'
+              icon: text-formatting-all-caps
+              fields:
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Text
+                    localizable: false
