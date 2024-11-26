@@ -1,12 +1,20 @@
 title: 'Content Sidebar'
 fields:
   -
+    handle: blank_sidebar
+    field:
+      type: toggle
+      display: 'Blank Sidebar'
+      localizable: false
+  -
     handle: sidebar_navigation
     field:
       type: navs
       display: 'Sidebar Navigation'
       localizable: true
       max_items: 1
+      if:
+        blank_sidebar: 'equals false'
   -
     import: main_bard
   -

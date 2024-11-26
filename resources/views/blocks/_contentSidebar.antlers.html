@@ -1,6 +1,8 @@
 <div class="block-content-sidebar">
   <div class="container grid gap-10 py-8 lg:grid-cols-12 lg:py-12 2xl:gap-14 2xl:py-14">
-    {{ if is_product || sidebar_navigation }}
+    {{ if blank_sidebar }}
+      <div class="lg:col-span-3"></div>
+    {{ elseif is_product || sidebar_navigation }}
       <div class="lg:col-span-3">
         {{ partial:common/navigationSidebar }}
       </div>
@@ -30,14 +32,14 @@
               <p class="mb-4 text-xl font-extrabold text-white">Reliable Solutions</p>
               <ul>
                 {{ solutions }}
-                <li class="{{ ['mb-4' => !last] | classes }}">
-                  <span class="flex items-center">
-                    <i class="fa-regular fa-check text-white text-xl mr-3 align-middle"></i>
-                    <span class="text-lg font-bold text-white leading-none">
-                      {{ title }}
+                  <li class="{{ ['mb-4' => !last] | classes }}">
+                    <span class="flex items-center">
+                      <i class="fa-regular fa-check text-white text-xl mr-3 align-middle"></i>
+                      <span class="text-lg font-bold text-white leading-none">
+                        {{ title }}
+                      </span>
                     </span>
-                  </span>
-                </li>
+                  </li>
                 {{ /solutions }}
               </ul>
             </div>
