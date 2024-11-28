@@ -58,6 +58,7 @@
           </div>
 
           <div class="col-span-full mt-4 flex flex-row xl:mt-0">
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
             <div>
               <input type="checkbox" name="terms" id="contact-terms" value="1" />
             </div>
@@ -69,6 +70,11 @@
                 <a class="text-blue-600 underline" href="{{ page_entries:privacy_page:url }}">privacy policy</a>
               {{ /if }}
               .
+              <br>
+              <br>
+              This site is protected by reCAPTCHA and the Google
+              <a class="text-blue-600 underline" target="_blank" href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a class="text-blue-600 underline" target="_blank" href="https://policies.google.com/terms">Terms of Service</a> apply.
             </div>
           </div>
         {{ /form:create }}
