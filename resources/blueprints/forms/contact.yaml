@@ -40,3 +40,21 @@ tabs:
               type: text
               display: Phone
               localizable: true
+          -
+            handle: country
+            field:
+              type: text
+              display: Country
+              localizable: false
+          -
+            handle: page_url
+            field:
+              type: text
+              display: 'Page URL'
+              localizable: false
+          -
+            handle: region
+            field:
+              type: text
+              display: Region
+              localizable: false

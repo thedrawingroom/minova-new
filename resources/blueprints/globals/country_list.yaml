@@ -1,0 +1,27 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: countries
+            field:
+              type: grid
+              display: Countries
+              localizable: false
+              fields:
+                -
+                  handle: country_name
+                  field:
+                    type: text
+                    display: 'Country Name'
+                    localizable: false
+                    width: 50
+                -
+                  handle: country_code
+                  field:
+                    type: text
+                    display: 'Country Code'
+                    localizable: false
+                    width: 50
