@@ -1,16 +1,12 @@
-<div
-  id="contact-container"
-  class="fixed bottom-0 right-0 z-50 w-full translate-y-full bg-white drop-shadow-lg transition-transform duration-300 ease-in-out lg:w-[900px]"
->
+<div id="contact-container"
+  class="fixed bottom-0 right-0 z-50 w-full translate-y-full bg-white drop-shadow-lg transition-transform duration-300 ease-in-out lg:w-[900px]">
   <div
     class="-mt-12 ml-auto flex h-12 w-40 cursor-pointer items-center justify-center rounded-tl-3xl bg-minova-gold lg:-mt-14 lg:h-14 lg:w-48"
-    id="contact-toggle"
-  >
+    id="contact-toggle">
     <div class="font-flama-book text-xl font-bold uppercase lg:text-2xl">Contact</div>
   </div>
   <div
-    class="grid max-h-[65vh] grid-cols-12 gap-6 overflow-y-auto p-6 md:max-h-[500px] lg:max-h-[600px] lg:gap-10 lg:p-10"
-  >
+    class="grid max-h-[65vh] grid-cols-12 gap-6 overflow-y-auto p-6 md:max-h-[500px] lg:max-h-[600px] lg:gap-10 lg:p-10">
     <div class="col-span-12 lg:col-span-3">
       <h6>Contact Us</h6>
       <p class="mb-8 text-sm">{{ site_content:address | nl2br }}</p>
@@ -22,6 +18,10 @@
     <div class="col-span-12 lg:col-span-9">
       {{ if form_handles:contact_form }}
         {{ form:create in="{form_handles:contact_form:handle}" class="grid grid-cols-1 lg:grid-cols-3 gap-4" }}
+          <input type="hidden" name="page_url" id="page_url" value="{{ current_uri }}" />
+          <input type="hidden" name="region"
+            value="{{ if current_uri contains '/americas' }}Americas{{ elseif current_uri contains '/emea-cis' }}EMEA & CIS{{ elseif current_uri contains '/apac' }}Asia Pacific{{ else }}Unknown{{ /if }}" />
+
           <div class="col-span-full">
             {{ partial:common/formTextArea label="How can we help you?" required="true" id="contact_message" name="message" }}
           </div>
@@ -40,14 +40,23 @@
           <div class="mt-auto">
             {{ partial:common/formInput label="Phone ( + country code)" required="true" id="contact-phone" name="phone" }}
           </div>
+          <div class="mt-auto">
+            <label for="contact-country" class="block mb-2 text-sm font-bold">Select a Country <span
+                class="text-minova-gold">*</span></label>
+            <select id="contact-country" name="country"
+              class="w-full rounded-md border border-slate-300 bg-slate-200 p-2 focus:border-minova-gold focus:outline-none"
+              required>
+              <option value="">-- Country --</option>
+              {{ country_list:countries }}
+                <option value="{{ country_code }}">{{ country_name }}</option>
+              {{ /country_list:countries }}
+            </select>
+          </div>
 
           <div class="mt-auto">
-            <button
-              type="submit"
-              id="submit-button"
+            <button type="submit" id="submit-button"
               class="w-full text-nowrap rounded-full border-2 border-minova-gold bg-minova-gold px-6 py-2 font-flama-book text-sm font-bold uppercase tracking-wider text-minova-blue transition-all enabled:hover:bg-transparent enabled:hover:text-minova-blue enabled:active:bg-minova-gold enabled:active:opacity-70 disabled:cursor-not-allowed disabled:opacity-70"
-              disabled
-            >
+              disabled>
               <span class="flex items-center justify-center">
                 <span class="uppercase">Send message</span>
                 <span class="ml-2">
@@ -58,6 +67,7 @@
           </div>
 
           <div class="col-span-full mt-4 flex flex-row xl:mt-0">
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
             <div>
               <input type="checkbox" name="terms" id="contact-terms" value="1" />
             </div>
@@ -69,6 +79,11 @@
                 <a class="text-blue-600 underline" href="{{ page_entries:privacy_page:url }}">privacy policy</a>
               {{ /if }}
               .
+              <br>
+              <br>
+              This site is protected by reCAPTCHA and the Google
+              <a class="text-blue-600 underline" target="_blank" href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a class="text-blue-600 underline" target="_blank" href="https://policies.google.com/terms">Terms of Service</a> apply.
             </div>
           </div>
         {{ /form:create }}

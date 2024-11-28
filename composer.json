@@ -10,12 +10,15 @@
     ],
     "require": {
         "php": "^8.2",
+        "anakadote/statamic-recaptcha": "^1.0",
         "besanek/laravel-alias-storage": "^4.1",
         "laravel/framework": "^11",
         "laravel/tinker": "^2.9",
+        "league/csv": "^9.18",
         "league/flysystem-aws-s3-v3": "^3.0",
         "statamic/cms": "^5.0",
-        "statamic/eloquent-driver": "^4.16"
+        "statamic/eloquent-driver": "^4.16",
+        "statamic/importer": "^1.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8.1",
