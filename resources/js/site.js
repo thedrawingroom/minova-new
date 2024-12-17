@@ -8,6 +8,7 @@ import letters from './includes/letters';
 import global from './includes/global';
 import crossSection from './includes/crossSection';
 import nav from './includes/nav';
+import carousel from './includes/carousel';
 
 // Alpine
 window.Alpine = Alpine;
@@ -21,4 +22,5 @@ window.addEventListener('DOMContentLoaded', () => {
   crossSection.init();
   nav.init();
   global.init();
+  carousel.init();
 });
