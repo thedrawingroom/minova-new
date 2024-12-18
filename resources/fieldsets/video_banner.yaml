@@ -66,5 +66,6 @@ fields:
                     type: assets
                     display: 'Video File'
                     localizable: false
+                    max_files: 1
                     if:
                       video_type: 'equals file'

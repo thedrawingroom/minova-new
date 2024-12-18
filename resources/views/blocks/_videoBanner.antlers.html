@@ -5,13 +5,14 @@
         {{ if video_type == 'link' }}
           {{ if video_link }}
             <iframe class="relative w-full overflow-hidden aspect-video-shallow"
-              src="{{ video_link | embed_url }}?autoplay=1&mute=1&loop=1&background=1" frameborder="0">
+              src="{{ video_link | embed_url }}?autoplay=1&muted=1&loop=1&background=1" frameborder="0"
+              allow="autoplay; fullscreen">
             </iframe>
           {{ /if }}
         {{ elseif video_type == 'file' }}
           {{ if video_file }}
             <div class="relative w-full aspect-video">
-              <video class="absolute left-0 top-0 w-full h-full object-cover" muted loop>
+              <video class="absolute left-0 top-0 w-full h-full object-cover" autoplay loop muted playsinline>
                 <source src="{{ video_file }}" type="video/mp4" />
               </video>
             </div>

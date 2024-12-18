@@ -31,7 +31,15 @@ export default {
       const next = slick.$slides[nextSlide];
 
       const iframe = $(next).find('iframe');
-      iframe.attr('src', iframe.attr('src'));
+
+      iframe.css('visibility', 'hidden');
+
+      const src = iframe.attr('src');
+      iframe.attr('src', '');
+      setTimeout(() => {
+        iframe.attr('src', src);
+        iframe.css('visibility', 'visible');
+      }, 10);
     });
 
     carousel.addEventListener('mouseenter', () => {
