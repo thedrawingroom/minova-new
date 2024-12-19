@@ -31,15 +31,24 @@ export default {
       const next = slick.$slides[nextSlide];
 
       const iframe = $(next).find('iframe');
-
       iframe.css('visibility', 'hidden');
-
       const src = iframe.attr('src');
       iframe.attr('src', '');
       setTimeout(() => {
         iframe.attr('src', src);
         iframe.css('visibility', 'visible');
       }, 10);
+
+      const currentVideo = $(current).find('video');
+      if (currentVideo.length) {
+        currentVideo[0].pause();
+        currentVideo[0].currentTime = 0;
+      }
+
+      const nextVideo = $(next).find('video');
+      if (nextVideo.length) {
+        nextVideo[0].play();
+      }
     });
 
     carousel.addEventListener('mouseenter', () => {
