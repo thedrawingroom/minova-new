@@ -6,6 +6,6 @@
     {{ title | sanitize }}
   </span>
   {{ if !children }}
-    {{ partial:common/chevron chevron_style="grey" chevron_size="xs" }}
+    {{ partial:common/chevron chevron_style="{{ (is_current||is_selected ? 'gold' : 'grey') }}" chevron_size="xs" }}
   {{ /if }}
 </a>
