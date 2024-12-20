@@ -1,37 +1,75 @@
 title: 'Video Banner'
 fields:
   -
-    handle: video_type
+    handle: carousel
     field:
-      options:
-        -
-          key: link
-          value: Link
-        -
-          key: file
-          value: File
-      inline: true
-      default: file
-      type: radio
-      display: 'Video Type'
-      localizable: false
-  -
-    handle: video_file
-    field:
-      type: assets
-      display: 'Video File'
-      validate:
-        - 'mimes:mp4'
-      container: assets
-      max_files: 1
+      type: replicator
+      display: Carousel
       localizable: true
-      if:
-        video_type: 'equals file'
-  -
-    handle: video_link
-    field:
-      type: video
-      display: 'Video Link'
-      localizable: true
-      if:
-        video_type: 'equals link'
+      sets:
+        carousel_sets:
+          display: 'Carousel Sets'
+          sets:
+            image_slide:
+              display: 'Image Slide'
+              fields:
+                -
+                  handle: image
+                  field:
+                    container: assets
+                    type: assets
+                    display: Image
+                    localizable: false
+                    max_files: 1
+                -
+                  handle: duration
+                  field:
+                    type: text
+                    display: Duration
+                    instructions: 'Set how many seconds this slide is shown for'
+                    localizable: false
+                    validate:
+                      - required
+            video_slide:
+              display: 'Video Slide'
+              fields:
+                -
+                  handle: video_type
+                  field:
+                    options:
+                      -
+                        key: link
+                        value: Link
+                      -
+                        key: file
+                        value: File
+                    type: radio
+                    display: 'Video Type'
+                    localizable: false
+                -
+                  handle: duration
+                  field:
+                    type: text
+                    display: Duration
+                    instructions: 'Set how many seconds this slide is shown for'
+                    localizable: false
+                    validate:
+                      - required
+                -
+                  handle: video_link
+                  field:
+                    type: video
+                    display: 'Video Link'
+                    localizable: false
+                    if:
+                      video_type: 'equals link'
+                -
+                  handle: video_file
+                  field:
+                    container: assets
+                    type: assets
+                    display: 'Video File'
+                    localizable: false
+                    max_files: 1
+                    if:
+                      video_type: 'equals file'

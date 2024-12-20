@@ -84,7 +84,7 @@
   .bard-content {
     ul,
     ol {
-      @apply pl-5 mb-8;
+      @apply mb-8 pl-5;
     }
 
     ul {
@@ -214,6 +214,16 @@
 
   .cross-section-card.no-shadow {
     box-shadow: none;
+  }
+
+  .slick-dots-invert .slick-dots {
+    @apply absolute bottom-4 left-1/2 transform -translate-x-1/2;
+    @apply opacity-0 transition-opacity duration-300;
+  }
+  
+  /* Scoped hover effect for slick-dots inside .slick-dots-invert */
+  .slick-dots-invert.group:hover .slick-dots {
+    @apply opacity-100;
   }
 }
 

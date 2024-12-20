@@ -1,17 +1,29 @@
-<div class="block-video-banner">
-  {{ if video_type == 'link' }}
-    {{ if video_link }}
-      <iframe class="relative w-full overflow-hidden aspect-video-shallow" width="100%" height="auto"
-        src="{{ video_link | embed_url }}?autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay">
-      </iframe>
-    {{ /if }}
-  {{ elseif video_type == 'file' }}
-    {{ if video_file }}
-      <div class="relative w-full overflow-hidden aspect-video-shallow">
-        <video class="absolute left-0 top-0 size-full object-cover" autoplay muted loop>
-          <source src="{{ video_file }}" type="video/mp4" />
-        </video>
-      </div>
-    {{ /if }}
-  {{ /if }}
+<div class="carousel w-full relative group slick-dots-invert">
+  {{ carousel }}
+    <div class="carousel-slide aspect-video-shallow" data-duration="{{ duration }}">
+      {{ if type == "video_slide" }}
+        {{ if video_type == 'link' }}
+          {{ if video_link }}
+            <iframe class="relative w-full overflow-hidden aspect-video-shallow"
+              src="{{ video_link | embed_url }}?autoplay=1&muted=1&loop=1&background=1" frameborder="0"
+              allow="autoplay; fullscreen">
+            </iframe>
+          {{ /if }}
+        {{ elseif video_type == 'file' }}
+          {{ if video_file }}
+            <div class="relative w-full aspect-video">
+              <video class="" autoplay loop muted playsinline>
+                <source src="{{ video_file }}" type="video/mp4" />
+              </video>
+            </div>
+          {{ /if }}
+        {{ /if }}
+      {{ /if }}
+      {{ if type == "image_slide" }}
+        {{ if image }}
+          <img src="{{ image }}" alt="{{ image:alt }}" class="w-full h-full object-cover" />
+        {{ /if }}
+      {{ /if }}
+    </div>
+  {{ /carousel }}
 </div>
