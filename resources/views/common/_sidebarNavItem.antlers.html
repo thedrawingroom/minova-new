@@ -28,7 +28,7 @@
                     <button type="button" @click="isExpanded = ! isExpanded"
                       :aria-expanded="isExpanded ? 'true' : 'false'" aria-controls="accordionItem{{ id }}"
                       class="focus:outline-none">
-                      <div :class="isExpanded ? 'rotate-270' : 'rotate-90'">
+                      <div>
                         {{ partial:common/chevron chevron_style="{{ (is_current||is_selected ? 'gold' : 'grey') }}" chevron_size="xs" }}
                       </div>
                     </button>
