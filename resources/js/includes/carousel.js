@@ -43,10 +43,12 @@ export default {
       if (currentVideo.length) {
         currentVideo[0].pause();
         currentVideo[0].currentTime = 0;
+        currentVideo[0].muted = true;
       }
 
       const nextVideo = $(next).find('video');
       if (nextVideo.length) {
+        nextVideo[0].muted = true;
         nextVideo[0].play();
       }
     });
@@ -64,6 +66,15 @@ export default {
       arrows.forEach(arrow => {
         arrow.classList.add('opacity-0');
         arrow.classList.remove('opacity-100');
+      });
+    });
+
+    document.querySelectorAll('.slick-arrow').forEach(arrow => {
+      arrow.addEventListener('click', () => {
+        const videos = document.querySelectorAll('.carousel video');
+        videos.forEach(video => {
+          video.muted = true;
+        });
       });
     });
   },

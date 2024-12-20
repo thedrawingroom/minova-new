@@ -28,6 +28,8 @@ fields:
                     display: Duration
                     instructions: 'Set how many seconds this slide is shown for'
                     localizable: false
+                    validate:
+                      - required
             video_slide:
               display: 'Video Slide'
               fields:
@@ -51,6 +53,8 @@ fields:
                     display: Duration
                     instructions: 'Set how many seconds this slide is shown for'
                     localizable: false
+                    validate:
+                      - required
                 -
                   handle: video_link
                   field:
