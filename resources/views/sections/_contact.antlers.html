@@ -20,7 +20,7 @@
         {{ form:create in="{form_handles:contact_form:handle}" class="grid grid-cols-1 lg:grid-cols-3 gap-4" }}
           <input type="hidden" name="page_url" id="page_url" value="{{ current_uri }}" />
           <input type="hidden" name="region"
-            value="{{ if current_uri contains '/americas' }}Americas{{ elseif current_uri contains '/emea-cis' }}EMEA & CIS{{ elseif current_uri contains '/apac' }}Asia Pacific{{ else }}Unknown{{ /if }}" />
+            value="{{ if current_uri contains '/americas' }}Americas{{ elseif current_uri contains '/emea' }}EMEA{{ elseif current_uri contains '/apac' }}Asia Pacific{{ else }}Unknown{{ /if }}" />
 
           <div class="col-span-full">
             {{ partial:common/formTextArea label="How can we help you?" required="true" id="contact_message" name="message" }}

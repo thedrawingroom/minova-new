@@ -11,6 +11,6 @@ asia_pacific:
   url: /apac
   locale: en_AP
 emea_cis:
-  name: 'EMEA & CIS'
-  url: /emea-cis
+  name: 'EMEA'
+  url: /emea
   locale: en_GB

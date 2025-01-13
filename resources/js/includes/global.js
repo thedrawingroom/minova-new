@@ -27,8 +27,8 @@ export default {
       const currentPath = window.location.pathname;
       if (currentPath.includes('/americas')) {
         regionSelector.value = 'americas';
-      } else if (currentPath.includes('/emea-cis')) {
-        regionSelector.value = 'emea-cis';
+      } else if (currentPath.includes('/emea')) {
+        regionSelector.value = 'emea';
       } else if (currentPath.includes('/apac')) {
         regionSelector.value = 'apac';
       }
