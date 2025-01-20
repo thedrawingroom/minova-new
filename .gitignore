@@ -1,10 +1,11 @@
 /.phpunit.cache
+/.docker-compose
 /node_modules
 /public/assets
 /public/build
 /public/hot
 /public/storage
-/public/vendor/statamic
+/public/vendor
 /storage/*.key
 /vendor
 .env

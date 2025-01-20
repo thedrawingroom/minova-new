@@ -1,2 +1,5 @@
 /.env
 /.env.*
+/bootstrap/cache/*
+/storage/app/*
+/storage/framework/*/*

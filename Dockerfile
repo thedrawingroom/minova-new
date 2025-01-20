@@ -1,59 +1,56 @@
-FROM php:8.3-apache
+# syntax=docker.io/docker/dockerfile:1.7-labs
 
-# Update and install system dependencies
-RUN apt-get clean && apt-get update && apt-get install -y \
-    git \
-    unzip \
-    curl \
-    libpq-dev \
-    libsqlite3-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    libcurl4-openssl-dev \
-    libzip-dev \
-    pkg-config \
-    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs \
-    && docker-php-ext-install \
-    pdo \
-    pdo_pgsql \
-    pdo_sqlite \
-    mbstring \
-    curl \
-    dom \
-    zip
+FROM webdevops/php-nginx:8.3-alpine AS php
 
-# Enable Apache Rewrite Module
-RUN a2enmod rewrite
+# Set timezone
+RUN apk add --no-cache ffmpeg tzdata
+ENV TZ=Europe/London
 
-# Update Apache DocumentRoot to /var/www/html/public
-COPY ./apache/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+ENV WEB_DOCUMENT_ROOT=/app/public \
+    PHP_DISMOD=bz2,ffi,ldap,sysvmsg,sysvsm,sysvshm,shmop,apcu,vips,mongodb,amqp
+WORKDIR /app
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Copy overrides
+COPY docker/php-nginx /opt/docker
 
-# Set the working directory inside the container
-WORKDIR /var/www/html
+RUN mkdir -p /app/storage/logs/workers
+RUN mkdir -p /app/storage/framework/cache/data
+RUN mkdir -p /app/storage/framework/sessions
+RUN mkdir -p /app/storage/framework/testing
+RUN mkdir -p /app/storage/framework/views
 
-# Copy application code into the container
-COPY ./ /var/www/html
+# Install composer dependencies
+COPY composer.* .
+#RUN --mount=type=secret,id=composer_auth,dst=/app/auth.json COMPOSER_ALLOW_SUPERUSER=1 composer install --prefer-dist --no-dev --no-autoloader --no-interaction && rm -rf /root/.composer
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --prefer-dist --no-dev --no-autoloader --no-interaction --no-suggest && rm -rf /root/.composer
 
-# Configure Git safe directory
-RUN git config --global --add safe.directory /var/www/html
+# Copy codebase
+COPY --exclude=vendor/* . .
 
-# Set proper permissions
-RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache && \
-    chown -R www-data:www-data /var/www/html && \
-    chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+RUN git config --global --add safe.directory /app
 
-# Install PHP dependencies using Composer
-RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --prefer-dist --no-dev --ignore-platform-req=ext-zip
+# Temporarily set Statamic to use static files
+RUN cp /app/config/statamic/eloquent-driver.php /app/config/statamic/eloquent-driver.original.php
+RUN php -r "file_put_contents('/app/config/statamic/eloquent-driver.php', str_replace('\'driver\' => \'eloquent\'', '\'driver\' => \'file\'', file_get_contents('/app/config/statamic/eloquent-driver.php')));"
 
-# Install frontend dependencies and compile assets
-RUN npm install --legacy-peer-deps && npm run build
+# Finish composer
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer dump-autoload --no-dev --no-interaction --optimize
 
-# Expose the default Apache port
-EXPOSE 80
+# Revert Statamic config
+RUN rm -f /app/config/statamic/eloquent-driver.php
+RUN mv /app/config/statamic/eloquent-driver.original.php /app/config/statamic/eloquent-driver.php
 
-# Start the Apache server
-CMD ["apache2-foreground"]
+FROM node:22 AS frontend
+WORKDIR /frontend
+COPY . .
+COPY --from=php /app/vendor /frontend/vendor
+RUN yarn
+RUN yarn build
+
+FROM php AS php2
+
+# Copy node build output
+COPY --from=frontend /frontend/public/build /app/public/build
+
+# Ensure all of our files are owned by the same user and group.
+RUN chown -R application:application .
