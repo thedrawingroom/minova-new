@@ -7,7 +7,8 @@ RUN apk add --no-cache ffmpeg tzdata
 ENV TZ=Europe/London
 
 ENV WEB_DOCUMENT_ROOT=/app/public \
-    PHP_DISMOD=bz2,ffi,ldap,sysvmsg,sysvsm,sysvshm,shmop,apcu,vips,mongodb,amqp
+    PHP_DISMOD=bz2,ffi,ldap,sysvmsg,sysvsm,sysvshm,shmop,apcu,vips,mongodb,amqp \
+    PGSSLCERT=/tmp/postgresql.crt
 WORKDIR /app
 
 # Copy overrides
