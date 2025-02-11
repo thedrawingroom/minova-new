@@ -68,7 +68,7 @@ return [
 
         'assets' => [
             'driver' => 'alias',
-            'target' => env('STATAMIC_ASSETS_DISK', 'local_assets')
+            'target' => env('STATAMIC_ASSETS_DISK', 'azure')
         ],
 
         'azure' => [
