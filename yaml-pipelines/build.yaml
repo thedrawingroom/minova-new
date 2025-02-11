@@ -1,11 +1,17 @@
 trigger:
-- mainzzz
+- feature-WOJ1
 
 resources:
 - repo: self
 
 variables:
+  dockerRegistryServiceConnection: '74b3a4ca-ad36-489f-bcfe-5531a52ee4ad'
+  imageRepository: 'corporatewebsite'
+  containerRegistry: 'minecontainerregistry.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
+
+  vmImageName: 'ubuntu-latest'
 
 stages:
   - template: templates/build.yaml
