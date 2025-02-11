@@ -1,0 +1,11 @@
+trigger:
+- mainzzz
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+
+stages:
+  - template: templates/build.yaml
