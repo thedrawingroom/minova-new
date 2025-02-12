@@ -1,5 +1,5 @@
 trigger:
-- feature-WOJ1
+- main
 
 resources:
 - repo: self
