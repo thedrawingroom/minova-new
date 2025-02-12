@@ -5,11 +5,14 @@ resources:
 - repo: self
 
 variables:
+  resourceGroupName: 'MI-NE-corporatewebsite'
   dockerRegistryServiceConnection: '74b3a4ca-ad36-489f-bcfe-5531a52ee4ad'
   imageRepository: 'corporatewebsite'
   containerRegistry: 'minecontainerregistry.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
+  containerAppName: 'corporatewebsite'
+  containerAppEnvironment: 'caeMINEcorporatewebssite'
 
   vmImageName: 'ubuntu-latest'
 
