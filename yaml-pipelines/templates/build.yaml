@@ -30,7 +30,7 @@ stages:
     steps:
     - task: AzureContainerApps@1
       inputs:
-        azureSubscription: '$(subscriptionName)'
+        azureSubscription: 'ARM_PRD'
         imageToDeploy: '$(containerRegistry)/$(imageRepository):$(tag)'
         containerAppName: '$(containerAppName)'
         resourceGroup: '$(resourceGroupName)'
@@ -42,7 +42,7 @@ stages:
           APP_KEY=base64:oRRKLNgappG1IiR3N6heuMpTxpKdRs43OpdLFj/s9DM=
           APP_DEBUG=false
           APP_TIMEZONE=Europe/London
-          APP_URL=https://staging.minovaglobal.com 
+          APP_URL=https://staging.minovaglobal.com
           APP_LOCALE=en
           APP_FALLBACK_LOCALE=en
           APP_FAKER_LOCALE=en_GB 
