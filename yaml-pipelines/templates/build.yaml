@@ -30,7 +30,7 @@ stages:
     steps:
     - task: AzureContainerApps@1
       inputs:
-        azureSubscription: 'ARM_PRD'
+        azureSubscription: '$(subscriptionName)'
         imageToDeploy: '$(containerRegistry)/$(imageRepository):$(tag)'
         containerAppName: '$(containerAppName)'
         resourceGroup: '$(resourceGroupName)'
