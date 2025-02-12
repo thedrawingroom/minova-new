@@ -16,3 +16,29 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
+- stage: Deploy
+  displayName: Deploy to Container App
+  dependsOn: Build
+  jobs:
+  - job: Deploy
+    displayName: Deploy
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: AzureContainerApp@1
+      inputs:
+        azureSubscription: 'Azure subscription'
+        imageToDeploy: '$(containerRegistry)/$(imageRepository):$(tag)'
+        containerAppName: '$(containerAppName)'
+        resourceGroup: '$(resourceGroupName)'
+        containerAppEnvironment: '$(containerAppEnvironment)'
+        targetPort: '80'
+        environmentVariables: |
+          DB_CONNECTION_STRING=$(DB_CONNECTION_STRING)
+          API_KEY=$(API_KEY)
+          ENVIRONMENT=production
+          ASPNETCORE_ENVIRONMENT=Production
+          LOG_LEVEL=Information
+          REDIS_CONNECTION=$(REDIS_CONNECTION)
+          STORAGE_ACCOUNT_CONNECTION=$(STORAGE_ACCOUNT_CONNECTION)
