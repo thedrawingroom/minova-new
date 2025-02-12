@@ -5,6 +5,7 @@ resources:
 - repo: self
 
 variables:
+  subscriptionName: 'MI-NE-Core-Production'
   resourceGroupName: 'MI-NE-corporatewebsite'
   dockerRegistryServiceConnection: '74b3a4ca-ad36-489f-bcfe-5531a52ee4ad'
   imageRepository: 'corporatewebsite'
