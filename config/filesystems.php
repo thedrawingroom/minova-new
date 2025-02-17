@@ -73,6 +73,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'glide' => [
+            'driver' => 'scoped',
+            'disk' => 's3',
+            'prefix' => 'glide',
+            'visibility' => 'public'
+        ]
+
     ],
 
     /*
