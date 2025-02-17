@@ -55,3 +55,8 @@ COPY --from=frontend /frontend/public/build /app/public/build
 
 # Ensure all of our files are owned by the same user and group.
 RUN chown -R application:application .
+
+# Handle SSH
+RUN apk add --no-cache openssh
+
+EXPOSE 49144
