@@ -12,6 +12,11 @@
   resolved "https://registry.npmjs.org/@alpinejs/collapse/-/collapse-3.14.3.tgz"
   integrity sha512-gqyzDLf6i6GPzqJROClVXpq10q/5gYfmcnmBs+UGHkHHeu7VYkMJUzH/ukPmbRmnJnZ2xkjEZz6yRrjun6N88A==
 
+"@alpinejs/persist@^3.14.8":
+  version "3.14.8"
+  resolved "https://registry.yarnpkg.com/@alpinejs/persist/-/persist-3.14.8.tgz#ea3898f242bc8a469d12a53a5da29a6fd4475670"
+  integrity sha512-aK30sjUuvhoB4JIqY3QRu9WdBVHCuCq6tXq3vIzxyFSvdPI0vXAGAQNsjQ/Y2ak+GtSFVssd13NlUMotRYMQQA==
+
 "@awesome.me/kit-04ebf634dd@^1.0.7":
   version "1.0.7"
   resolved "https://npm.fontawesome.com/@awesome.me/kit-04ebf634dd/-/1.0.7/kit-04ebf634dd-1.0.7.tgz"

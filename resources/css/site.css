@@ -220,7 +220,7 @@
     @apply absolute bottom-4 left-1/2 transform -translate-x-1/2;
     @apply opacity-0 transition-opacity duration-300;
   }
-  
+
   /* Scoped hover effect for slick-dots inside .slick-dots-invert */
   .slick-dots-invert.group:hover .slick-dots {
     @apply opacity-100;
@@ -232,3 +232,61 @@
     @apply translate-x-0 opacity-100;
   }
 }
+
+/* Cookie banner */
+.cookie {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #373737;
+  z-index: 8000;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem calc(10rem + 123px) 3rem 10rem;
+
+  .btn {
+    border: 0;
+    border-radius: 25px;
+    background: 0 0;
+    transition: all .2s;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    background: #cb9608;
+    color: #242424;
+    background: linear-gradient(0deg, rgba(203, 150, 8, 1) 0, rgba(245, 182, 10, 1) 100%);
+
+    & __white {
+      color: #fff;
+    }
+  }
+
+  &__text {
+    font-size: 2rem;
+    color: #fff;
+    max-width: 70%;
+  }
+
+  &__text-highlight {
+    color: #fab90a;
+  }
+
+  &__text-link {
+    &:link, &:visited {
+      color: inherit;
+      text-decoration: underline;
+      transition: all .2s;
+    }
+  }
+
+  &__btn {
+    padding-left: 2rem;
+
+    .btn {
+      color: #373737;
+    }
+  }
+}
+
+.cookie
