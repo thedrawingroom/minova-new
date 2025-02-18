@@ -14,6 +14,7 @@ import carousel from './includes/carousel';
 // Alpine
 window.Alpine = Alpine;
 Alpine.plugin(collapse);
+Alpine.plugin(persist);
 Alpine.start();
 
 // Components init
