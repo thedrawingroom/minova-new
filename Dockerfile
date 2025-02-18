@@ -55,11 +55,3 @@ COPY --from=frontend /frontend/public/build /app/public/build
 
 # Ensure all of our files are owned by the same user and group.
 RUN chown -R application:application .
-
-# Handle SSH
-RUN apk add --no-cache openssh
-RUN mkdir /var/run/sshd
-COPY ./docker/custom/sshd_config /etc/ssh/sshd_config
-COPY ./docker/custom/dockerkey.pub /root/.ssh/authorized_keys
-
-EXPOSE 49144
