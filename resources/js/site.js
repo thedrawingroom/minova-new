@@ -13,19 +13,9 @@ import carousel from './includes/carousel';
 
 // Alpine
 window.Alpine = Alpine;
+
 Alpine.plugin(collapse);
 Alpine.plugin(persist);
-Alpine.start();
-
-// Components init
-window.addEventListener('DOMContentLoaded', () => {
-  sliders.init();
-  letters.init();
-  crossSection.init();
-  nav.init();
-  global.init();
-  carousel.init();
-});
 
 document.addEventListener("alpine:init", function () {
   Alpine.data('cookieConsent', () => ({
@@ -64,4 +54,16 @@ document.addEventListener("alpine:init", function () {
     }
 
   }))
+});
+
+Alpine.start();
+
+// Components init
+window.addEventListener('DOMContentLoaded', () => {
+  sliders.init();
+  letters.init();
+  crossSection.init();
+  nav.init();
+  global.init();
+  carousel.init();
 });
