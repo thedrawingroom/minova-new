@@ -14,6 +14,15 @@ return [
     |
     */
 
+    'azure' => [
+        'client_id' => env('AZURE_CLIENT_ID'),
+        'client_secret' => env('AZURE_CLIENT_SECRET'),
+        'url_authorize' => env('AZURE_URL_AUTHORIZE', 'https://login.microsoftonline.com/9cbf82cc-0d11-4d72-8073-ef83a037a953/oauth2/v2.0/authorize'),
+        'url_access_token' => env('AZURE_URL_ACCESS_TOKEN', 'https://login.microsoftonline.com/9cbf82cc-0d11-4d72-8073-ef83a037a953/oauth2/v2.0/token'),
+        'url_resource_owner_details' => env('AZURE_URL_RESOURCE_OWNER_DETAILS', ''),
+        'scope' => env('AZURE_SCOPE', 'https://outlook.office365.com/.default')
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
