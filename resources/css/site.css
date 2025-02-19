@@ -249,6 +249,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 3rem calc(10rem + 123px) 3rem 10rem;
+  gap: 2em;
+
+  @media (max-width: 1400px) {
+    padding: 1rem;
+    flex-direction: column;
+  }
 
   .btn {
     border: 0;
@@ -263,8 +269,9 @@
     padding: 0.2em 1em 0.3em;
     background: linear-gradient(0deg, rgba(203, 150, 8, 1) 0, rgba(245, 182, 10, 1) 100%);
     cursor: pointer;
+    white-space: nowrap;
 
-    & __white {
+    &__white {
       color: #fff;
     }
   }
