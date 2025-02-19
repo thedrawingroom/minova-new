@@ -38,9 +38,9 @@
       'default': 'americas'
     };
 
-    let siteHandle = document.body.dataset.regionName || 'default';
+    let siteHandle = '{{ site:handle }}' || 'default';
 
-    let region = window.regionMap[siteHandle] || 'americas';
+    let region = regionMap[siteHandle] || 'americas';
 
     gtag('config', 'G-R34H1M4RZP');
     gtag('event', 'page_view', {
