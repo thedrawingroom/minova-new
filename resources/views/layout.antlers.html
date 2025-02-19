@@ -8,10 +8,10 @@
   <meta name="recaptcha-site-key" content="{{ env:RECAPTCHA_V3_SITE_KEY }}">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="shortcut icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet" />
@@ -20,8 +20,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R34H1M4RZP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    const regionMap = {
+      'americas': 'americas',
+      'asia_pacific': 'apac',
+      'emea_cis': 'emea',
+      'default': 'americas'
+    };
+
+    let siteHandle = document.body.dataset.regionName || 'default';
+
+    let region = window.regionMap[siteHandle] || 'americas';
+
+    gtag('config', 'G-R34H1M4RZP');
+    gtag('event', 'page_view', {
+      'region': region
+    });
+  </script>
+
 </head>
-<body>
+<body data-region-name="{{ site:handle }}">
   {{ partial:sections/offcanvas }}
   {{ partial:sections/header }}
   <main>
