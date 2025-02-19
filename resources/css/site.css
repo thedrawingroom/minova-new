@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities';
 @import '@fortawesome/fontawesome-pro/css/all';
 
+[x-cloak] {
+  display: none !important;
+}
+
 @font-face {
   font-family: 'Flama Book';
   src:
