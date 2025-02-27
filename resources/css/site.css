@@ -44,6 +44,12 @@
     main {
       min-height: 70vh;
     }
+
+    &.hideHeader {
+      #site-header {
+        @apply -translate-y-[50px];
+      }
+    }
   }
 
   /* Text */
