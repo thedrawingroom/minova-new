@@ -90,6 +90,8 @@
       {{ /if }}
     {{ elseif type == "h1_h2" }}
       <h1 class="text-4xl md:text-5xl">{{ text }}</h1>
+    {{ elseif type == "individual_address" }}
+      <p>{{ text | nl2br }}</p>
     {{ elseif type == "h1_h3" }}
       <h1 class="text-3xl md:text-4xl">{{ text }}</h1>
     {{ /if }}
