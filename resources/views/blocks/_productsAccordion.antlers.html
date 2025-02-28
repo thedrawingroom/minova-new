@@ -2,7 +2,7 @@
 <div class="block-products-accordion">
   {{ if title }}
     <div class="container">
-      {{ partial:common/sectionTitle :text="title" size="small" }}
+      {{ partial:common/sectionTitle :text="title" }}
     </div>
   {{ /if }}
   {{ sections }}
@@ -13,7 +13,7 @@
           :aria-expanded="isExpanded ? 'true' : 'false'">
           <div class="flex justify-between py-6">
             {{ if label }}
-              <h5 class="mb-0">{{ label }}</h5>
+              <h4 class="mb-0">{{ label }}</h4>
             {{ /if }}
             <div>
               <i class="ml-2 transition-transform fa-regular fa-chevron-down fa-2x"
