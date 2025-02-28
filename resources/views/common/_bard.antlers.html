@@ -1,5 +1,9 @@
 {{ data }}
-  <div class="mb-10">
+  {{# 
+    These classes are to remove the margin from numbered and bulleted lists
+    [&_ul_li_p]:mb-0 [&_ol_li_p]:mb-0 
+  #}}
+  <div class="mb-10 [&_ul_li_p]:mb-0 [&_ol_li_p]:mb-0">
     {{ if type == "text" }}
       <div class="bard-content">
         {{ text }}
